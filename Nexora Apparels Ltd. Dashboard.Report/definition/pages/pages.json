@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "e5224d3fb000009d5a9d",
+    "page2_macro_trends00",
+    "page3_commercial0000",
+    "page4_procurement000",
+    "page5_inventory00000",
+    "page6_manufacturing0",
+    "page7_quality_otif00",
+    "page8_finance_esg000"
+  ],
+  "activePageName": "e5224d3fb000009d5a9d"
+}

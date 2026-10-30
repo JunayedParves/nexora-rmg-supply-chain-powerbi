@@ -1,0 +1,82 @@
+[
+  {
+    "name": "supplier_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "supplier_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supplier_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supplier_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "origin_country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "domestic_import_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "major_materials_supplied",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "average_lead_time_days",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lead_time_variability_days",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payment_terms",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "baseline_reliability_score",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "minimum_order_value_usd",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active_from_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active_to_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_currently_active",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "spend_share_weight",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  }
+]

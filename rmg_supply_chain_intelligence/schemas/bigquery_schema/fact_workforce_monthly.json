@@ -1,0 +1,122 @@
+[
+  {
+    "name": "workforce_month_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "department_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "worker_grade_role",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active_headcount",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthly_hires",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthly_separations",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "statutory_entry_min_wage_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "average_monthly_wage_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "overtime_hours",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_payroll_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "allowances_and_bonus_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "overtime_expense_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "total_payroll_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "total_payroll_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "absenteeism_rate_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "training_hours",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

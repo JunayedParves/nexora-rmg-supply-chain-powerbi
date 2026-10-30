@@ -1,0 +1,32 @@
+/// Compact number formatting by kind: usd, cnt, bdt, usdbn, pct0/1/2, n0-3, days.
+function 'Nexora.Fmt' = ( v : SCALAR NUMERIC VAL, k : STRING ) => SWITCH ( k, "usd", IF ( ABS ( v ) >= 1e9, FORMAT ( v / 1e9, "$0.0" ) & "bn", IF ( ABS ( v ) >= 1e6, FORMAT ( v / 1e6, "$0" ) & "M", IF ( ABS ( v ) >= 1e3, FORMAT ( v / 1e3, "$0" ) & "K", FORMAT ( v, "$0.00" ) ) ) ), "cnt", IF ( ABS ( v ) >= 1e9, FORMAT ( v / 1e9, "0.0" ) & "bn", IF ( ABS ( v ) >= 1e6, FORMAT ( v / 1e6, "0.0" ) & "M", IF ( ABS ( v ) >= 1e4, FORMAT ( v / 1e3, "0.0" ) & "K", FORMAT ( v, "#,0" ) ) ) ), "bdt", "BDT " & IF ( ABS ( v ) >= 1e9, FORMAT ( v / 1e9, "0.0" ) & "bn", IF ( ABS ( v ) >= 1e6, FORMAT ( v / 1e6, "0.0" ) & "M", IF ( ABS ( v ) >= 1e4, FORMAT ( v / 1e3, "0.0" ) & "K", FORMAT ( v, "#,0" ) ) ) ), "usdbn", FORMAT ( v, "$0.0" ) & "bn", "pct0", FORMAT ( v, "0%" ), "pct1", FORMAT ( v, "0.0%" ), "pct2", FORMAT ( v, "0.00%" ), "n0", FORMAT ( v, "#,0" ), "n1", FORMAT ( v, "0.0" ), "n2", FORMAT ( v, "0.00" ), "n3", FORMAT ( v, "0.000" ), "days", FORMAT ( v, "0" ) & " days", FORMAT ( v, "#,0.##" ) )
+	lineageTag: f1a7b133-48a0-433c-8315-6b5593114c9b
+
+/// KPI context line: latest year value and change vs first selected year (or prior year when one year is selected). kind = rate (pts) or level/add (% or x).
+function 'Nexora.KpiContext' = ( m : SCALAR NUMERIC EXPR, k : STRING, kind : STRING ) => VAR _Yrs = FILTER ( VALUES ( dim_date[calendar_year] ), NOT ISBLANK ( m ) ) VAR _Y1 = MAXX ( _Yrs, dim_date[calendar_year] ) VAR _Y0a = MINX ( _Yrs, dim_date[calendar_year] ) VAR _Y0 = IF ( _Y0a = _Y1, _Y1 - 1, _Y0a ) VAR _D1 = CALCULATE ( m, dim_date[calendar_year] = _Y1 ) VAR _D0 = CALCULATE ( m, dim_date[calendar_year] = _Y0 ) VAR _R = DIVIDE ( _D1, _D0 ) VAR _Delta = IF ( kind = "rate", IF ( _D1 >= _D0, "▲ ", "▼ " ) & FORMAT ( ABS ( _D1 - _D0 ) * 100, IF ( k = "pct2", "0.00", "0.0" ) ) & " pts", IF ( _R >= 1, "▲ ", "▼ " ) & IF ( _R >= 2, FORMAT ( _R, "0.0" ) & "x", FORMAT ( ABS ( _R - 1 ), "0%" ) ) ) RETURN IF ( ISBLANK ( _Y1 ), BLANK (), _Y1 & ": " & Nexora.Fmt ( _D1, k ) & IF ( ISBLANK ( _D0 ) || _D0 = 0, "", "   " & _Delta & " vs " & _Y0 ) )
+	lineageTag: 5aae77ad-7cbe-4473-98fa-71539f7256b0
+
+/// Alert colour for a KPI context line when it moved in the bad direction (good: 1 = up is good, -1 = down is good, 0 = neutral).
+function 'Nexora.KpiColor' = ( ctx : STRING, good : INT64 ) => IF ( good <> 0 && CONTAINSSTRING ( ctx, IF ( good > 0, "▼", "▲" ) ), "#B54708", "#4B5563" )
+	lineageTag: cdd8bf84-d3c0-4f5e-b606-7c7c358d37df
+
+/// Action title for a time trend: '<label> rose from X in Y0 to Z in Y1 (n.nx)'.
+function 'Nexora.TrendTitle' = ( m : SCALAR NUMERIC EXPR, lbl : STRING, k : STRING, upWord : STRING, downWord : STRING, showRatio : INT64 ) => VAR _Yrs = FILTER ( VALUES ( dim_date[calendar_year] ), NOT ISBLANK ( m ) ) VAR _Y0 = MINX ( _Yrs, dim_date[calendar_year] ) VAR _Y1 = MAXX ( _Yrs, dim_date[calendar_year] ) VAR _V0 = CALCULATE ( m, dim_date[calendar_year] = _Y0 ) VAR _V1 = CALCULATE ( m, dim_date[calendar_year] = _Y1 ) VAR _R = DIVIDE ( _V1, _V0 ) RETURN IF ( ISBLANK ( _Y1 ), lbl, IF ( _Y0 = _Y1, lbl & " in " & _Y1 & ": " & Nexora.Fmt ( _V1, k ), lbl & " " & IF ( _V1 >= _V0, upWord, downWord ) & " from " & Nexora.Fmt ( _V0, k ) & " in " & _Y0 & " to " & Nexora.Fmt ( _V1, k ) & " in " & _Y1 & IF ( showRatio = 1, IF ( _R >= 1.5, " (" & FORMAT ( _R, "0.0" ) & "x)", " (" & FORMAT ( _R - 1, "+0%;-0%" ) & ")" ), "" ) ) )
+	lineageTag: f16b8906-0355-4660-a159-17dbd48ee297
+
+/// Action title from the top (or bottom when lowFirst = 1) n items of a column. Pattern placeholders: {name} {value} {share} {total}.
+function 'Nexora.RankTitle' = ( d : ANYREF EXPR, m : SCALAR NUMERIC EXPR, k : STRING, lowFirst : INT64, n : INT64, pattern : STRING ) => VAR _Base = FILTER ( VALUES ( d ), NOT ISBLANK ( m ) ) VAR _T = TOPN ( n, _Base, IF ( lowFirst = 1, -m, m ), DESC ) VAR _N = CONCATENATEX ( _T, d, " and ", m, DESC ) VAR _V = SUMX ( _T, m ) VAR _Tot = m VAR _S = DIVIDE ( _V, _Tot ) RETURN IF ( ISBLANK ( _N ) || _N = "", BLANK (), SUBSTITUTE ( SUBSTITUTE ( SUBSTITUTE ( SUBSTITUTE ( pattern, "{name}", _N ), "{value}", Nexora.Fmt ( _V, k ) ), "{share}", FORMAT ( _S, "0%" ) ), "{total}", Nexora.Fmt ( _Tot, k ) ) )
+	lineageTag: 998468fe-d38b-4bf4-9198-5dc519ffb12c
+
+/// Compare growth multiples of two measures between first and last selected year. Placeholders: {y0} {y1} {a} {b}.
+function 'Nexora.TwoRatio' = ( mA : SCALAR NUMERIC EXPR, mB : SCALAR NUMERIC EXPR, pattern : STRING ) => VAR _Yrs = FILTER ( VALUES ( dim_date[calendar_year] ), NOT ISBLANK ( mA ) && NOT ISBLANK ( mB ) ) VAR _Y0 = MINX ( _Yrs, dim_date[calendar_year] ) VAR _Y1 = MAXX ( _Yrs, dim_date[calendar_year] ) VAR _RA = DIVIDE ( CALCULATE ( mA, dim_date[calendar_year] = _Y1 ), CALCULATE ( mA, dim_date[calendar_year] = _Y0 ) ) VAR _RB = DIVIDE ( CALCULATE ( mB, dim_date[calendar_year] = _Y1 ), CALCULATE ( mB, dim_date[calendar_year] = _Y0 ) ) RETURN IF ( ISBLANK ( _Y0 ) || _Y0 = _Y1, BLANK (), SUBSTITUTE ( SUBSTITUTE ( SUBSTITUTE ( SUBSTITUTE ( pattern, "{y0}", _Y0 ), "{y1}", _Y1 ), "{a}", FORMAT ( _RA, "0.0" ) & "x" ), "{b}", FORMAT ( _RB, "0.0" ) & "x" ) )
+	lineageTag: cd207698-3fd5-4434-b40b-6d5626309138
+
+/// Bar fill: highlight colour for the top (lowFirst = 0) or bottom (lowFirst = 1) n items, grey for the rest.
+function 'Nexora.BarColor' = ( d : ANYREF EXPR, m : SCALAR NUMERIC EXPR, lowFirst : INT64, n : INT64, hi : STRING ) => VAR _R = RANKX ( ALLSELECTED ( d ), IF ( lowFirst = 1, -m, m ), , DESC, DENSE ) RETURN IF ( ISBLANK ( m ), BLANK (), IF ( _R <= n, hi, "#868F9C" ) )
+	lineageTag: 41c1c977-8796-47c0-92df-88e820f7cb4c
+
+/// Index a measure to 100 in the first selected year with data.
+function 'Nexora.Index' = ( m : SCALAR NUMERIC EXPR ) => VAR _Y0 = MINX ( FILTER ( ALLSELECTED ( dim_date[calendar_year] ), NOT ISBLANK ( m ) ), dim_date[calendar_year] ) VAR _Base = CALCULATE ( m, dim_date[calendar_year] = _Y0 ) RETURN DIVIDE ( m, _Base ) * 100
+	lineageTag: 50735e7c-8c77-436a-b414-6441795b6376
+

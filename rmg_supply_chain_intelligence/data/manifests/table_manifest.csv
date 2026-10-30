@@ -1,0 +1,23 @@
+table_name,table_category,relative_directory,partition_scheme,file_count,row_count,column_count,compression,total_size_bytes,total_size_mb,primary_key
+dim_date,dimension,data/dimensions/dim_date,Unpartitioned (Single File),1,7305,30,SNAPPY,105987,0.101,date_key
+dim_company,dimension,data/dimensions/dim_company,Unpartitioned (Single File),1,8,14,SNAPPY,7199,0.007,company_key
+dim_factory,dimension,data/dimensions/dim_factory,Unpartitioned (Single File),1,26,16,SNAPPY,9183,0.009,factory_key
+dim_factory_line,dimension,data/dimensions/dim_factory_line,Unpartitioned (Single File),1,191,13,SNAPPY,9795,0.009,production_line_key
+dim_buyer,dimension,data/dimensions/dim_buyer,Unpartitioned (Single File),1,52,15,SNAPPY,9295,0.009,buyer_key
+dim_material,dimension,data/dimensions/dim_material,Unpartitioned (Single File),1,64,13,SNAPPY,9720,0.009,material_key
+dim_supplier,dimension,data/dimensions/dim_supplier,Unpartitioned (Single File),1,180,16,SNAPPY,13906,0.013,supplier_key
+dim_product,dimension,data/dimensions/dim_product,Unpartitioned (Single File),1,125,20,SNAPPY,14197,0.014,product_key
+dim_cost_category,dimension,data/dimensions/dim_cost_category,Unpartitioned (Single File),1,12,8,SNAPPY,4519,0.004,cost_category_key
+dim_order_line,dimension,data/dimensions/dim_order_line,Unpartitioned (Single File),1,240000,15,SNAPPY,5258715,5.015,order_line_key
+fact_sales_order_line,fact,data/facts/fact_sales_order_line,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,240000,34,SNAPPY,11958896,11.405,order_line_key
+fact_purchase_order_line,fact,data/facts/fact_purchase_order_line,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,245000,19,SNAPPY,10606096,10.115,purchase_order_line_key
+fact_supplier_delivery,fact,data/facts/fact_supplier_delivery,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,281638,23,SNAPPY,18224763,17.38,delivery_key
+fact_production_batch,fact,data/facts/fact_production_batch,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,254183,29,SNAPPY,15186294,14.483,production_batch_key
+fact_material_consumption,fact,data/facts/fact_material_consumption,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,508366,21,SNAPPY,34885967,33.27,consumption_key
+fact_quality_inspection,fact,data/facts/fact_quality_inspection,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,254183,28,SNAPPY,15910683,15.174,inspection_key
+fact_shipment_line,fact,data/facts/fact_shipment_line,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,241126,43,SNAPPY,23220174,22.144,shipment_line_key
+fact_inventory_snapshot_monthly,fact,data/facts/fact_inventory_snapshot_monthly,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,227760,32,SNAPPY,15534690,14.815,inventory_snapshot_key
+fact_cost_transaction,fact,data/facts/fact_cost_transaction,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,301611,16,SNAPPY,14434980,13.766,cost_transaction_key
+fact_workforce_monthly,fact,data/facts/fact_workforce_monthly,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,42705,24,SNAPPY,2823897,2.693,workforce_month_key
+fact_sustainability_monthly,fact,data/facts/fact_sustainability_monthly,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,4745,24,SNAPPY,591122,0.564,sustainability_month_key
+fact_macro_monthly,fact,data/facts/fact_macro_monthly,"event_year=YYYY (20 Annual Partitions, 2006-2025)",20,240,32,SNAPPY,265804,0.253,macro_month_key

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "company_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "operating_archetype",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_established",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "primary_product_specialization",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "business_model",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "trade_association",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "headquarters_city",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "backward_linkage_level",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active_from_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "active_to_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_currently_active",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_market_share_weight",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  }
+]

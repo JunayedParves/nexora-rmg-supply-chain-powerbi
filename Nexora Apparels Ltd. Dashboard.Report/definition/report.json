@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU10",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "NexoraBrand-5d8e2b17.json",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU10",
+          "path": "BaseThemes/Fluent2-CY26SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "nexora_logo.png",
+          "path": "nexora_logo.png",
+          "type": "Image"
+        },
+        {
+          "name": "NexoraBrand-5d8e2b17.json",
+          "path": "NexoraBrand-5d8e2b17.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "page_01_executive_brand.svg",
+          "path": "page_01_executive_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_02_macro_brand.svg",
+          "path": "page_02_macro_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_03_commercial_brand.svg",
+          "path": "page_03_commercial_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_04_procurement_brand.svg",
+          "path": "page_04_procurement_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_05_inventory_brand.svg",
+          "path": "page_05_inventory_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_06_manufacturing_brand.svg",
+          "path": "page_06_manufacturing_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_07_quality_brand.svg",
+          "path": "page_07_quality_brand.svg",
+          "type": "Image"
+        },
+        {
+          "name": "page_08_sustainability_brand.svg",
+          "path": "page_08_sustainability_brand.svg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

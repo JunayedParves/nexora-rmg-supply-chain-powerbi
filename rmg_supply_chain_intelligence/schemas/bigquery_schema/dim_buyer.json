@@ -1,0 +1,77 @@
+[
+  {
+    "name": "buyer_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "buyer_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "buyer_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "customer_segment",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "destination_country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market_region",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "market_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_preference",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_size_tier",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payment_terms",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "quality_tolerance_aql",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "compliance_strictness",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationship_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "relationship_end_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "demand_share_weight",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  }
+]

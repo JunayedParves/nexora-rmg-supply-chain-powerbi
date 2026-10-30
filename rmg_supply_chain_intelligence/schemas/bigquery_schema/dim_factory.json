@@ -1,0 +1,82 @@
+[
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "factory_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "location_city",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industrial_zone",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_specialization",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "production_technology",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "design_line_count",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_monthly_capacity_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "opening_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "closure_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_closed",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "compliance_profile",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_efficiency_factor",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_cost_multiplier",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  }
+]

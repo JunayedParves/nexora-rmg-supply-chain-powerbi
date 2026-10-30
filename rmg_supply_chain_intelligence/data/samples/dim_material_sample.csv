@@ -1,0 +1,65 @@
+material_key,material_code,material_name,material_category,material_group,base_uom,sourcing_profile,sourcing_classification,is_primarily_imported,standard_lead_time_days,base_unit_cost_usd_2015,storage_characteristics,is_critical_path_material
+1,MAT-001,30/1 Combed Compact Cotton Yarn,Yarn,Cotton & Yarn,KG,Domestic Spinning & India Import,Dual-Sourced (Domestic & Import),False,18,3.15,Dry Humidity-Controlled Yarn Store,True
+2,MAT-002,26/1 Carded Ring-Spun Cotton Yarn,Yarn,Cotton & Yarn,KG,Domestic Spinning & India Import,Dual-Sourced (Domestic & Import),False,16,2.75,Dry Humidity-Controlled Yarn Store,True
+3,MAT-003,40/1 Combed Organic Cotton Yarn (GOTS),Yarn,Cotton & Yarn,KG,India & Turkiye Import,Direct Import (Bonded Warehouse),True,28,3.85,Certified Organic Segregated Store,True
+4,MAT-004,20/1 Open-End (OE) Cotton Yarn,Yarn,Cotton & Yarn,KG,Domestic Spinning,Domestic Back-to-Back L/C,False,14,2.3,Standard Yarn Warehouse,True
+5,MAT-005,30/1 CVC (60% Cotton / 40% Polyester) Melange Yarn,Yarn,Cotton & Yarn,KG,Domestic & China Import,Dual-Sourced (Domestic & Import),False,22,2.95,Standard Yarn Warehouse,True
+6,MAT-006,24/1 PC (65% Polyester / 35% Cotton) Blended Yarn,Yarn,Cotton & Yarn,KG,Domestic & Indonesia Import,Dual-Sourced (Domestic & Import),False,20,2.55,Standard Yarn Warehouse,True
+7,MAT-007,75D/72F Recycled Polyester DTY Filament Yarn,Yarn,Cotton & Yarn,KG,China & Taiwan Import,Direct Import (Bonded Warehouse),True,32,2.4,Synthetic Filament Store,True
+8,MAT-008,40D Bare Elastane / Spandex Core Yarn,Yarn,Cotton & Yarn,KG,China & Vietnam Import,Direct Import (Bonded Warehouse),True,30,6.8,Temperature-Controlled Elastane Store,True
+9,MAT-009,2/28 Nm High-Bulk Acrylic Sweater Yarn,Yarn,Cotton & Yarn,KG,China & Indonesia Import,Direct Import (Bonded Warehouse),True,28,3.4,Sweater Cone Warehouse,True
+10,MAT-010,2/32 Nm Cotton-Acrylic (60/40) Jacquard Yarn,Yarn,Cotton & Yarn,KG,Domestic & China Import,Dual-Sourced (Domestic & Import),False,24,3.75,Sweater Cone Warehouse,True
+11,MAT-011,2/36 Nm Merino Wool-Blend Sweater Yarn,Yarn,Cotton & Yarn,KG,China & Australia Import,Direct Import (Bonded Warehouse),True,38,8.9,Climate-Controlled Wool Store,True
+12,MAT-012,Raw Upland / Shankar-6 Ginned Cotton Bale,Cotton Fiber,Cotton & Yarn,KG,"India, USA & West Africa Import",Direct Import (Bonded Warehouse),True,42,1.95,Bonded Raw Cotton Bale Godown,True
+13,MAT-013,160 GSM 100% Cotton Single Jersey Fabric (Dyed),Knit Fabric,Fabric,KG,In-House / Domestic Composite,In-House Backward Linkage / Domestic,False,15,4.9,Tubular/Open-Width Fabric Racks,True
+14,MAT-014,180 GSM 95/5 Cotton-Spandex Single Jersey,Knit Fabric,Fabric,KG,In-House / Domestic Composite,In-House Backward Linkage / Domestic,False,16,5.45,Relaxation Fabric Racks,True
+15,MAT-015,200 GSM 100% Cotton Pique Polo Fabric,Knit Fabric,Fabric,KG,In-House / Domestic Composite,In-House Backward Linkage / Domestic,False,16,5.2,Fabric Roll Racks,True
+16,MAT-016,220 GSM Organic Cotton Interlock Knit Fabric,Knit Fabric,Fabric,KG,In-House / Domestic Eco-Mill,In-House Backward Linkage / Domestic,False,18,6.3,Certified Organic Fabric Store,True
+17,MAT-017,280 GSM 3-Thread Brushed CVC Fleece Fabric,Knit Fabric,Fabric,KG,Domestic & China Import,Dual-Sourced (Domestic & Import),False,22,5.6,Heavy Roll Fabric Store,True
+18,MAT-018,240 GSM French Terry Unbrushed Loopback Fabric,Knit Fabric,Fabric,KG,In-House / Domestic Composite,In-House Backward Linkage / Domestic,False,17,5.35,Fabric Roll Racks,True
+19,MAT-019,1x1 Cotton-Elastane Collar & Cuff Rib (220 GSM),Knit Fabric,Fabric,KG,In-House / Domestic Composite,In-House Backward Linkage / Domestic,False,14,5.1,Accessory Fabric Bins,True
+20,MAT-020,145 GSM Recycled Polyester Moisture-Wicking Mesh,Knit Fabric,Fabric,KG,China & Taiwan Import,Direct Import (Bonded Warehouse),True,34,6.15,Synthetic Fabric Racks,True
+21,MAT-021,210 GSM Nylon-Spandex 4-Way Stretch Tricot,Knit Fabric,Fabric,KG,China & South Korea Import,Direct Import (Bonded Warehouse),True,36,7.8,Technical Activewear Store,True
+22,MAT-022,175 GSM Viscose-Elastane Drape Jersey,Knit Fabric,Fabric,KG,China & India Import,Direct Import (Bonded Warehouse),True,30,5.85,Standard Fabric Store,True
+23,MAT-023,"100% Cotton Poplin Shirting Fabric (40x40, 120 GSM)",Woven Fabric,Fabric,YARD,China & India Import,Direct Import (Bonded Warehouse),True,35,1.65,Woven Inspection & Roll Racks,True
+24,MAT-024,100% Cotton Yarn-Dyed Check Oxford Shirting,Woven Fabric,Fabric,YARD,China & India Import,Direct Import (Bonded Warehouse),True,38,1.95,Woven Inspection & Roll Racks,True
+25,MAT-025,65/35 Easy-Care Poly-Cotton Dress Shirting,Woven Fabric,Fabric,YARD,China & Indonesia Import,Direct Import (Bonded Warehouse),True,32,1.45,Woven Inspection & Roll Racks,True
+26,MAT-026,98/2 Cotton-Spandex Stretch Peached Twill (245 GSM),Woven Fabric,Fabric,YARD,Domestic & China Import,Dual-Sourced (Domestic & Import),False,28,2.35,Bottoms Fabric Warehouse,True
+27,MAT-027,100% Cotton Heavy Canvas / Ripstop Cargo Fabric,Woven Fabric,Fabric,YARD,China & Pakistan Import,Direct Import (Bonded Warehouse),True,36,2.5,Bottoms Fabric Warehouse,True
+28,MAT-028,Linen-Cotton Blended Summer Woven Shirting,Woven Fabric,Fabric,YARD,China Import,Direct Import (Bonded Warehouse),True,40,2.85,Specialty Woven Racks,True
+29,MAT-029,12.5 oz 100% Cotton Indigo Rope-Dyed Rigid Denim,Woven Fabric,Fabric,YARD,In-House / Domestic & Pakistan,In-House Backward Linkage / Domestic,False,22,2.4,Denim Roll Warehouse,True
+30,MAT-030,11.0 oz 98/2 Cotton-Elastane Comfort Stretch Denim,Woven Fabric,Fabric,YARD,In-House / Domestic & Pakistan,In-House Backward Linkage / Domestic,False,22,2.65,Denim Roll Warehouse,True
+31,MAT-031,10.5 oz Bi-Stretch Cotton-Poly-Spandex High-Recovery Denim,Woven Fabric,Fabric,YARD,China & Turkiye Import,Direct Import (Bonded Warehouse),True,34,3.1,Denim Roll Warehouse,True
+32,MAT-032,13.5 oz Red-Cast Selvedge Premium Denim Fabric,Woven Fabric,Fabric,YARD,Japan & Turkiye Import,Direct Import (Bonded Warehouse),True,42,4.75,Premium Bonded Denim Store,True
+33,MAT-033,9.5 oz Black-Sulfur Dyed Stretch Denim,Woven Fabric,Fabric,YARD,In-House / Domestic Denim Mill,In-House Backward Linkage / Domestic,False,20,2.55,Denim Roll Warehouse,True
+34,MAT-034,75D TPU-Laminated Waterproof Breathable Ripstop Shell,Woven Fabric,Fabric,YARD,China & Taiwan Import,Direct Import (Bonded Warehouse),True,38,3.45,Technical Outerwear Store,True
+35,MAT-035,210T Polyester Taffeta Lining Fabric,Woven Fabric,Fabric,YARD,China Import,Direct Import (Bonded Warehouse),True,28,0.78,Lining & Interlining Racks,True
+36,MAT-036,120 GSM Synthetic Down / Polyester Wadding Insulation,Woven Fabric,Fabric,YARD,China & Domestic,Domestic Back-to-Back L/C,False,22,1.15,High-Volume Loft Store,True
+37,MAT-037,Reactive Bifunctional Dye Conc. (ZDHC MRSL Level-1),Dyes & Chemicals,Dyes & Chemicals,KG,"Germany, India & China Import",Direct Import (Bonded Warehouse),True,30,8.4,Hazmat Chemical & Dye Store,False
+38,MAT-038,Disperse High-Fastness Dye for Polyester/MMF,Dyes & Chemicals,Dyes & Chemicals,KG,China & India Import,Direct Import (Bonded Warehouse),True,30,7.6,Hazmat Chemical & Dye Store,False
+39,MAT-039,Pre-Reduced Liquid Indigo Vat Dye,Dyes & Chemicals,Dyes & Chemicals,KG,Germany & China Import,Direct Import (Bonded Warehouse),True,34,6.9,Denim Dye Vat Storage,False
+40,MAT-040,Cellulase Bio-Polishing & Denim Wash Enzyme,Dyes & Chemicals,Dyes & Chemicals,KG,Denmark & India Import,Direct Import (Bonded Warehouse),True,28,5.2,Cool Chemical Drum Store,False
+41,MAT-041,Hydrophilic Silicone Fabric Softener Emulsion,Dyes & Chemicals,Dyes & Chemicals,KG,Domestic & Import,Dual-Sourced (Domestic & Import),False,18,2.8,Chemical Drum Store,False
+42,MAT-042,Hydrogen Peroxide (50% Industrial Bleaching Grade),Dyes & Chemicals,Dyes & Chemicals,KG,Domestic Chemical Plants,Domestic Back-to-Back L/C,False,10,0.72,Ventilated Oxidizer Store,False
+43,MAT-043,Caustic Soda Flakes & Glaubers Salt Auxiliary,Dyes & Chemicals,Dyes & Chemicals,KG,Domestic & India Import,Dual-Sourced (Domestic & Import),False,12,0.55,Dry Chemical Store,False
+44,MAT-044,ETP Biological Coagulant & Polyelectrolyte Dosing Pack,Dyes & Chemicals,Dyes & Chemicals,KG,Domestic & Import,Dual-Sourced (Domestic & Import),False,14,1.95,ETP Utility Store,False
+45,MAT-045,Spun Polyester Sewing Thread (40/2 & 60/3 Ticket),Trims & Accessories,Trims,CONE,Domestic Thread Mills,Domestic Back-to-Back L/C,False,10,1.15,Trim & Thread Bin System,False
+46,MAT-046,Core-Spun Poly-Poly Heavy Denim Sewing Thread,Trims & Accessories,Trims,CONE,Domestic & China,Domestic Back-to-Back L/C,False,12,1.65,Trim & Thread Bin System,False
+47,MAT-047,YKK / Metal Brass Auto-Lock Jeans Zipper,Trims & Accessories,Trims,PCS,Domestic MNC Plant & Import,Dual-Sourced (Domestic & Import),False,14,0.22,Secured Trim Room,True
+48,MAT-048,Nylon Coil & Waterproof Reverse-Coil Jacket Zipper,Trims & Accessories,Trims,PCS,China & Domestic,Domestic Back-to-Back L/C,False,20,0.48,Secured Trim Room,True
+49,MAT-049,Lead-Free Brass Shank Button & Copper Rivet Set,Trims & Accessories,Trims,SET,China & Domestic,Domestic Back-to-Back L/C,False,18,0.14,Metal Trim Bin System,False
+50,MAT-050,4-Hole Chalk / Horn-Effect Resin Shirt Button,Trims & Accessories,Trims,GROSS,Domestic & China,Domestic Back-to-Back L/C,False,12,0.95,Trim & Button Store,False
+51,MAT-051,Woven Damask Main Brand Label & Size Tab Set,Trims & Accessories,Trims,SET,Domestic Garment Accessories,Domestic Back-to-Back L/C,False,10,0.06,Buyer-Segregated Label Vault,False
+52,MAT-052,Printed Satin Wash-Care & Multi-Language Content Label,Trims & Accessories,Trims,PCS,Domestic Garment Accessories,Domestic Back-to-Back L/C,False,9,0.03,Buyer-Segregated Label Vault,False
+53,MAT-053,Woven Fusible Shirt Collar & Placket Interlining,Trims & Accessories,Trims,YARD,China & Domestic,Domestic Back-to-Back L/C,False,16,0.52,Interlining Rack,False
+54,MAT-054,Knitted Jacquard Waistband Elastic (38mm),Trims & Accessories,Trims,YARD,Domestic Narrow Fabrics,Domestic Back-to-Back L/C,False,12,0.28,Trim & Elastic Racks,False
+55,MAT-055,Jacquard Drawcord with Metal/Silicone Aglet Tip,Trims & Accessories,Trims,PCS,Domestic Accessories,Domestic Back-to-Back L/C,False,12,0.11,Trim Bin System,False
+56,MAT-056,Leatherette / Jacron Back-Waist Brand Patch,Trims & Accessories,Trims,PCS,Domestic & China,Domestic Back-to-Back L/C,False,15,0.16,Buyer-Segregated Label Vault,False
+57,MAT-057,FSC-Certified Printed Retail Hangtag & Barcode Sticker,Packaging,Packaging,SET,Domestic Printing & Packaging,Domestic Back-to-Back L/C,False,9,0.07,Finishing & Packing Store,False
+58,MAT-058,RFID-Embedded UHF Retail Inventory Smart Tag,Packaging,Packaging,PCS,China & Taiwan Nominated Supplier,Direct Import (Bonded Warehouse),False,21,0.13,High-Security RFID Vault,True
+59,MAT-059,Recycled LDPE Self-Adhesive Garment Polybag,Packaging,Packaging,PCS,Domestic Packaging Unit,Domestic Back-to-Back L/C,False,8,0.04,Packing Consumables Store,False
+60,MAT-060,"Acid-Free Tissue Paper, Collar Butterfly & Clip Set",Packaging,Packaging,SET,Domestic Packaging Unit,Domestic Back-to-Back L/C,False,8,0.05,Shirt Packing Store,False
+61,MAT-061,7-Ply Corrugated Master Export Carton Box,Packaging,Packaging,PCS,Domestic Carton Plant,Domestic Back-to-Back L/C,False,7,1.35,Dry Carton Mezzanine,False
+62,MAT-062,Molded Recycled Plastic Garment Hanger (GOH Program),Packaging,Packaging,PCS,Domestic & Nominated Import,Dual-Sourced (Domestic & Import),False,12,0.18,Packing Store,False
+63,MAT-063,Silica Gel / Calcium Chloride Anti-Mold Desiccant Pouch,Packaging,Packaging,PCS,Domestic & China,Domestic Back-to-Back L/C,False,10,0.03,Dry Packing Cabinet,False
+64,MAT-064,"PP Carton Strapping Band, Gum Tape & Corner Board Kit",Packaging,Packaging,SET,Domestic Packaging Unit,Domestic Back-to-Back L/C,False,7,0.25,Dispatch Warehouse Store,False

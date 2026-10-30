@@ -1,0 +1,122 @@
+[
+  {
+    "name": "sustainability_month_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthly_output_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "electricity_consumption_kwh",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "renewable_solar_kwh",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "renewable_energy_share_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "natural_gas_consumption_m3",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "water_withdrawal_m3",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wastewater_treated_m3",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "solid_fabric_waste_kg",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "recycled_material_kg",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "waste_recycling_rate_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimated_carbon_emissions_kg_co2e",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "emissions_per_garment_kg_co2e",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "utility_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "utility_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimation_methodology",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,122 @@
+table dim_supplier
+	lineageTag: 28f68fb2-30ae-5e66-8b5f-b76bcb4fec86
+
+	column supplier_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 23fe9ca3-b04a-51bc-8c98-bb77c1a2fa99
+		summarizeBy: none
+		sourceColumn: supplier_key
+
+	column supplier_code
+		dataType: string
+		lineageTag: 2fa6a6b9-6acb-5532-bf66-6f277c13bcd4
+		summarizeBy: none
+		sourceColumn: supplier_code
+
+	column supplier_name
+		dataType: string
+		lineageTag: 55adc437-e92f-597c-8a33-85abaae6ac48
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+	column supplier_type
+		dataType: string
+		lineageTag: dd108a1c-0a45-5e90-85f1-432e9039d25d
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+	column origin_country
+		dataType: string
+		lineageTag: d482504c-6ddb-5977-896e-b75260e42e06
+		summarizeBy: none
+		sourceColumn: origin_country
+
+	column domestic_import_classification
+		dataType: string
+		lineageTag: b80e49ec-177c-576d-aacb-d35501238943
+		summarizeBy: none
+		sourceColumn: domestic_import_classification
+
+	column major_materials_supplied
+		dataType: string
+		lineageTag: 399a5066-99ad-59cc-a2fb-749f00eb0b58
+		summarizeBy: none
+		sourceColumn: major_materials_supplied
+
+	column average_lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e72dc10-6bec-5a61-8b4a-581ec17a86c8
+		summarizeBy: none
+		sourceColumn: average_lead_time_days
+
+	column lead_time_variability_days
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 0a2d6ff3-da98-50ef-a2b7-8ca1c92c3992
+		summarizeBy: none
+		sourceColumn: lead_time_variability_days
+
+	column payment_terms
+		dataType: string
+		lineageTag: 212bd1fb-6d55-5d08-a181-467419493ce2
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+	column baseline_reliability_score
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b0dd5f7d-65a8-572e-8d93-864f600537a6
+		summarizeBy: none
+		sourceColumn: baseline_reliability_score
+
+	column minimum_order_value_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c5dff20-ae43-5d97-95cc-df65ad6af601
+		summarizeBy: none
+		sourceColumn: minimum_order_value_usd
+
+	column active_from_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: b37dc91b-312c-5c56-8661-7a04c763c09b
+		summarizeBy: none
+		sourceColumn: active_from_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column active_to_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: ab929a63-8d25-5d88-9ddd-badfd7f48a0d
+		summarizeBy: none
+		sourceColumn: active_to_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_currently_active
+		dataType: boolean
+		lineageTag: b0ed2b9a-2123-5a42-ac07-52174afde95e
+		summarizeBy: none
+		sourceColumn: is_currently_active
+
+	column spend_share_weight
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8840cf86-7613-52cf-949f-50b231662beb
+		summarizeBy: none
+		sourceColumn: spend_share_weight
+
+	partition dim_supplier = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_supplier\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

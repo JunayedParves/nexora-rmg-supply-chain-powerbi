@@ -1,0 +1,213 @@
+table dim_date
+	lineageTag: f6644839-0b59-5e9f-97f0-21b843891502
+
+	column date_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 1c61b992-c1fa-5d45-8a79-f2cf052c2f12
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column full_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 99695d0f-225e-588d-9f34-b97897f64451
+		summarizeBy: none
+		sourceColumn: full_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day_of_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d53d975-dff5-5f1e-b202-f4b2b931057c
+		summarizeBy: none
+		sourceColumn: day_of_month
+
+	column day_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: d8580906-1f64-5203-a223-0accdcf29cfa
+		summarizeBy: none
+		sourceColumn: day_of_year
+
+	column iso_weekday
+		dataType: int64
+		formatString: 0
+		lineageTag: 594c36a5-4810-5e08-86b5-d8199155c6d3
+		summarizeBy: none
+		sourceColumn: iso_weekday
+
+	column weekday_name
+		dataType: string
+		lineageTag: a9fbf2f5-b975-556e-8a4d-91ea795edc62
+		summarizeBy: none
+		sourceColumn: weekday_name
+		sortByColumn: iso_weekday
+
+	column iso_week_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 6904ad75-7a91-524a-a271-7c0ce6026ac7
+		summarizeBy: none
+		sourceColumn: iso_week_of_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 004eb2d4-141b-570c-97aa-53b8d74516c1
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column month_name
+		dataType: string
+		lineageTag: ed8c0600-45a7-564d-ae44-f96ca2b6e74b
+		summarizeBy: none
+		sourceColumn: month_name
+		sortByColumn: calendar_month
+
+	column month_short
+		dataType: string
+		lineageTag: 412123ba-1cbb-5e5b-8c28-271d51e44283
+		summarizeBy: none
+		sourceColumn: month_short
+		sortByColumn: calendar_month
+
+	column year_month
+		dataType: string
+		lineageTag: e68c6d81-c51c-56c1-b321-c8c3aadc9608
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column calendar_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: b7f0fe96-32ce-5d5f-8064-cf1eee064727
+		summarizeBy: none
+		sourceColumn: calendar_quarter
+
+	column calendar_quarter_label
+		dataType: string
+		lineageTag: d66ef903-676c-54e3-a197-e8636f17467e
+		summarizeBy: none
+		sourceColumn: calendar_quarter_label
+		sortByColumn: calendar_quarter
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: d602a865-e7ce-5e96-a689-873ac43566d7
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column fiscal_year
+		dataType: string
+		lineageTag: 12f967d3-9354-5fe2-8965-8c8afe05822e
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column fiscal_year_numeric
+		dataType: int64
+		formatString: 0
+		lineageTag: c2f4ca24-a288-59dc-8c0f-167603d5361d
+		summarizeBy: none
+		sourceColumn: fiscal_year_numeric
+
+	column fiscal_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: eb8776bc-b71c-549a-8b2d-a7d57b42c717
+		summarizeBy: none
+		sourceColumn: fiscal_quarter
+
+	column fiscal_quarter_label
+		dataType: string
+		lineageTag: 83eebe7d-9601-5253-a059-c11776deb1f2
+		summarizeBy: none
+		sourceColumn: fiscal_quarter_label
+		sortByColumn: fiscal_quarter
+
+	column fiscal_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 780dfca5-3f9d-5f7e-b5ba-940a3dd088db
+		summarizeBy: none
+		sourceColumn: fiscal_month
+
+	column is_leap_year
+		dataType: boolean
+		lineageTag: 2d363458-b5b0-566e-9d5f-5ffbd12f0200
+		summarizeBy: none
+		sourceColumn: is_leap_year
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: 524da23d-0e3f-50f2-8a94-febae4226514
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	column is_month_start
+		dataType: boolean
+		lineageTag: eb6be9b8-ee6f-5452-b9b9-2806f0ec8865
+		summarizeBy: none
+		sourceColumn: is_month_start
+
+	column is_month_end
+		dataType: boolean
+		lineageTag: 5b492367-1b50-5971-b60e-d8537dad4020
+		summarizeBy: none
+		sourceColumn: is_month_end
+
+	column is_public_holiday
+		dataType: boolean
+		lineageTag: 818f9885-6e74-5705-aba3-193bf0cc2a0d
+		summarizeBy: none
+		sourceColumn: is_public_holiday
+
+	column holiday_name
+		dataType: string
+		lineageTag: 3794e4b4-f0db-5cdf-baab-bfb13b36e21c
+		summarizeBy: none
+		sourceColumn: holiday_name
+
+	column is_ramadan_period
+		dataType: boolean
+		lineageTag: e7625c46-4da2-5263-9d41-4f027c4a1fa8
+		summarizeBy: none
+		sourceColumn: is_ramadan_period
+
+	column is_eid_festival_window
+		dataType: boolean
+		lineageTag: 698c3958-64db-55de-bcf5-6dd1bbaf68cd
+		summarizeBy: none
+		sourceColumn: is_eid_festival_window
+
+	column is_working_day
+		dataType: boolean
+		lineageTag: 9920add3-8070-5a03-92f1-9f390c773431
+		summarizeBy: none
+		sourceColumn: is_working_day
+
+	column apparel_buying_season
+		dataType: string
+		lineageTag: bc198329-00df-516f-85a3-419686b5ccac
+		summarizeBy: none
+		sourceColumn: apparel_buying_season
+
+	column bangladesh_climate_season
+		dataType: string
+		lineageTag: 4b77ae5a-80a6-5056-86ea-92484457894c
+		summarizeBy: none
+		sourceColumn: bangladesh_climate_season
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_date\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

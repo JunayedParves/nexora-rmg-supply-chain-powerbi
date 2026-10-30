@@ -1,0 +1,225 @@
+table fact_production_batch
+	lineageTag: 4637bfa2-422e-5992-b146-968e3fa0ca66
+
+	column production_batch_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: d1deee63-9280-52c9-890d-714914fb503f
+		summarizeBy: none
+		sourceColumn: production_batch_key
+
+	column batch_id
+		dataType: string
+		lineageTag: a000d0ae-9760-5eb0-84cb-8fc1e8ac4313
+		summarizeBy: none
+		sourceColumn: batch_id
+
+	column order_line_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d087e678-49e9-5716-9c1c-63e46c751b79
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 633a2c27-adfd-58ca-9042-1572bb6b73ec
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bf36b1e-2605-5da2-b266-28e6c66b57c4
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column production_line_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 95fa1dbd-17f9-5d32-8e36-5f721ba64c94
+		summarizeBy: none
+		sourceColumn: production_line_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e6545a7-a883-521b-9521-b94f1fb14749
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column planned_start_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ba02204f-9bdf-594e-ad56-5516a015236b
+		summarizeBy: none
+		sourceColumn: planned_start_date_key
+
+	column planned_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 194f7992-4e32-5a35-b9d0-94a372d6c010
+		summarizeBy: none
+		sourceColumn: planned_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_start_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 51247878-6d5b-551e-9462-793522b75dd6
+		summarizeBy: none
+		sourceColumn: actual_start_date_key
+
+	column actual_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 9aeb3f3a-fab3-555b-b0ef-8f2db1833fdc
+		summarizeBy: none
+		sourceColumn: actual_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column planned_completion_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 07354595-b4a1-57bf-b960-39b67ba75008
+		summarizeBy: none
+		sourceColumn: planned_completion_date_key
+
+	column planned_completion_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 30eff727-7a87-58c2-91dd-ee896c2308cc
+		summarizeBy: none
+		sourceColumn: planned_completion_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_completion_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 857e30f3-2c00-588d-a2df-3173b10fd712
+		summarizeBy: none
+		sourceColumn: actual_completion_date_key
+
+	column actual_completion_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: deb89a34-620c-53ab-9e69-cbe9f822357c
+		summarizeBy: none
+		sourceColumn: actual_completion_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column planned_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: e4f00ac4-15e8-58dd-a98d-63eed0321a7c
+		summarizeBy: sum
+		sourceColumn: planned_qty_pcs
+
+	column gross_produced_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: dd100a05-bb1a-5b2b-bd63-d16bb224fa67
+		summarizeBy: sum
+		sourceColumn: gross_produced_qty_pcs
+
+	column actual_good_output_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ffeb1b9-cb9d-5763-ad99-bc551aa541e7
+		summarizeBy: sum
+		sourceColumn: actual_good_output_pcs
+
+	column rework_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: e992f042-7819-5cc0-a5e2-170885862e68
+		summarizeBy: sum
+		sourceColumn: rework_qty_pcs
+
+	column rejected_scrap_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 327338a8-7467-53fb-a462-d803de8f5733
+		summarizeBy: sum
+		sourceColumn: rejected_scrap_qty_pcs
+
+	column standard_minute_value_smv
+		dataType: double
+		formatString: #,0.00
+		lineageTag: a9ac0ca8-f1cf-53c6-bba2-273844c35edd
+		summarizeBy: sum
+		sourceColumn: standard_minute_value_smv
+
+	column earned_standard_minutes
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2f52d3a1-fd64-5d31-9f8e-109c8153a88e
+		summarizeBy: sum
+		sourceColumn: earned_standard_minutes
+
+	column actual_production_line_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 420ae44e-a65b-5460-987b-1915c5d8714a
+		summarizeBy: sum
+		sourceColumn: actual_production_line_hours
+
+	column actual_labour_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8dbfaa69-f2d7-5452-ad5e-11d6925e6bfa
+		summarizeBy: sum
+		sourceColumn: actual_labour_hours
+
+	column machine_downtime_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: cfb88c9d-e5cf-5a08-8e9e-e09904750bb7
+		summarizeBy: sum
+		sourceColumn: machine_downtime_hours
+
+	column line_efficiency_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8c4791d2-3022-5876-a844-6aae6d291f3a
+		summarizeBy: sum
+		sourceColumn: line_efficiency_pct
+
+	column schedule_delay_days
+		dataType: int64
+		formatString: 0
+		lineageTag: bb3d9e6a-6023-5e73-ba12-6b7d7813deaf
+		summarizeBy: none
+		sourceColumn: schedule_delay_days
+
+	column production_status
+		dataType: string
+		lineageTag: 711be000-34a0-5356-9f5f-6722358b496e
+		summarizeBy: none
+		sourceColumn: production_status
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d5b6a65-3ebd-540c-8a51-433b8db9e1fb
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_production_batch = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_production_batch"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

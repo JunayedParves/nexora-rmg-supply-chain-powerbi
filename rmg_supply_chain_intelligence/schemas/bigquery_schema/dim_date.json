@@ -1,0 +1,152 @@
+[
+  {
+    "name": "date_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "full_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "day_of_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "day_of_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "iso_weekday",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "weekday_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "iso_week_of_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_short",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_month",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_quarter",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_quarter_label",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year_numeric",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_quarter",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_quarter_label",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_leap_year",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_weekend",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_month_start",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_month_end",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_public_holiday",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "holiday_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_ramadan_period",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_eid_festival_window",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_working_day",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "apparel_buying_season",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bangladesh_climate_season",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

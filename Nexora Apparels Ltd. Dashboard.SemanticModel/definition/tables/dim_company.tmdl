@@ -1,0 +1,107 @@
+table dim_company
+	lineageTag: 036b1a54-854a-58fc-a160-ec766559c45f
+
+	column company_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 6c51334a-7be9-560e-bd31-eb08755492a3
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column company_code
+		dataType: string
+		lineageTag: 8ff92238-b5c8-5801-98cb-7e7c15ea0797
+		summarizeBy: none
+		sourceColumn: company_code
+
+	column company_name
+		dataType: string
+		lineageTag: 2914d25f-5623-5a0a-93a5-c9d1d4f01d3a
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column operating_archetype
+		dataType: string
+		lineageTag: 5e5906d3-c883-55c8-9da6-49f73ca40d57
+		summarizeBy: none
+		sourceColumn: operating_archetype
+
+	column year_established
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a2b478f-430d-5d54-aab2-8c5b9e5beb31
+		summarizeBy: none
+		sourceColumn: year_established
+
+	column primary_product_specialization
+		dataType: string
+		lineageTag: 819ca0e5-a89c-5198-a304-2625cbe79980
+		summarizeBy: none
+		sourceColumn: primary_product_specialization
+
+	column business_model
+		dataType: string
+		lineageTag: 6e358594-5728-5edb-8910-fb712486f971
+		summarizeBy: none
+		sourceColumn: business_model
+
+	column trade_association
+		dataType: string
+		lineageTag: a7f9ca5b-6bd4-5508-a7f4-2a6811b76071
+		summarizeBy: none
+		sourceColumn: trade_association
+
+	column headquarters_city
+		dataType: string
+		lineageTag: 87639f6b-0d2e-515b-bd14-047170033253
+		summarizeBy: none
+		sourceColumn: headquarters_city
+
+	column backward_linkage_level
+		dataType: string
+		lineageTag: 7fb1e7dd-c4c0-511d-a707-6dea54cd9627
+		summarizeBy: none
+		sourceColumn: backward_linkage_level
+
+	column active_from_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 6d28afc9-2cf4-5000-be37-f2ab1879b309
+		summarizeBy: none
+		sourceColumn: active_from_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column active_to_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: c13a53cb-9192-5fad-bdca-4ff135ea7a07
+		summarizeBy: none
+		sourceColumn: active_to_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_currently_active
+		dataType: boolean
+		lineageTag: 05d04396-ef04-52a8-b0c8-b543e18d35a7
+		summarizeBy: none
+		sourceColumn: is_currently_active
+
+	column base_market_share_weight
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 1fa84d1e-2539-51a5-804c-a910c57a48b6
+		summarizeBy: none
+		sourceColumn: base_market_share_weight
+
+	partition dim_company = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_company\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

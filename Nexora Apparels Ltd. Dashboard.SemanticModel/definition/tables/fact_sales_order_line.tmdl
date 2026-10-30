@@ -1,0 +1,250 @@
+table fact_sales_order_line
+	lineageTag: 116ea3ea-323c-5ec3-a0a8-92574281a5dc
+
+	column order_line_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: a610e247-afc9-5d0c-849c-031450cd5b81
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+	column sales_order_id
+		dataType: string
+		lineageTag: 689e0ad4-0390-5923-90b4-884706336ae8
+		summarizeBy: none
+		sourceColumn: sales_order_id
+
+	column order_line_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 181b9f5d-ac1a-5bc6-bc9d-33b6a2fffbfb
+		summarizeBy: none
+		sourceColumn: order_line_number
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: bc00b6dc-8aab-5756-8d9a-db22ab1305ee
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 4398dfe9-59a8-5097-94f1-e91d855c4e1b
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column calendar_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 230053f8-a695-59a3-8c1a-0657aa0d36f9
+		summarizeBy: none
+		sourceColumn: calendar_quarter
+
+	column fiscal_year
+		dataType: string
+		lineageTag: d078a8e7-2a7b-5bab-b581-0acf9beacf6b
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column fiscal_month
+		dataType: int64
+		formatString: 0
+		lineageTag: df258c46-d92c-58cf-92b5-d7ddf2567b9c
+		summarizeBy: none
+		sourceColumn: fiscal_month
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 78815e24-25bf-5b5c-818d-0ad43744a184
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e38b4973-b93e-59d6-a5c5-2cbc74be19ac
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column buyer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b4b6b879-4d4b-556a-89f0-84e03f2ad062
+		summarizeBy: none
+		sourceColumn: buyer_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f6ef6f2-a9d2-5f16-8d5d-b14874bf792f
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column ordered_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: e825f0e5-06e9-528d-b102-35655d8058c9
+		summarizeBy: sum
+		sourceColumn: ordered_qty_pcs
+
+	column amended_order_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: e9d0c39e-3e44-5b4c-a4b1-3e209f10d5ef
+		summarizeBy: sum
+		sourceColumn: amended_order_qty_pcs
+
+	column unit_price_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: cea94008-335a-5309-b416-5d5c41d5e53a
+		summarizeBy: sum
+		sourceColumn: unit_price_usd
+
+	column currency_code
+		dataType: string
+		lineageTag: 8571022d-2ed9-51fd-bf98-82004ea0ef96
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: d97e0354-e94d-57fd-8bfe-fe8f93a65a3c
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column gross_order_value_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: b1fb8178-58f2-5ba1-8123-8eaa5f57f9ce
+		summarizeBy: sum
+		sourceColumn: gross_order_value_usd
+
+	column discount_rate
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 1871163a-7b8a-5631-a436-8573a883396d
+		summarizeBy: sum
+		sourceColumn: discount_rate
+
+	column discount_amount_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 0d76f5f6-c303-5ead-9bb5-ad20a17b603a
+		summarizeBy: sum
+		sourceColumn: discount_amount_usd
+
+	column net_order_value_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: bf631c2c-3464-528a-96f4-2344128516ac
+		summarizeBy: sum
+		sourceColumn: net_order_value_usd
+
+	column net_order_value_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 0b75bc22-a5f1-5c5c-9b57-912f402c1c33
+		summarizeBy: sum
+		sourceColumn: net_order_value_bdt
+
+	column order_status
+		dataType: string
+		lineageTag: 2aab03b0-9324-596a-9522-ed92153f1926
+		summarizeBy: none
+		sourceColumn: order_status
+
+	column is_cancelled
+		dataType: boolean
+		lineageTag: 0ded06ce-e78e-5f40-ab81-14436e4ffca4
+		summarizeBy: none
+		sourceColumn: is_cancelled
+
+	column is_amended
+		dataType: boolean
+		lineageTag: 8e39dc9a-09b1-5ac7-98e7-ecfb05f0baf6
+		summarizeBy: none
+		sourceColumn: is_amended
+
+	column is_partial_fulfilment
+		dataType: boolean
+		lineageTag: 9e294f01-bb39-5745-adae-1ee350213dd9
+		summarizeBy: none
+		sourceColumn: is_partial_fulfilment
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 97135397-08e6-579c-a2e4-bdd53df5e716
+		summarizeBy: none
+		sourceColumn: event_year
+
+	column order_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: afa7f0db-aa76-581e-b287-7c91aebd6615
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b70ff487-7cc1-5ec5-bfef-2d14096116c7
+		summarizeBy: none
+		sourceColumn: order_date_key
+
+	column requested_delivery_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5dc3adcb-2405-50bb-8bb6-ef7aa61afd0f
+		summarizeBy: none
+		sourceColumn: requested_delivery_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column requested_delivery_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c8837cd-0d2d-5f09-9138-091c8e7945ba
+		summarizeBy: none
+		sourceColumn: requested_delivery_date_key
+
+	column incoterm
+		dataType: string
+		lineageTag: 8159713e-6806-5ab2-8ddf-dc34a2a689d3
+		summarizeBy: none
+		sourceColumn: incoterm
+
+	column shipped_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: f26a5426-fdf2-54e5-883d-084cb9322e23
+		summarizeBy: sum
+		sourceColumn: shipped_qty_pcs
+
+	column unfulfilled_backlog_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 7235a346-3b73-5d44-8dad-ead151004c90
+		summarizeBy: sum
+		sourceColumn: unfulfilled_backlog_qty_pcs
+
+	partition fact_sales_order_line = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_sales_order_line"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

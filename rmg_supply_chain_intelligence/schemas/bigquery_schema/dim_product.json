@@ -1,0 +1,102 @@
+[
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "product_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "style_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_category",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "knit_woven_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "garment_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fabric_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiber_composition",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "target_market_segment",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_tier",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "manufacturing_complexity",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "standard_minute_value_smv",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "primary_material_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "primary_material_consumption_per_unit",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "primary_material_uom",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_fob_unit_price_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "seasonality_profile",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "introduction_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "discontinuation_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_active_style",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  }
+]

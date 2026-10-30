@@ -1,0 +1,13 @@
+cost_category_key,cost_category_code,cost_category_name,cost_group,cost_behavior,allocation_basis,income_statement_classification,is_direct_production_cost
+1,COST-DM,"Direct Materials (Fabric, Yarn & Dyes)",Direct Manufacturing Cost,Variable,Production Batch / Material Consumption,COGS - Direct Material,True
+2,COST-TRM,"Garment Trims, Accessories & Retail Packaging",Direct Manufacturing Cost,Variable,Production Batch / Order Quantity,COGS - Direct Material,True
+3,COST-DL,Direct Production Labour & Overtime Payroll,Direct Manufacturing Cost,Variable / Step-Fixed,Factory Monthly Workforce / Standard Minutes,COGS - Direct Labour,True
+4,COST-FOH,Factory Indirect Supervision & Floor Overhead,Factory Overhead,Fixed / Semi-Variable,Factory Monthly Allocation,COGS - Factory Overhead,False
+5,COST-UTL,"Industrial Utilities (Electricity, Gas, Steam & ETP)",Factory Overhead,Semi-Variable,Factory Monthly Sustainability & Output,COGS - Factory Overhead,False
+6,COST-MNT,"Machinery Preventive Maintenance, Spares & Depreciation",Factory Overhead,Semi-Variable,Factory Line Count & Modernization Level,COGS - Factory Overhead,False
+7,COST-QLT,"Quality Assurance, Lab Testing, Rework & Audit Compliance",Quality & Compliance Cost,Variable / Event-Driven,Inspection & Compliance Audit Events,COGS - Quality & Compliance,False
+8,COST-INL,"Inland Haulage, Covered Van Transport & C&F Port Handling",Logistics & Selling Expense,Variable,Shipment Dispatch Events,Operating Expense - Selling & Distribution,False
+9,COST-FRT,International Ocean/Air Freight & Forwarder Charges,Logistics & Selling Expense,Variable,Shipment Line (CIF/DDP/Air Recovery),Operating Expense - Selling & Distribution,False
+10,COST-ADM,"Corporate Administration, Merchandising & IT Systems",Administrative Expense,Fixed,Company Monthly Allocation,Operating Expense - G&A,False
+11,COST-FIN,"Working Capital Interest, L/C Commission & Bank Charges",Financing Cost,Semi-Variable,Company Monthly Working Capital & L/C Volume,Non-Operating - Finance Cost,False
+12,COST-SUB,Subcontracting & External Washing/Embroidery Charges,Direct Manufacturing Cost,Variable,Peak-Season Capacity Overflow Batches,COGS - Subcontract & Processing,True

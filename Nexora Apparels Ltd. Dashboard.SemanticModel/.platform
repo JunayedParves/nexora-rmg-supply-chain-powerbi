@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Nexora Apparels Ltd. Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b3bd0d74-7a72-4997-86e3-83c3e52ac12a"
+  }
+}

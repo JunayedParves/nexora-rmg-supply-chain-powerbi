@@ -1,0 +1,234 @@
+table fact_inventory_snapshot_monthly
+	lineageTag: 9ab095c9-ecf1-54bb-9287-3d4609d8e74e
+
+	column inventory_snapshot_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: b548fa26-03e7-5f46-b104-894980a602c2
+		summarizeBy: none
+		sourceColumn: inventory_snapshot_key
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a41705d-db73-5177-9861-5481c9c8f0d0
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column snapshot_month_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 35885371-0272-5fb2-8caa-8584b8761e71
+		summarizeBy: none
+		sourceColumn: snapshot_month_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 08d54c7f-4334-56a4-b7f9-a94fb457c90d
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: f056e4f7-7035-5649-95ed-9363c4570db4
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column fiscal_year
+		dataType: string
+		lineageTag: d9b419f4-493a-57dd-82d2-497dde8813d3
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ae8a2791-8046-5b04-9ea7-2df47ecaa62b
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ee1d7f70-dcdf-5786-94df-9feb9a8e2424
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column item_code
+		dataType: string
+		lineageTag: d9fe6eb1-08fe-5282-b7fc-2ba79204375d
+		summarizeBy: none
+		sourceColumn: item_code
+
+	column material_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3587832a-6756-5995-bc8c-815e209051f1
+		summarizeBy: none
+		sourceColumn: material_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c54df4e-2ac1-5e7c-8a04-a6859044fcbe
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column stock_type
+		dataType: string
+		lineageTag: 6104b129-c270-5aaf-b5d1-abe1aa3ea112
+		summarizeBy: none
+		sourceColumn: stock_type
+
+	column uom
+		dataType: string
+		lineageTag: 3d18e29e-f33c-52dd-be99-f9a4a769dca4
+		summarizeBy: none
+		sourceColumn: uom
+
+	column opening_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 46c47bc6-1647-53b0-81a2-b09e7f2acac7
+		summarizeBy: sum
+		sourceColumn: opening_qty
+
+	column receipts_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 6925cff2-b5ed-5004-868e-f75f43c71752
+		summarizeBy: sum
+		sourceColumn: receipts_qty
+
+	column production_additions_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8d861712-ecba-5bcb-b754-1776bc6d6743
+		summarizeBy: sum
+		sourceColumn: production_additions_qty
+
+	column consumption_issues_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 23b88c74-a18e-5175-a1ef-2df14892978a
+		summarizeBy: sum
+		sourceColumn: consumption_issues_qty
+
+	column shipment_issues_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8efc9acb-99c0-5996-8cdd-a13160581cb1
+		summarizeBy: sum
+		sourceColumn: shipment_issues_qty
+
+	column adjustment_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 434bbe51-c480-5fec-a662-a2b08fcbde16
+		summarizeBy: sum
+		sourceColumn: adjustment_qty
+
+	column closing_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 44b33fd6-81dd-58a4-a2c1-ff20e378374e
+		summarizeBy: sum
+		sourceColumn: closing_qty
+
+	column reserved_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d63837c8-bf13-5a62-b14d-e2e8ac519960
+		summarizeBy: sum
+		sourceColumn: reserved_qty
+
+	column safety_stock_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 78d7695a-a1cc-5546-bfaa-19763a4f551c
+		summarizeBy: sum
+		sourceColumn: safety_stock_qty
+
+	column is_below_safety_stock
+		dataType: boolean
+		lineageTag: 9b82e2e3-4cf0-53ad-bb42-e226a17d3007
+		summarizeBy: none
+		sourceColumn: is_below_safety_stock
+
+	column is_stockout_incident
+		dataType: boolean
+		lineageTag: 34fe6ed9-d4ef-50f6-a45d-25067048a746
+		summarizeBy: none
+		sourceColumn: is_stockout_incident
+
+	column average_ageing_days
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 67bbda84-4468-5a04-b304-c7369ca32a44
+		summarizeBy: none
+		sourceColumn: average_ageing_days
+
+	column ageing_bucket
+		dataType: string
+		lineageTag: 234ae878-e94c-57ba-9c49-9ea5f1a8b58a
+		summarizeBy: none
+		sourceColumn: ageing_bucket
+
+	column currency_code
+		dataType: string
+		lineageTag: afdd0dbd-f9de-56e0-9624-81e0a22c0346
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 57f74bab-995d-5d12-a979-b036609d636c
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column unit_valuation_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 8612c4e3-90f2-55f5-9a8e-bca10dc9fcc9
+		summarizeBy: sum
+		sourceColumn: unit_valuation_usd
+
+	column inventory_value_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: ff1c78a0-248d-5b64-8b72-eab3af93a2ff
+		summarizeBy: sum
+		sourceColumn: inventory_value_usd
+
+	column inventory_value_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: ef417f4d-543d-5061-b5fd-1ba5356f37a9
+		summarizeBy: sum
+		sourceColumn: inventory_value_bdt
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c3a4c91-4b1e-511a-a3a7-5809cba84af8
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_inventory_snapshot_monthly = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_inventory_snapshot_monthly"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

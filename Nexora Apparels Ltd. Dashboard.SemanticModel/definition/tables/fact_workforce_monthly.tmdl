@@ -1,0 +1,183 @@
+table fact_workforce_monthly
+	lineageTag: 4f361844-d1ba-54ab-ba51-e2c5916116bb
+
+	column workforce_month_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 4e308f22-1f13-5f55-aab4-f7ce772b3b6c
+		summarizeBy: none
+		sourceColumn: workforce_month_key
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bd91a696-4c62-5433-82bc-9f9a3b6849c6
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column month_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 228b2288-dce4-5746-8060-354572de9e95
+		summarizeBy: none
+		sourceColumn: month_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 279afb56-dd09-5a0c-a2cd-97f961963272
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dfac7f6-f927-5c83-8052-a7deac299570
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column fiscal_year
+		dataType: string
+		lineageTag: 1ecd90ed-520d-5ed3-ab43-728492f9aae6
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b4285314-3f55-5205-b97c-3f26fcc1f8fe
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: fbb8eb75-3cdc-5685-afb2-88a78d16cd07
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column department_name
+		dataType: string
+		lineageTag: 29b75c84-b590-5f62-8dfc-7e23150e87f6
+		summarizeBy: none
+		sourceColumn: department_name
+
+	column worker_grade_role
+		dataType: string
+		lineageTag: 2b200ed8-9dcb-54c5-a9db-c7b14d721a3d
+		summarizeBy: none
+		sourceColumn: worker_grade_role
+
+	column active_headcount
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e5cf447-e11b-5023-ad42-3300fd105bb9
+		summarizeBy: sum
+		sourceColumn: active_headcount
+
+	column monthly_hires
+		dataType: int64
+		formatString: 0
+		lineageTag: ccb7800b-c5a2-521f-8c43-2a741805c8f1
+		summarizeBy: none
+		sourceColumn: monthly_hires
+
+	column monthly_separations
+		dataType: int64
+		formatString: 0
+		lineageTag: 685f6ae6-7781-57ca-bc7e-efce89ac1f5c
+		summarizeBy: none
+		sourceColumn: monthly_separations
+
+	column statutory_entry_min_wage_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 62e911b9-06ac-5dc6-a078-ef5d072cfdd2
+		summarizeBy: sum
+		sourceColumn: statutory_entry_min_wage_bdt
+
+	column average_monthly_wage_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: f762e7c2-7959-5147-82ea-6a8d02433288
+		summarizeBy: none
+		sourceColumn: average_monthly_wage_bdt
+
+	column overtime_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b7af2e5e-b740-5b9c-836d-891d141237be
+		summarizeBy: sum
+		sourceColumn: overtime_hours
+
+	column base_payroll_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 0a2c87b0-4bd9-5a96-8f4a-82ef3585b535
+		summarizeBy: sum
+		sourceColumn: base_payroll_bdt
+
+	column allowances_and_bonus_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: adb0d53e-44c2-5ac2-a08f-db5ed80d4338
+		summarizeBy: sum
+		sourceColumn: allowances_and_bonus_bdt
+
+	column overtime_expense_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 81beede2-2604-5301-b4d4-740d964474e6
+		summarizeBy: sum
+		sourceColumn: overtime_expense_bdt
+
+	column total_payroll_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 931a2442-95a9-5b0e-9c79-fb67a27f5e43
+		summarizeBy: sum
+		sourceColumn: total_payroll_bdt
+
+	column total_payroll_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 80f30d79-538f-59f6-884e-5c06a43848b4
+		summarizeBy: sum
+		sourceColumn: total_payroll_usd
+
+	column absenteeism_rate_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 63687acd-b8c6-5227-9631-b3ef2eb36608
+		summarizeBy: sum
+		sourceColumn: absenteeism_rate_pct
+
+	column training_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: ab99b483-a11d-5786-8a9b-04b4178477df
+		summarizeBy: sum
+		sourceColumn: training_hours
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 59324e86-2c20-590c-a9c8-5530837e250a
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_workforce_monthly = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_workforce_monthly"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,217 @@
+[
+  {
+    "name": "shipment_line_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "shipment_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_line_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sales_order_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "buyer_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dispatch_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dispatch_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "expected_ship_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "expected_ship_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "actual_ship_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "actual_ship_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimated_arrival_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimated_arrival_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "actual_arrival_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "actual_arrival_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "confirmed_delivery_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "confirmed_delivery_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "shipped_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivered_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fob_revenue_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fob_revenue_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivered_revenue_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivered_revenue_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "freight_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "freight_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inland_logistics_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inland_logistics_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "shipping_mode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "port_of_loading",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "export_destination_country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "shipment_delay_days",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivery_delay_days",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_on_time_shipment",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_on_time_delivery",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_partial_shipment",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivery_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delay_reason",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

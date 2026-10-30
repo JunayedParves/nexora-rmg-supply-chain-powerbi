@@ -1,0 +1,101 @@
+production_line_key,factory_key,company_key,line_code,line_name,line_specialization,shift_pattern,standard_daily_hours,operators_per_line,helpers_per_line,monthly_standard_capacity_pcs,active_from_date,active_to_date
+1,1,1,FAC-01-L01,Padma Knit Composite Unit-1 - Line 01,Knit Tops & Jersey,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22000,2006-01-01,9999-12-31
+2,1,1,FAC-01-L02,Padma Knit Composite Unit-1 - Line 02,Knit Tops & Jersey,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22000,2006-01-01,9999-12-31
+3,1,1,FAC-01-L03,Padma Knit Composite Unit-1 - Line 03,Knit Tops & Jersey,Double 8-Hour Shift (High Utilization),15.0,42,14,22000,2006-01-01,9999-12-31
+4,1,1,FAC-01-L04,Padma Knit Composite Unit-1 - Line 04,Knit Tops & Jersey,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22000,2006-01-01,9999-12-31
+5,1,1,FAC-01-L05,Padma Knit Composite Unit-1 - Line 05,Knit Tops & Jersey,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22000,2006-01-01,9999-12-31
+6,1,1,FAC-01-L06,Padma Knit Composite Unit-1 - Line 06,Knit Tops & Jersey,Double 8-Hour Shift (High Utilization),15.0,42,14,22000,2006-01-01,9999-12-31
+7,1,1,FAC-01-L07,Padma Knit Composite Unit-1 - Line 07,Knit Tops & Jersey,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22000,2006-01-01,9999-12-31
+8,1,1,FAC-01-L08,Padma Knit Composite Unit-1 - Line 08,Knit Tops & Jersey,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22000,2006-01-01,9999-12-31
+9,1,1,FAC-01-L09,Padma Knit Composite Unit-1 - Line 09,Knit Tops & Jersey,Double 8-Hour Shift (High Utilization),15.0,42,14,22000,2006-01-01,9999-12-31
+10,1,1,FAC-01-L10,Padma Knit Composite Unit-1 - Line 10,Knit Tops & Jersey,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22000,2006-01-01,9999-12-31
+11,2,1,FAC-02-L01,Padma Knit Composite Unit-2 - Line 01,Knit Polos & Fleece,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22222,2006-01-01,9999-12-31
+12,2,1,FAC-02-L02,Padma Knit Composite Unit-2 - Line 02,Knit Polos & Fleece,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22222,2006-01-01,9999-12-31
+13,2,1,FAC-02-L03,Padma Knit Composite Unit-2 - Line 03,Knit Polos & Fleece,Double 8-Hour Shift (High Utilization),15.0,42,14,22222,2006-01-01,9999-12-31
+14,2,1,FAC-02-L04,Padma Knit Composite Unit-2 - Line 04,Knit Polos & Fleece,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22222,2006-01-01,9999-12-31
+15,2,1,FAC-02-L05,Padma Knit Composite Unit-2 - Line 05,Knit Polos & Fleece,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22222,2006-01-01,9999-12-31
+16,2,1,FAC-02-L06,Padma Knit Composite Unit-2 - Line 06,Knit Polos & Fleece,Double 8-Hour Shift (High Utilization),15.0,42,14,22222,2006-01-01,9999-12-31
+17,2,1,FAC-02-L07,Padma Knit Composite Unit-2 - Line 07,Knit Polos & Fleece,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22222,2006-01-01,9999-12-31
+18,2,1,FAC-02-L08,Padma Knit Composite Unit-2 - Line 08,Knit Polos & Fleece,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22222,2006-01-01,9999-12-31
+19,2,1,FAC-02-L09,Padma Knit Composite Unit-2 - Line 09,Knit Polos & Fleece,Double 8-Hour Shift (High Utilization),15.0,42,14,22222,2006-01-01,9999-12-31
+20,3,1,FAC-03-L01,Padma Narayanganj Knit Park - Line 01,Fine-Gauge Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2008-04-01,9999-12-31
+21,3,1,FAC-03-L02,Padma Narayanganj Knit Park - Line 02,Fine-Gauge Knitwear,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2008-04-01,9999-12-31
+22,3,1,FAC-03-L03,Padma Narayanganj Knit Park - Line 03,Fine-Gauge Knitwear,Double 8-Hour Shift (High Utilization),15.0,42,14,21875,2008-04-01,9999-12-31
+23,3,1,FAC-03-L04,Padma Narayanganj Knit Park - Line 04,Fine-Gauge Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2008-04-01,9999-12-31
+24,3,1,FAC-03-L05,Padma Narayanganj Knit Park - Line 05,Fine-Gauge Knitwear,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2008-04-01,9999-12-31
+25,3,1,FAC-03-L06,Padma Narayanganj Knit Park - Line 06,Fine-Gauge Knitwear,Double 8-Hour Shift (High Utilization),15.0,42,14,21875,2008-04-01,9999-12-31
+26,3,1,FAC-03-L07,Padma Narayanganj Knit Park - Line 07,Fine-Gauge Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2008-04-01,9999-12-31
+27,3,1,FAC-03-L08,Padma Narayanganj Knit Park - Line 08,Fine-Gauge Knitwear,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2008-04-01,9999-12-31
+28,4,1,FAC-04-L01,Padma Eco-Active Studio Unit-4 - Line 01,Seamless & Active Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2016-07-01,9999-12-31
+29,4,1,FAC-04-L02,Padma Eco-Active Studio Unit-4 - Line 02,Seamless & Active Knitwear,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23571,2016-07-01,9999-12-31
+30,4,1,FAC-04-L03,Padma Eco-Active Studio Unit-4 - Line 03,Seamless & Active Knitwear,Double 8-Hour Shift (High Utilization),15.0,42,14,23571,2016-07-01,9999-12-31
+31,4,1,FAC-04-L04,Padma Eco-Active Studio Unit-4 - Line 04,Seamless & Active Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2016-07-01,9999-12-31
+32,4,1,FAC-04-L05,Padma Eco-Active Studio Unit-4 - Line 05,Seamless & Active Knitwear,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23571,2016-07-01,9999-12-31
+33,4,1,FAC-04-L06,Padma Eco-Active Studio Unit-4 - Line 06,Seamless & Active Knitwear,Double 8-Hour Shift (High Utilization),15.0,42,14,23571,2016-07-01,9999-12-31
+34,4,1,FAC-04-L07,Padma Eco-Active Studio Unit-4 - Line 07,Seamless & Active Knitwear,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2016-07-01,9999-12-31
+35,5,2,FAC-05-L01,Meghna Woven Apparels Unit-1 - Line 01,Woven Dress & Casual Shirts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21000,2006-01-01,9999-12-31
+36,5,2,FAC-05-L02,Meghna Woven Apparels Unit-1 - Line 02,Woven Dress & Casual Shirts,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21000,2006-01-01,9999-12-31
+37,5,2,FAC-05-L03,Meghna Woven Apparels Unit-1 - Line 03,Woven Dress & Casual Shirts,Double 8-Hour Shift (High Utilization),15.0,42,14,21000,2006-01-01,9999-12-31
+38,5,2,FAC-05-L04,Meghna Woven Apparels Unit-1 - Line 04,Woven Dress & Casual Shirts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21000,2006-01-01,9999-12-31
+39,5,2,FAC-05-L05,Meghna Woven Apparels Unit-1 - Line 05,Woven Dress & Casual Shirts,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21000,2006-01-01,9999-12-31
+40,5,2,FAC-05-L06,Meghna Woven Apparels Unit-1 - Line 06,Woven Dress & Casual Shirts,Double 8-Hour Shift (High Utilization),15.0,42,14,21000,2006-01-01,9999-12-31
+41,5,2,FAC-05-L07,Meghna Woven Apparels Unit-1 - Line 07,Woven Dress & Casual Shirts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21000,2006-01-01,9999-12-31
+42,5,2,FAC-05-L08,Meghna Woven Apparels Unit-1 - Line 08,Woven Dress & Casual Shirts,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21000,2006-01-01,9999-12-31
+43,5,2,FAC-05-L09,Meghna Woven Apparels Unit-1 - Line 09,Woven Dress & Casual Shirts,Double 8-Hour Shift (High Utilization),15.0,42,14,21000,2006-01-01,9999-12-31
+44,5,2,FAC-05-L10,Meghna Woven Apparels Unit-1 - Line 10,Woven Dress & Casual Shirts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21000,2006-01-01,9999-12-31
+45,6,2,FAC-06-L01,Meghna Bottoms & Chino Plant - Line 01,Twill Chinos & Cargo Trousers,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+46,6,2,FAC-06-L02,Meghna Bottoms & Chino Plant - Line 02,Twill Chinos & Cargo Trousers,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+47,6,2,FAC-06-L03,Meghna Bottoms & Chino Plant - Line 03,Twill Chinos & Cargo Trousers,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+48,6,2,FAC-06-L04,Meghna Bottoms & Chino Plant - Line 04,Twill Chinos & Cargo Trousers,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+49,6,2,FAC-06-L05,Meghna Bottoms & Chino Plant - Line 05,Twill Chinos & Cargo Trousers,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+50,6,2,FAC-06-L06,Meghna Bottoms & Chino Plant - Line 06,Twill Chinos & Cargo Trousers,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+51,6,2,FAC-06-L07,Meghna Bottoms & Chino Plant - Line 07,Twill Chinos & Cargo Trousers,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+52,6,2,FAC-06-L08,Meghna Bottoms & Chino Plant - Line 08,Twill Chinos & Cargo Trousers,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+53,6,2,FAC-06-L09,Meghna Bottoms & Chino Plant - Line 09,Twill Chinos & Cargo Trousers,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+54,7,2,FAC-07-L01,Meghna Gazipur Woven Complex - Line 01,Woven Tops & Blouses,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22500,2010-01-01,9999-12-31
+55,7,2,FAC-07-L02,Meghna Gazipur Woven Complex - Line 02,Woven Tops & Blouses,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22500,2010-01-01,9999-12-31
+56,7,2,FAC-07-L03,Meghna Gazipur Woven Complex - Line 03,Woven Tops & Blouses,Double 8-Hour Shift (High Utilization),15.0,42,14,22500,2010-01-01,9999-12-31
+57,7,2,FAC-07-L04,Meghna Gazipur Woven Complex - Line 04,Woven Tops & Blouses,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22500,2010-01-01,9999-12-31
+58,7,2,FAC-07-L05,Meghna Gazipur Woven Complex - Line 05,Woven Tops & Blouses,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22500,2010-01-01,9999-12-31
+59,7,2,FAC-07-L06,Meghna Gazipur Woven Complex - Line 06,Woven Tops & Blouses,Double 8-Hour Shift (High Utilization),15.0,42,14,22500,2010-01-01,9999-12-31
+60,7,2,FAC-07-L07,Meghna Gazipur Woven Complex - Line 07,Woven Tops & Blouses,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,22500,2010-01-01,9999-12-31
+61,7,2,FAC-07-L08,Meghna Gazipur Woven Complex - Line 08,Woven Tops & Blouses,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,22500,2010-01-01,9999-12-31
+62,8,2,FAC-08-L01,Meghna Casualwear Unit-4 - Line 01,Woven Bottoms & Shorts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21429,2006-01-01,2023-06-30
+63,8,2,FAC-08-L02,Meghna Casualwear Unit-4 - Line 02,Woven Bottoms & Shorts,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21429,2006-01-01,2023-06-30
+64,8,2,FAC-08-L03,Meghna Casualwear Unit-4 - Line 03,Woven Bottoms & Shorts,Double 8-Hour Shift (High Utilization),15.0,42,14,21429,2006-01-01,2023-06-30
+65,8,2,FAC-08-L04,Meghna Casualwear Unit-4 - Line 04,Woven Bottoms & Shorts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21429,2006-01-01,2023-06-30
+66,8,2,FAC-08-L05,Meghna Casualwear Unit-4 - Line 05,Woven Bottoms & Shorts,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21429,2006-01-01,2023-06-30
+67,8,2,FAC-08-L06,Meghna Casualwear Unit-4 - Line 06,Woven Bottoms & Shorts,Double 8-Hour Shift (High Utilization),15.0,42,14,21429,2006-01-01,2023-06-30
+68,8,2,FAC-08-L07,Meghna Casualwear Unit-4 - Line 07,Woven Bottoms & Shorts,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21429,2006-01-01,2023-06-30
+69,9,2,FAC-09-L01,Meghna Smart Woven Park Unit-5 - Line 01,Premium Shirts & Structured Woven,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23750,2018-01-01,9999-12-31
+70,9,2,FAC-09-L02,Meghna Smart Woven Park Unit-5 - Line 02,Premium Shirts & Structured Woven,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23750,2018-01-01,9999-12-31
+71,9,2,FAC-09-L03,Meghna Smart Woven Park Unit-5 - Line 03,Premium Shirts & Structured Woven,Double 8-Hour Shift (High Utilization),15.0,42,14,23750,2018-01-01,9999-12-31
+72,9,2,FAC-09-L04,Meghna Smart Woven Park Unit-5 - Line 04,Premium Shirts & Structured Woven,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23750,2018-01-01,9999-12-31
+73,9,2,FAC-09-L05,Meghna Smart Woven Park Unit-5 - Line 05,Premium Shirts & Structured Woven,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23750,2018-01-01,9999-12-31
+74,9,2,FAC-09-L06,Meghna Smart Woven Park Unit-5 - Line 06,Premium Shirts & Structured Woven,Double 8-Hour Shift (High Utilization),15.0,42,14,23750,2018-01-01,9999-12-31
+75,9,2,FAC-09-L07,Meghna Smart Woven Park Unit-5 - Line 07,Premium Shirts & Structured Woven,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23750,2018-01-01,9999-12-31
+76,9,2,FAC-09-L08,Meghna Smart Woven Park Unit-5 - Line 08,Premium Shirts & Structured Woven,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23750,2018-01-01,9999-12-31
+77,10,3,FAC-10-L01,Karnaphuli CEPZ Denim Plant-1 - Line 01,Five-Pocket Denim Jeans,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+78,10,3,FAC-10-L02,Karnaphuli CEPZ Denim Plant-1 - Line 02,Five-Pocket Denim Jeans,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+79,10,3,FAC-10-L03,Karnaphuli CEPZ Denim Plant-1 - Line 03,Five-Pocket Denim Jeans,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+80,10,3,FAC-10-L04,Karnaphuli CEPZ Denim Plant-1 - Line 04,Five-Pocket Denim Jeans,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+81,10,3,FAC-10-L05,Karnaphuli CEPZ Denim Plant-1 - Line 05,Five-Pocket Denim Jeans,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+82,10,3,FAC-10-L06,Karnaphuli CEPZ Denim Plant-1 - Line 06,Five-Pocket Denim Jeans,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+83,10,3,FAC-10-L07,Karnaphuli CEPZ Denim Plant-1 - Line 07,Five-Pocket Denim Jeans,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21667,2006-01-01,9999-12-31
+84,10,3,FAC-10-L08,Karnaphuli CEPZ Denim Plant-1 - Line 08,Five-Pocket Denim Jeans,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21667,2006-01-01,9999-12-31
+85,10,3,FAC-10-L09,Karnaphuli CEPZ Denim Plant-1 - Line 09,Five-Pocket Denim Jeans,Double 8-Hour Shift (High Utilization),15.0,42,14,21667,2006-01-01,9999-12-31
+86,11,3,FAC-11-L01,Karnaphuli CEPZ Casuals Plant-2 - Line 01,Denim Jackets & Washed Twills,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2006-01-01,9999-12-31
+87,11,3,FAC-11-L02,Karnaphuli CEPZ Casuals Plant-2 - Line 02,Denim Jackets & Washed Twills,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2006-01-01,9999-12-31
+88,11,3,FAC-11-L03,Karnaphuli CEPZ Casuals Plant-2 - Line 03,Denim Jackets & Washed Twills,Double 8-Hour Shift (High Utilization),15.0,42,14,21875,2006-01-01,9999-12-31
+89,11,3,FAC-11-L04,Karnaphuli CEPZ Casuals Plant-2 - Line 04,Denim Jackets & Washed Twills,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2006-01-01,9999-12-31
+90,11,3,FAC-11-L05,Karnaphuli CEPZ Casuals Plant-2 - Line 05,Denim Jackets & Washed Twills,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2006-01-01,9999-12-31
+91,11,3,FAC-11-L06,Karnaphuli CEPZ Casuals Plant-2 - Line 06,Denim Jackets & Washed Twills,Double 8-Hour Shift (High Utilization),15.0,42,14,21875,2006-01-01,9999-12-31
+92,11,3,FAC-11-L07,Karnaphuli CEPZ Casuals Plant-2 - Line 07,Denim Jackets & Washed Twills,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,21875,2006-01-01,9999-12-31
+93,11,3,FAC-11-L08,Karnaphuli CEPZ Casuals Plant-2 - Line 08,Denim Jackets & Washed Twills,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,21875,2006-01-01,9999-12-31
+94,12,3,FAC-12-L01,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 01,Premium Stretch & Selvedge Denim,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2014-09-01,9999-12-31
+95,12,3,FAC-12-L02,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 02,Premium Stretch & Selvedge Denim,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23571,2014-09-01,9999-12-31
+96,12,3,FAC-12-L03,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 03,Premium Stretch & Selvedge Denim,Double 8-Hour Shift (High Utilization),15.0,42,14,23571,2014-09-01,9999-12-31
+97,12,3,FAC-12-L04,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 04,Premium Stretch & Selvedge Denim,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2014-09-01,9999-12-31
+98,12,3,FAC-12-L05,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 05,Premium Stretch & Selvedge Denim,Standard 8-Hour Shift + Seasonal Overtime,9.5,42,14,23571,2014-09-01,9999-12-31
+99,12,3,FAC-12-L06,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 06,Premium Stretch & Selvedge Denim,Double 8-Hour Shift (High Utilization),15.0,42,14,23571,2014-09-01,9999-12-31
+100,12,3,FAC-12-L07,Karnaphuli Eco-Wash & Jeans Unit-3 - Line 07,Premium Stretch & Selvedge Denim,Single 8-Hour Shift + 2-Hour Max Overtime,10.0,42,14,23571,2014-09-01,9999-12-31

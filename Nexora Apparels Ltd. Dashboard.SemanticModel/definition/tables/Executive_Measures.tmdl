@@ -1,0 +1,930 @@
+table Executive_Measures
+	lineageTag: 59b082d4-b802-597f-bba6-1b2ef6d87b22
+
+	/// Net confirmed sales order intake value in USD excluding cancelled lines.
+	measure 'Order Intake Value (USD)' = CALCULATE ( SUM ( fact_sales_order_line[net_order_value_usd] ), fact_sales_order_line[is_cancelled] = FALSE () )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 4ad7dd50-1f24-5215-a9ec-8acc7fe2436e
+
+	/// Net confirmed sales order intake value in BDT excluding cancelled lines.
+	measure 'Order Intake Value (BDT)' = CALCULATE ( SUM ( fact_sales_order_line[net_order_value_bdt] ), fact_sales_order_line[is_cancelled] = FALSE () )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 68325d20-63e1-566a-989b-7e7941377003
+
+	/// Total gross order value in USD including cancelled and discounted lines.
+	measure 'Gross Order Value (USD)' = SUM ( fact_sales_order_line[gross_order_value_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 16727ae6-3a6c-5d77-a697-1407aea9630c
+
+	/// Total amended order quantity in pieces for active/fulfilled orders.
+	measure 'Ordered Quantity (PCS)' = CALCULATE ( SUM ( fact_sales_order_line[amended_order_qty_pcs] ), fact_sales_order_line[is_cancelled] = FALSE () )
+		formatString: #,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 7615adf3-3b34-518e-a5e4-ed97b74c21d1
+
+	/// Remaining unshipped backlog quantity in pieces on active orders.
+	measure 'Unfulfilled Order Backlog (PCS)' = CALCULATE ( SUM ( fact_sales_order_line[unfulfilled_backlog_qty_pcs] ), fact_sales_order_line[is_cancelled] = FALSE () )
+		formatString: #,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 2c79fc48-afb8-5b72-bf68-d13c0f288e60
+
+	/// Percentage of sales order lines cancelled by buyers.
+	measure 'Order Cancellation Rate %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_sales_order_line ), fact_sales_order_line[is_cancelled] = TRUE () ), COUNTROWS ( fact_sales_order_line ), 0 )
+		formatString: 0.00%
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 12b65150-b409-53d3-a320-05cfa21096e4
+
+	/// Ratio of shipped quantity to amended ordered quantity on non-cancelled orders.
+	measure 'Order Fulfilment Rate %' = DIVIDE ( CALCULATE ( SUM ( fact_sales_order_line[shipped_qty_pcs] ), fact_sales_order_line[is_cancelled] = FALSE () ), [Ordered Quantity (PCS)], 0 )
+		formatString: 0.0%
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 6710f4df-ade7-5479-9049-7e8d49a7188a
+
+	/// Realized FOB average selling price per garment in USD.
+	measure 'Average Selling Price (USD)' = DIVIDE ( [Shipped FOB Revenue (USD)], [Shipped Quantity (PCS)], 0 )
+		formatString: $#,0.00
+		displayFolder: 01. Commercial & Orders
+		lineageTag: 46b46b4e-2066-50fe-9bf6-fc2745943077
+
+	/// Count of distinct international buyers placing orders in the period.
+	measure 'Active Buyers Count' = DISTINCTCOUNT ( fact_sales_order_line[buyer_key] )
+		formatString: #,0
+		displayFolder: 01. Commercial & Orders
+		lineageTag: c8d4c571-414b-5ba0-a9c2-c1abc2975aea
+
+	/// Total realized Free-on-Board (FOB) export revenue in USD upon shipment.
+	measure 'Shipped FOB Revenue (USD)' = SUM ( fact_shipment_line[fob_revenue_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 76024338-9f01-55e8-acc9-6f7ef2a765bf
+
+	/// Total realized Free-on-Board (FOB) export revenue in BDT upon shipment.
+	measure 'Shipped FOB Revenue (BDT)' = SUM ( fact_shipment_line[fob_revenue_bdt] )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 9b8fe52d-bca9-5988-a742-b2f8ece94bd9
+
+	/// Total realized revenue for buyer-accepted delivered garments in USD.
+	measure 'Delivered Revenue (USD)' = SUM ( fact_shipment_line[delivered_revenue_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: f8b6fddb-b7a3-50d1-868a-06809200080d
+
+	/// Prior-year Shipped FOB Revenue in USD across any calendar or fiscal slice.
+	measure 'Shipped Revenue PY (USD)' = VAR _MinDate = MIN ( dim_date[full_date] ) VAR _MaxDate = MAX ( dim_date[full_date] ) VAR _PrevMinKey = ( YEAR ( _MinDate ) - 1 ) * 10000 + MONTH ( _MinDate ) * 100 + DAY ( _MinDate ) VAR _PrevMaxKey = ( YEAR ( _MaxDate ) - 1 ) * 10000 + MONTH ( _MaxDate ) * 100 + DAY ( _MaxDate ) RETURN CALCULATE ( [Shipped FOB Revenue (USD)], REMOVEFILTERS ( dim_date ), dim_date[date_key] >= _PrevMinKey && dim_date[date_key] <= _PrevMaxKey )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: a20bcd52-9c30-50d3-bdb3-f2f2dc457d1f
+
+	/// Year-over-Year percentage growth in Shipped FOB Revenue (USD).
+	measure 'Shipped Revenue YoY Growth %' = VAR _Curr = [Shipped FOB Revenue (USD)] VAR _Prev = [Shipped Revenue PY (USD)] RETURN IF ( _Prev > 0, DIVIDE ( _Curr - _Prev, _Prev, 0 ), BLANK () )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: fd138d1d-39fe-5462-a7e2-782160520566
+
+	/// Total cost recorded in the unified cost ledger in USD across all categories.
+	measure 'Total Cost Ledger (USD)' = SUM ( fact_cost_transaction[amount_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: c9fcd4ac-507c-57fd-a41f-5a428bec34c8
+
+	/// Total cost recorded in the unified cost ledger in BDT across all categories.
+	measure 'Total Cost Ledger (BDT)' = SUM ( fact_cost_transaction[amount_bdt] )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 45d86df2-cd13-5a05-ab31-f9d296131efa
+
+	/// Total Cost of Goods Sold (COGS) in USD from the cost transaction ledger.
+	measure 'Total Production Cost (COGS USD)' = CALCULATE ( SUM ( fact_cost_transaction[amount_usd] ), KEEPFILTERS ( LEFT ( dim_cost_category[income_statement_classification], 4 ) = "COGS" ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 306853e4-9de8-5b32-a381-d432386ae368
+
+	/// Total Cost of Goods Sold (COGS) in BDT from the cost transaction ledger.
+	measure 'Total Production Cost (COGS BDT)' = CALCULATE ( SUM ( fact_cost_transaction[amount_bdt] ), KEEPFILTERS ( LEFT ( dim_cost_category[income_statement_classification], 4 ) = "COGS" ) )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 4588e142-4f55-5a87-937e-0d3cc66efec6
+
+	/// Direct fabric, yarn, trims, and accessories cost in USD.
+	measure 'Direct Material Cost (USD)' = CALCULATE ( SUM ( fact_cost_transaction[amount_usd] ), KEEPFILTERS ( dim_cost_category[income_statement_classification] IN { "COGS - Direct Material", "COGS - Subcontract & Processing" } ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: ba5f6e3c-9a4a-5248-bf4b-406927c08576
+
+	/// Direct factory sewing, cutting, and finishing labour cost in USD.
+	measure 'Direct Labour Cost (USD)' = CALCULATE ( SUM ( fact_cost_transaction[amount_usd] ), KEEPFILTERS ( dim_cost_category[income_statement_classification] = "COGS - Direct Labour" ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: fc8f3637-897d-5ec8-972c-15683b77020c
+
+	/// Factory utilities, depreciation, maintenance, compliance, and quality costs in USD.
+	measure 'Factory Overhead Cost (USD)' = CALCULATE ( SUM ( fact_cost_transaction[amount_usd] ), KEEPFILTERS ( dim_cost_category[income_statement_classification] IN { "COGS - Factory Overhead", "COGS - Quality & Compliance" } ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: ae81a5a6-3b57-5f0c-8c73-1ba3d549fd60
+
+	/// Inland transport and international freight expense in USD.
+	measure 'Selling & Logistics Cost (USD)' = CALCULATE ( SUM ( fact_cost_transaction[amount_usd] ), KEEPFILTERS ( dim_cost_category[income_statement_classification] = "Operating Expense - Selling & Distribution" ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 2c3f6213-6fd8-535e-9815-b78b9c0c051e
+
+	/// Operational gross margin in USD (Shipped FOB Revenue minus COGS).
+	measure 'Operational Gross Margin (USD)' = [Shipped FOB Revenue (USD)] - [Total Production Cost (COGS USD)]
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 67f9f9fb-9a57-59e2-9aa9-22937f884b6f
+
+	/// Operational gross margin in BDT (Shipped FOB Revenue minus COGS).
+	measure 'Operational Gross Margin (BDT)' = [Shipped FOB Revenue (BDT)] - [Total Production Cost (COGS BDT)]
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 60eb1665-6407-5804-a992-3e788ccf726f
+
+	/// Operational Gross Margin as a percentage of Shipped FOB Revenue (USD).
+	measure 'Operational Gross Margin %' = DIVIDE ( [Operational Gross Margin (USD)], [Shipped FOB Revenue (USD)], 0 )
+		formatString: 0.0%
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 928dcff0-8a27-5a36-acba-5d3f6e557c42
+
+	/// Operating contribution after COGS, logistics, and quality costs in USD.
+	measure 'Net Operating Contribution (USD)' = [Shipped FOB Revenue (USD)] - [Total Cost Ledger (USD)]
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: a69573cd-072e-55be-ad6e-8646537c1518
+
+	/// Net operating contribution percentage of FOB revenue.
+	measure 'Net Operating Margin %' = DIVIDE ( [Net Operating Contribution (USD)], [Shipped FOB Revenue (USD)], 0 )
+		formatString: 0.0%
+		displayFolder: 02. Revenue & Profitability
+		lineageTag: 56912fe7-1e50-5d45-b1aa-2d8110281bda
+
+	/// Total raw material and trim purchase order value in USD.
+	measure 'Total Procurement Value (USD)' = SUM ( fact_purchase_order_line[order_value_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: e6754e90-32dc-5c9e-8745-2453e810d743
+
+	/// Total raw material and trim purchase order value in BDT.
+	measure 'Total Procurement Value (BDT)' = SUM ( fact_purchase_order_line[order_value_bdt] )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: db624de9-79d7-59bd-ae72-e6ab5cd10d12
+
+	/// Total value of supplier material deliveries received at factory gate in USD.
+	measure 'Documented Delivery Value (USD)' = SUM ( fact_supplier_delivery[documented_material_cost_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: c553cfab-6562-5fb1-82b1-8afa4a92ba84
+
+	/// Share of procurement spend sourced from international imported suppliers.
+	measure 'Imported Procurement Share %' = DIVIDE ( CALCULATE ( [Total Procurement Value (USD)], dim_supplier[domestic_import_classification] = "Imported" ), [Total Procurement Value (USD)], 0 )
+		formatString: 0.0%
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: f7eb1723-ad44-546e-89c5-1e6fc5c403e1
+
+	/// Share of procurement spend sourced from domestic Bangladeshi spinners/mills.
+	measure 'Domestic Backward Linkage Share %' = DIVIDE ( CALCULATE ( [Total Procurement Value (USD)], dim_supplier[domestic_import_classification] = "Domestic" ), [Total Procurement Value (USD)], 0 )
+		formatString: 0.0%
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: 60ffc104-88b9-5222-bdcb-d780e9fa56b5
+
+	/// Percentage of supplier material deliveries received on or before expected PO date.
+	measure 'Supplier On-Time Delivery %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_supplier_delivery ), fact_supplier_delivery[is_on_time_delivery] = TRUE () ), COUNTROWS ( fact_supplier_delivery ), 0 )
+		formatString: 0.0%
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: deda692c-cb2f-59f6-be84-169436bda318
+
+	/// Average delivery delay in days across supplier GRN receipts.
+	measure 'Avg Supplier Delay (Days)' = AVERAGE ( fact_supplier_delivery[delivery_delay_days] )
+		formatString: 0.0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: f6844b75-cf33-597e-9bfc-e5fe7880c382
+
+	/// Percentage of delivered raw material quantity rejected upon incoming inspection.
+	measure 'Supplier Material Rejection Rate %' = DIVIDE ( SUM ( fact_supplier_delivery[rejected_qty] ), SUM ( fact_supplier_delivery[received_qty] ), 0 )
+		formatString: 0.00%
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: 33201bfa-4a70-5a30-979a-0de8f6aa1645
+
+	/// Total cost of raw materials consumed in production batches in USD.
+	measure 'Total Material Cost Consumed (USD)' = SUM ( fact_material_consumption[total_material_cost_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: 121b1a83-fe81-53f0-a8d8-bc09eb37d006
+
+	/// Cost of excess raw material wastage above BOM standard allowance in USD.
+	measure 'Material Wastage Cost (USD)' = SUM ( fact_material_consumption[wastage_cost_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: b43aa796-d187-574f-8e68-7d08b4b0d3da
+
+	/// Weighted average material wastage percentage across production batches.
+	measure 'BOM Material Wastage Rate %' = DIVIDE ( SUM ( fact_material_consumption[wastage_qty] ), SUM ( fact_material_consumption[actual_material_qty] ), 0 )
+		formatString: 0.00%
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: 036b63cf-9ad2-544c-895d-97b508246c80
+
+	/// Purchase price variance against 2015 base material standard cost in USD.
+	measure 'Purchase Price Variance (USD)' = SUMX ( fact_purchase_order_line, fact_purchase_order_line[ordered_qty] * ( fact_purchase_order_line[unit_cost_usd] - RELATED ( dim_material[base_unit_cost_usd_2015] ) ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 03. Procurement & Suppliers
+		lineageTag: 36a94032-88e6-58bc-b9a4-390fabfa4535
+
+	/// Semi-additive closing inventory valuation in USD at the end of the selected period.
+	measure 'Closing Inventory Value (USD)' = VAR _MaxDateKey = MAX ( fact_inventory_snapshot_monthly[date_key] ) RETURN CALCULATE ( SUM ( fact_inventory_snapshot_monthly[inventory_value_usd] ), fact_inventory_snapshot_monthly[date_key] = _MaxDateKey )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 7299081c-ef01-52ed-b85a-d1404f413d93
+
+	/// Semi-additive closing inventory valuation in BDT at the end of the selected period.
+	measure 'Closing Inventory Value (BDT)' = VAR _MaxDateKey = MAX ( fact_inventory_snapshot_monthly[date_key] ) RETURN CALCULATE ( SUM ( fact_inventory_snapshot_monthly[inventory_value_bdt] ), fact_inventory_snapshot_monthly[date_key] = _MaxDateKey )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 75c05d94-77c7-5cd0-9bcb-c6fd42629d1b
+
+	/// Average monthly inventory valuation in USD across the selected timeframe.
+	measure 'Average Inventory Value (USD)' = AVERAGEX ( VALUES ( dim_date[year_month] ), CALCULATE ( SUM ( fact_inventory_snapshot_monthly[inventory_value_usd] ) ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: f8c8ab9f-5b22-5600-9a29-6334918a642d
+
+	/// Ratio of COGS to Average Inventory Value.
+	measure 'Inventory Turnover Ratio' = VAR _Months = COUNTROWS ( FILTER ( VALUES ( dim_date[year_month] ), CALCULATE ( COUNTROWS ( fact_inventory_snapshot_monthly ) ) > 0 ) ) VAR _AnnualCOGS = DIVIDE ( [Total Production Cost (COGS USD)] * 12, _Months ) RETURN DIVIDE ( _AnnualCOGS, [Average Inventory Value (USD)] )
+		formatString: 0.00
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 8d4e59e5-ceb7-5597-a5be-1e8bea64f094
+
+	/// Average number of days inventory is held before consumption/shipment.
+	measure 'Days Inventory Outstanding (DIO)' = DIVIDE ( 365, [Inventory Turnover Ratio] )
+		formatString: 0.0
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 5575940d-c7a1-50ca-b719-378618fd7851
+
+	/// Closing inventory value aged over 90 days in USD.
+	measure 'Slow & Obsolete Stock (90+ Days USD)' = VAR _MaxDateKey = MAX ( fact_inventory_snapshot_monthly[date_key] ) RETURN IF ( NOT ISBLANK ( _MaxDateKey ), COALESCE ( CALCULATE ( SUM ( fact_inventory_snapshot_monthly[inventory_value_usd] ), fact_inventory_snapshot_monthly[date_key] = _MaxDateKey, KEEPFILTERS ( LEFT ( fact_inventory_snapshot_monthly[ageing_bucket], 3 ) = "90+" ) ), 0 ) )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: ca45c69a-d830-5905-a765-c25b1c61f124
+
+	/// Percentage of closing inventory value aged over 90 days.
+	measure 'Slow & Obsolete Stock Share %' = DIVIDE ( [Slow & Obsolete Stock (90+ Days USD)], [Closing Inventory Value (USD)], 0 )
+		formatString: 0.0%
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 957a0f6b-87a0-5cd4-ac3d-876746e3d09b
+
+	/// Percentage of monthly factory-item inventory snapshots experiencing a stockout.
+	measure 'Stockout Incident Rate %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_inventory_snapshot_monthly ), fact_inventory_snapshot_monthly[is_stockout_incident] = TRUE () ), COUNTROWS ( fact_inventory_snapshot_monthly ), 0 )
+		formatString: 0.00%
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: ae1afa3a-7c2e-5790-b001-f7d646f930f4
+
+	/// Percentage of monthly inventory snapshots maintaining stock at or above safety threshold.
+	measure 'Safety Stock Compliance %' = 1 - DIVIDE ( CALCULATE ( COUNTROWS ( fact_inventory_snapshot_monthly ), fact_inventory_snapshot_monthly[is_below_safety_stock] = TRUE () ), COUNTROWS ( fact_inventory_snapshot_monthly ), 0 )
+		formatString: 0.0%
+		displayFolder: 04. Inventory & Working Capital
+		lineageTag: 8f084083-b978-59b4-b1dc-e41ae00a4dc9
+
+	/// Total planned production quantity in pieces across scheduled batches.
+	measure 'Planned Production (PCS)' = SUM ( fact_production_batch[planned_qty_pcs] )
+		formatString: #,0
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: 5a755e44-008f-5440-8333-53190086f431
+
+	/// Total first-quality + reworked good garment output in pieces.
+	measure 'Actual Good Output (PCS)' = SUM ( fact_production_batch[actual_good_output_pcs] )
+		formatString: #,0
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: 23fc0d01-9cd3-5f77-9d99-efd4ed8f2ec2
+
+	/// Manufacturing attainment of actual good output against planned batch quantity.
+	measure 'Plan vs Actual Attainment %' = DIVIDE ( [Actual Good Output (PCS)], [Planned Production (PCS)], 0 )
+		formatString: 0.0%
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: d41f2901-bab7-538e-85f8-341f2be31ee1
+
+	/// True industrial engineering sewing efficiency: Earned Standard Minutes / Available Labour Minutes.
+	measure 'Production Line Efficiency %' = DIVIDE ( SUM ( fact_production_batch[earned_standard_minutes] ), SUM ( fact_production_batch[actual_labour_hours] ) * 60, 0 )
+		formatString: 0.0%
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: a1d7ffd6-29c9-555c-8ca8-cfddc4d4495d
+
+	/// Physical garment output produced per direct operator/helper labour hour.
+	measure 'Output per Labour Hour (PCS)' = DIVIDE ( [Actual Good Output (PCS)], SUM ( fact_production_batch[actual_labour_hours] ), 0 )
+		formatString: 0.00
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: 3d350676-c7ee-5bcc-8b30-b0b286b27a0e
+
+	/// Total production line downtime hours due to machine breakdown, power, or material wait.
+	measure 'Machine Downtime Hours' = SUM ( fact_production_batch[machine_downtime_hours] )
+		formatString: #,0
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: 26e84824-8efa-5ee8-9cf1-b4d5d8f90344
+
+	/// Direct labour cost in USD per good garment produced.
+	measure 'Labour Cost per Garment (USD)' = DIVIDE ( [Direct Labour Cost (USD)], [Actual Good Output (PCS)], 0 )
+		formatString: $#,0.00
+		displayFolder: 05. Manufacturing & Productivity
+		lineageTag: 7f65ff36-2fe8-5cfd-9d18-f5bdae38608f
+
+	/// Total garments inspected across inline and final AQL quality audits.
+	measure 'Inspected Quantity (PCS)' = SUM ( fact_quality_inspection[inspected_qty_pcs] )
+		formatString: #,0
+		displayFolder: 06. Quality & Compliance
+		lineageTag: 2cc3ed61-be6f-5979-b1a3-8c5cfbaba519
+
+	/// Total defective garments identified during quality inspections.
+	measure 'Defective Quantity (PCS)' = SUM ( fact_quality_inspection[defective_qty_pcs] )
+		formatString: #,0
+		displayFolder: 06. Quality & Compliance
+		lineageTag: 4c43c6e5-30e3-5c5a-a1fc-6fb981c9f376
+
+	/// Percentage of inspected garments passing inspection defect-free on the first pass.
+	measure 'First-Pass Yield (FPY) %' = 1 - DIVIDE ( [Defective Quantity (PCS)], [Inspected Quantity (PCS)], 0 )
+		formatString: 0.0%
+		displayFolder: 06. Quality & Compliance
+		lineageTag: caf84f10-a77b-56c1-8c03-a54b32ca4777
+
+	/// Overall garment defect rate across quality inspections.
+	measure 'AQL Defect Rate %' = DIVIDE ( [Defective Quantity (PCS)], [Inspected Quantity (PCS)], 0 )
+		formatString: 0.00%
+		displayFolder: 06. Quality & Compliance
+		lineageTag: e505fd37-ae79-5d4a-a157-2d59546e93fe
+
+	/// Percentage of inspected garments requiring rectification/rework.
+	measure 'Garment Rework Rate %' = DIVIDE ( SUM ( fact_quality_inspection[rework_qty_pcs] ), [Inspected Quantity (PCS)], 0 )
+		formatString: 0.00%
+		displayFolder: 06. Quality & Compliance
+		lineageTag: 8fae058d-f20d-5478-a9f0-066d874a8125
+
+	/// Percentage of inspected garments permanently scrapped/rejected.
+	measure 'Garment Rejection Rate %' = DIVIDE ( SUM ( fact_quality_inspection[rejected_qty_pcs] ), [Inspected Quantity (PCS)], 0 )
+		formatString: 0.00%
+		displayFolder: 06. Quality & Compliance
+		lineageTag: 8f3f489d-0b29-5154-8470-115b9258b1a1
+
+	/// Direct rework and scrap quality cost estimated at inspection in USD.
+	measure 'Estimated Quality Cost (USD)' = SUM ( fact_quality_inspection[estimated_quality_cost_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 06. Quality & Compliance
+		lineageTag: fd8c801f-bd48-55d4-a374-5e097ddfacba
+
+	/// Combined Cost of Poor Quality (COPQ): garment rework/scrap + excess BOM material wastage in USD.
+	measure 'Total Cost of Poor Quality (USD)' = [Estimated Quality Cost (USD)] + [Material Wastage Cost (USD)]
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 06. Quality & Compliance
+		lineageTag: 21f12bd5-129e-5090-b6e0-c0ef40f8943d
+
+	/// Total garment pieces shipped via sea and air freight.
+	measure 'Shipped Quantity (PCS)' = SUM ( fact_shipment_line[shipped_qty_pcs] )
+		formatString: #,0
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: 75f3d3b7-5fc0-5953-8462-45f286f47e11
+
+	/// Total garment pieces accepted at buyer destination warehouse.
+	measure 'Delivered Quantity (PCS)' = SUM ( fact_shipment_line[delivered_qty_pcs] )
+		formatString: #,0
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: b07502a7-015f-5b45-a676-7739239fe0a5
+
+	/// Percentage of export shipments departing port on or before scheduled ship date.
+	measure 'On-Time Shipment (OTS) %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_shipment_line ), fact_shipment_line[is_on_time_shipment] = TRUE () ), COUNTROWS ( fact_shipment_line ), 0 )
+		formatString: 0.0%
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: 2d9ab63f-f9e8-59f0-b1d7-a99b115ee08f
+
+	/// Percentage of export shipments arriving at buyer destination on or before confirmed delivery date.
+	measure 'On-Time Delivery (OTD) %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_shipment_line ), fact_shipment_line[is_on_time_delivery] = TRUE () ), COUNTROWS ( fact_shipment_line ), 0 )
+		formatString: 0.0%
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: 2b1439da-ed05-5167-be78-dc685d0192d0
+
+	/// Percentage of shipments delivered both On-Time and In-Full without partial split shortages.
+	measure 'On-Time In-Full (OTIF) %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_shipment_line ), fact_shipment_line[is_on_time_delivery] = TRUE (), fact_shipment_line[is_partial_shipment] = FALSE () ), COUNTROWS ( fact_shipment_line ), 0 )
+		formatString: 0.0%
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: 4212b82e-f8c5-5038-a0e6-6848fff8cbf1
+
+	/// Combined international freight and domestic inland transport cost in USD.
+	measure 'Total Freight Cost (USD)' = SUM ( fact_shipment_line[freight_cost_usd] ) + SUM ( fact_shipment_line[inland_logistics_cost_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: dd9eb511-d8fe-53bb-b28b-4e139fcf5b42
+
+	/// Percentage of FOB export revenue shipped via expedited air freight.
+	measure 'Air Freight Revenue Share %' = DIVIDE ( CALCULATE ( [Shipped FOB Revenue (USD)], KEEPFILTERS ( LEFT ( fact_shipment_line[shipping_mode], 3 ) = "Air" ) ), [Shipped FOB Revenue (USD)], 0 )
+		formatString: 0.00%
+		displayFolder: 07. Logistics & OTIF
+		lineageTag: 8192b087-d48f-54dd-8f92-87eed304ff12
+
+	/// Semi-additive active workforce headcount at the end of the selected period.
+	measure 'Active Headcount' = VAR _MaxDateKey = MAX ( fact_workforce_monthly[date_key] ) RETURN CALCULATE ( SUM ( fact_workforce_monthly[active_headcount] ), fact_workforce_monthly[date_key] = _MaxDateKey )
+		formatString: #,0
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: ebad1d00-665c-5f24-8064-7d1186050ad8
+
+	/// Total monthly workforce payroll (base + allowances/Eid bonus + overtime) in USD.
+	measure 'Total Workforce Payroll (USD)' = SUM ( fact_workforce_monthly[total_payroll_usd] )
+		formatString: $#,0;($#,0);$#,0
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: 48b039db-1960-5630-9613-ddbc8f11a4ca
+
+	/// Total monthly workforce payroll (base + allowances/Eid bonus + overtime) in BDT.
+	measure 'Total Workforce Payroll (BDT)' = SUM ( fact_workforce_monthly[total_payroll_bdt] )
+		formatString: ৳#,0;(৳#,0);৳#,0
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: 61925b1f-e482-551e-858d-cb25b67b2356
+
+	/// Total worker overtime hours logged across factory departments.
+	measure 'Overtime Hours' = SUM ( fact_workforce_monthly[overtime_hours] )
+		formatString: #,0
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: bb45f24c-7e9d-59f4-b962-82aa57e00883
+
+	/// Overtime expense as a percentage of total factory payroll.
+	measure 'Overtime Share of Payroll %' = DIVIDE ( SUM ( fact_workforce_monthly[overtime_expense_bdt] ), SUM ( fact_workforce_monthly[total_payroll_bdt] ), 0 )
+		formatString: 0.0%
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: cbe79367-f869-5d48-a722-3179804272fb
+
+	/// Average monthly worker absenteeism rate percentage.
+	measure 'Absenteeism Rate %' = AVERAGE ( fact_workforce_monthly[absenteeism_rate_pct] ) / 100
+		formatString: 0.00%
+		displayFolder: 08. Workforce & Payroll
+		lineageTag: c35dee4e-7533-5652-b5dc-c108327d3e98
+
+	/// Total grid and solar electricity consumed in kWh per garment produced.
+	measure 'Electricity per Garment (kWh)' = DIVIDE ( SUM ( fact_sustainability_monthly[electricity_consumption_kwh] ), SUM ( fact_sustainability_monthly[monthly_output_pcs] ), 0 )
+		formatString: 0.000
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: a9f85f9f-0e49-5484-8602-1d0462d87b7f
+
+	/// Percentage of factory electricity generated by rooftop solar PV.
+	measure 'Renewable Solar Share %' = DIVIDE ( SUM ( fact_sustainability_monthly[renewable_solar_kwh] ), SUM ( fact_sustainability_monthly[electricity_consumption_kwh] ), 0 )
+		formatString: 0.0%
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: ef5d9315-19cb-540e-bfd7-c3648a29ae38
+
+	/// Water withdrawal in liters per garment produced.
+	measure 'Water per Garment (Liters)' = DIVIDE ( SUM ( fact_sustainability_monthly[water_withdrawal_m3] ) * 1000, SUM ( fact_sustainability_monthly[monthly_output_pcs] ), 0 )
+		formatString: 0.0
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: ed58be88-f8bf-5feb-a8b6-56a7ba66f9c1
+
+	/// Estimated Scope 1+2 carbon emissions in kg CO2e per garment produced.
+	measure 'Carbon Footprint (kg CO2e/PC)' = DIVIDE ( SUM ( fact_sustainability_monthly[estimated_carbon_emissions_kg_co2e] ), SUM ( fact_sustainability_monthly[monthly_output_pcs] ), 0 )
+		formatString: 0.000
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 49790353-8adc-54a6-b6f3-80e91ecb1b30
+
+	/// Percentage of solid cutting/sewing jhut fabric waste recycled or upcycled.
+	measure 'Fabric Waste Recycling Rate %' = DIVIDE ( SUM ( fact_sustainability_monthly[recycled_material_kg] ), SUM ( fact_sustainability_monthly[solid_fabric_waste_kg] ), 0 )
+		formatString: 0.0%
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 523af9a7-9bf2-5035-8b61-a927aee1b309
+
+	/// Average BDT per 1 USD exchange rate across the selected period.
+	measure 'Average BDT/USD Exchange Rate' = AVERAGE ( fact_macro_monthly[bdt_usd_exchange_rate] )
+		formatString: ৳#,0.00
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 8e9bbd72-1f0e-59d8-a862-0614f265d085
+
+	/// Gazetted Bangladesh garment entry-level statutory minimum wage in BDT.
+	measure 'Statutory Minimum Wage (BDT)' = MAX ( fact_macro_monthly[statutory_min_wage_entry_bdt] )
+		formatString: ৳#,0
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 4c9fbf0a-cb50-5a8b-9818-0504e9444c13
+
+	/// Average Bangladesh Consumer Price Index (CPI) annual inflation rate.
+	measure 'CPI Inflation YoY %' = AVERAGE ( fact_macro_monthly[cpi_inflation_yoy_pct] ) / 100
+		formatString: 0.0%
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 0d1257c0-2809-5c0a-8836-540d0c9d059f
+
+	/// Published BGMEA national Bangladesh RMG export benchmark in USD Billions.
+	measure 'BGMEA National RMG Export ($B)' = AVERAGE ( fact_macro_monthly[bgmea_fy_total_rmg_export_usd_bn] )
+		formatString: $#,0.00B
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: a26a512c-879f-547a-acf9-1835c256dff7
+
+	/// Global container freight rate index (2015 = 100).
+	measure 'Container Freight Index' = AVERAGE ( fact_macro_monthly[container_freight_rate_index] )
+		formatString: #,0.0
+		displayFolder: 09. Sustainability & Macro
+		lineageTag: 7de3f4ae-611c-5ced-a2bc-0ff7cc3e5756
+
+	measure 'Late Shipped Quantity (PCS)' = CALCULATE ( [Shipped Quantity (PCS)], KEEPFILTERS ( fact_shipment_line[delay_reason] <> "On-Time Delivery (No Delay)" ) )
+		formatString: #,0
+		displayFolder: 90. Storytelling
+
+	measure 'Nexora revenue (index)' = Nexora.Index ( [Shipped FOB Revenue (USD)] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'National RMG exports (index)' = Nexora.Index ( [BGMEA National RMG Export ($B)] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'Minimum wage (index)' = Nexora.Index ( [Statutory Minimum Wage (BDT)] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'Output per labour hour (index)' = Nexora.Index ( [Output per Labour Hour (PCS)] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'Payroll (index)' = Nexora.Index ( [Total Workforce Payroll (USD)] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'Headcount (index)' = Nexora.Index ( [Active Headcount] )
+		formatString: 0
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Shipped FOB Revenue (USD)' = Nexora.KpiContext ( [Shipped FOB Revenue (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Shipped FOB Revenue (USD)' = Nexora.KpiColor ( [KPI Context | Shipped FOB Revenue (USD)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Order Intake Value (USD)' = Nexora.KpiContext ( [Order Intake Value (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Order Intake Value (USD)' = Nexora.KpiColor ( [KPI Context | Order Intake Value (USD)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Operational Gross Margin %' = Nexora.KpiContext ( [Operational Gross Margin %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Operational Gross Margin %' = Nexora.KpiColor ( [KPI Context | Operational Gross Margin %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | On-Time In-Full (OTIF) %' = Nexora.KpiContext ( [On-Time In-Full (OTIF) %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | On-Time In-Full (OTIF) %' = Nexora.KpiColor ( [KPI Context | On-Time In-Full (OTIF) %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Closing Inventory Value (USD)' = Nexora.KpiContext ( [Closing Inventory Value (USD)], "usd", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Closing Inventory Value (USD)' = Nexora.KpiColor ( [KPI Context | Closing Inventory Value (USD)], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Actual Good Output (PCS)' = Nexora.KpiContext ( [Actual Good Output (PCS)], "cnt", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Actual Good Output (PCS)' = Nexora.KpiColor ( [KPI Context | Actual Good Output (PCS)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Shipped Revenue YoY Growth %' = Nexora.KpiContext ( [Shipped Revenue YoY Growth %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Shipped Revenue YoY Growth %' = Nexora.KpiColor ( [KPI Context | Shipped Revenue YoY Growth %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Average Selling Price (USD)' = Nexora.KpiContext ( [Average Selling Price (USD)], "usd", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Average Selling Price (USD)' = Nexora.KpiColor ( [KPI Context | Average Selling Price (USD)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Average BDT/USD Exchange Rate' = Nexora.KpiContext ( [Average BDT/USD Exchange Rate], "n1", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Average BDT/USD Exchange Rate' = Nexora.KpiColor ( [KPI Context | Average BDT/USD Exchange Rate], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Statutory Minimum Wage (BDT)' = Nexora.KpiContext ( [Statutory Minimum Wage (BDT)], "bdt", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Statutory Minimum Wage (BDT)' = Nexora.KpiColor ( [KPI Context | Statutory Minimum Wage (BDT)], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | BGMEA National RMG Export ($B)' = Nexora.KpiContext ( [BGMEA National RMG Export ($B)], "usdbn", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | BGMEA National RMG Export ($B)' = Nexora.KpiColor ( [KPI Context | BGMEA National RMG Export ($B)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Container Freight Index' = Nexora.KpiContext ( [Container Freight Index], "n0", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Container Freight Index' = Nexora.KpiColor ( [KPI Context | Container Freight Index], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Ordered Quantity (PCS)' = Nexora.KpiContext ( [Ordered Quantity (PCS)], "cnt", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Ordered Quantity (PCS)' = Nexora.KpiColor ( [KPI Context | Ordered Quantity (PCS)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Unfulfilled Order Backlog (PCS)' = Nexora.KpiContext ( [Unfulfilled Order Backlog (PCS)], "cnt", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Unfulfilled Order Backlog (PCS)' = Nexora.KpiColor ( [KPI Context | Unfulfilled Order Backlog (PCS)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Order Cancellation Rate %' = Nexora.KpiContext ( [Order Cancellation Rate %], "pct2", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Order Cancellation Rate %' = Nexora.KpiColor ( [KPI Context | Order Cancellation Rate %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Order Fulfilment Rate %' = Nexora.KpiContext ( [Order Fulfilment Rate %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Order Fulfilment Rate %' = Nexora.KpiColor ( [KPI Context | Order Fulfilment Rate %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Total Procurement Value (USD)' = Nexora.KpiContext ( [Total Procurement Value (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Total Procurement Value (USD)' = Nexora.KpiColor ( [KPI Context | Total Procurement Value (USD)], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Imported Procurement Share %' = Nexora.KpiContext ( [Imported Procurement Share %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Imported Procurement Share %' = Nexora.KpiColor ( [KPI Context | Imported Procurement Share %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Supplier On-Time Delivery %' = Nexora.KpiContext ( [Supplier On-Time Delivery %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Supplier On-Time Delivery %' = Nexora.KpiColor ( [KPI Context | Supplier On-Time Delivery %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Supplier Material Rejection Rate %' = Nexora.KpiContext ( [Supplier Material Rejection Rate %], "pct2", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Supplier Material Rejection Rate %' = Nexora.KpiColor ( [KPI Context | Supplier Material Rejection Rate %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Avg Supplier Delay (Days)' = Nexora.KpiContext ( [Avg Supplier Delay (Days)], "n1", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Avg Supplier Delay (Days)' = Nexora.KpiColor ( [KPI Context | Avg Supplier Delay (Days)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Material Wastage Cost (USD)' = Nexora.KpiContext ( [Material Wastage Cost (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Material Wastage Cost (USD)' = Nexora.KpiColor ( [KPI Context | Material Wastage Cost (USD)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Closing Inventory Value (BDT)' = Nexora.KpiContext ( [Closing Inventory Value (BDT)], "bdt", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Closing Inventory Value (BDT)' = Nexora.KpiColor ( [KPI Context | Closing Inventory Value (BDT)], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Inventory Turnover Ratio' = Nexora.KpiContext ( [Inventory Turnover Ratio], "n1", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Inventory Turnover Ratio' = Nexora.KpiColor ( [KPI Context | Inventory Turnover Ratio], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Days Inventory Outstanding (DIO)' = Nexora.KpiContext ( [Days Inventory Outstanding (DIO)], "n0", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Days Inventory Outstanding (DIO)' = Nexora.KpiColor ( [KPI Context | Days Inventory Outstanding (DIO)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Stockout Incident Rate %' = Nexora.KpiContext ( [Stockout Incident Rate %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Stockout Incident Rate %' = Nexora.KpiColor ( [KPI Context | Stockout Incident Rate %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Safety Stock Compliance %' = Nexora.KpiContext ( [Safety Stock Compliance %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Safety Stock Compliance %' = Nexora.KpiColor ( [KPI Context | Safety Stock Compliance %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Plan vs Actual Attainment %' = Nexora.KpiContext ( [Plan vs Actual Attainment %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Plan vs Actual Attainment %' = Nexora.KpiColor ( [KPI Context | Plan vs Actual Attainment %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Production Line Efficiency %' = Nexora.KpiContext ( [Production Line Efficiency %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Production Line Efficiency %' = Nexora.KpiColor ( [KPI Context | Production Line Efficiency %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Output per Labour Hour (PCS)' = Nexora.KpiContext ( [Output per Labour Hour (PCS)], "n2", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Output per Labour Hour (PCS)' = Nexora.KpiColor ( [KPI Context | Output per Labour Hour (PCS)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Labour Cost per Garment (USD)' = Nexora.KpiContext ( [Labour Cost per Garment (USD)], "usd", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Labour Cost per Garment (USD)' = Nexora.KpiColor ( [KPI Context | Labour Cost per Garment (USD)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Active Headcount' = Nexora.KpiContext ( [Active Headcount], "cnt", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Active Headcount' = Nexora.KpiColor ( [KPI Context | Active Headcount], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | First-Pass Yield (FPY) %' = Nexora.KpiContext ( [First-Pass Yield (FPY) %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | First-Pass Yield (FPY) %' = Nexora.KpiColor ( [KPI Context | First-Pass Yield (FPY) %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | AQL Defect Rate %' = Nexora.KpiContext ( [AQL Defect Rate %], "pct2", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | AQL Defect Rate %' = Nexora.KpiColor ( [KPI Context | AQL Defect Rate %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Garment Rework Rate %' = Nexora.KpiContext ( [Garment Rework Rate %], "pct2", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Garment Rework Rate %' = Nexora.KpiColor ( [KPI Context | Garment Rework Rate %], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Total Cost of Poor Quality (USD)' = Nexora.KpiContext ( [Total Cost of Poor Quality (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Total Cost of Poor Quality (USD)' = Nexora.KpiColor ( [KPI Context | Total Cost of Poor Quality (USD)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | On-Time Shipment (OTS) %' = Nexora.KpiContext ( [On-Time Shipment (OTS) %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | On-Time Shipment (OTS) %' = Nexora.KpiColor ( [KPI Context | On-Time Shipment (OTS) %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Total Production Cost (COGS USD)' = Nexora.KpiContext ( [Total Production Cost (COGS USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Total Production Cost (COGS USD)' = Nexora.KpiColor ( [KPI Context | Total Production Cost (COGS USD)], 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Operational Gross Margin (USD)' = Nexora.KpiContext ( [Operational Gross Margin (USD)], "usd", "add" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Operational Gross Margin (USD)' = Nexora.KpiColor ( [KPI Context | Operational Gross Margin (USD)], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Electricity per Garment (kWh)' = Nexora.KpiContext ( [Electricity per Garment (kWh)], "n3", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Electricity per Garment (kWh)' = Nexora.KpiColor ( [KPI Context | Electricity per Garment (kWh)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Renewable Solar Share %' = Nexora.KpiContext ( [Renewable Solar Share %], "pct1", "rate" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Renewable Solar Share %' = Nexora.KpiColor ( [KPI Context | Renewable Solar Share %], 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Context | Carbon Footprint (kg CO2e/PC)' = Nexora.KpiContext ( [Carbon Footprint (kg CO2e/PC)], "n3", "level" )
+		displayFolder: 90. Storytelling
+
+	measure 'KPI Color | Carbon Footprint (kg CO2e/PC)' = Nexora.KpiColor ( [KPI Context | Carbon Footprint (kg CO2e/PC)], -1 )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p1_vis01' = Nexora.TrendTitle ( [Shipped FOB Revenue (USD)], "Shipped revenue", "usd", "grew", "fell", 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p1_vis02' = Nexora.TrendTitle ( [On-Time In-Full (OTIF) %], "On-time-in-full delivery", "pct0", "improved", "fell", 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p1_vis03' = Nexora.RankTitle ( dim_company[company_name], [Operational Gross Margin %], "pct1", 1, 1, "{name} trails at {value} gross margin vs {total} for the group" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p2_vis01' = Nexora.TwoRatio ( [Shipped FOB Revenue (USD)], [BGMEA National RMG Export ($B)], "Since {y0}, Nexora revenue grew {a} vs {b} for national RMG exports" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p2_vis02' = Nexora.RankTitle ( dim_product[knit_woven_classification], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} garments generate {share} of revenue" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p2_vis03' = Nexora.TwoRatio ( [Statutory Minimum Wage (BDT)], [Output per Labour Hour (PCS)], "Since {y0}, the minimum wage rose {a} while output per labour hour rose only {b}" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p3_vis01' = Nexora.RankTitle ( dim_buyer[buyer_name], [Shipped FOB Revenue (USD)], "usd", 0, 2, "Two buyers ({name}) generate {share} of revenue" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p3_vis02' = Nexora.RankTitle ( dim_product[product_category], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} lead with {value}, {share} of revenue" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p3_vis03' = Nexora.RankTitle ( dim_buyer[market_classification], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} markets still supply {share} of revenue" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p4_vis01' = Nexora.RankTitle ( dim_supplier[origin_country], [Total Procurement Value (USD)], "usd", 0, 1, "{name} supplies {share} of procurement spend ({value})" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p4_vis02' = Nexora.RankTitle ( dim_material[material_category], [BOM Material Wastage Rate %], "pct1", 0, 1, "{name} has the highest wastage rate at {value} (all materials: {total})" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p4_vis03' = Nexora.RankTitle ( dim_supplier[domestic_import_classification], [Total Procurement Value (USD)], "usd", 0, 1, "{name} materials make up {share} of procurement spend" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p5_vis01' = Nexora.TrendTitle ( [Days Inventory Outstanding (DIO)], "Days of inventory on hand", "days", "rose", "fell", 0 )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p5_vis02' = Nexora.RankTitle ( fact_inventory_snapshot_monthly[stock_type], [Closing Inventory Value (USD)], "usd", 0, 1, "{name} ties up {share} of closing inventory ({value})" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p5_vis03' = Nexora.RankTitle ( fact_inventory_snapshot_monthly[ageing_bucket], [Closing Inventory Value (USD)], "usd", 0, 1, "{share} of closing inventory is {name} stock" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p6_vis01' = Nexora.RankTitle ( dim_company[company_name], [Production Line Efficiency %], "pct1", 1, 1, "{name} trails at {value} line efficiency vs {total} for the group" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p6_vis02' = Nexora.TwoRatio ( [Total Workforce Payroll (USD)], [Active Headcount], "Since {y0}, payroll grew {a} while headcount grew only {b}" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p6_vis03' = Nexora.RankTitle ( fact_workforce_monthly[department_name], [Total Workforce Payroll (USD)], "usd", 0, 1, "{name} absorbs {share} of payroll" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p7_vis01' = Nexora.RankTitle ( dim_company[company_name], [AQL Defect Rate %], "pct1", 0, 1, "{name} has the highest defect rate at {value} vs {total} for the group" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p7_vis02' = Nexora.RankTitle ( fact_shipment_line[delay_reason], [Late Shipped Quantity (PCS)], "cnt", 0, 1, "{name} causes {share} of late shipment volume" )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p7_vis03' = "Air freight carries " & FORMAT ( [Air Freight Revenue Share %], "0.0%" ) & " of revenue, the costly exception lane"
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p8_vis01' = "Direct material makes up " & FORMAT ( DIVIDE ( [Direct Material Cost (USD)], [Total Cost Ledger (USD)] ), "0%" ) & " of total cost, the biggest lever on margin"
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p8_vis02' = Nexora.TrendTitle ( [Carbon Footprint (kg CO2e/PC)], "Carbon per garment (kg CO2e)", "n3", "rose", "fell", 1 )
+		displayFolder: 90. Storytelling
+
+	measure 'Title | p8_vis03' = "Gross margin keeps " & FORMAT ( [Operational Gross Margin %], "0%" ) & " of revenue; direct material takes " & FORMAT ( DIVIDE ( [Direct Material Cost (USD)], [Shipped FOB Revenue (USD)] ), "0%" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p1_vis03' = Nexora.BarColor ( dim_company[company_name], [Operational Gross Margin %], 1, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p3_vis01' = Nexora.BarColor ( dim_buyer[buyer_name], [Shipped FOB Revenue (USD)], 0, 2, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p3_vis02' = Nexora.BarColor ( dim_product[product_category], [Shipped FOB Revenue (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p3_vis03' = Nexora.BarColor ( dim_buyer[market_classification], [Shipped FOB Revenue (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p4_vis01' = Nexora.BarColor ( dim_supplier[origin_country], [Total Procurement Value (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p4_vis02' = Nexora.BarColor ( dim_material[material_category], [BOM Material Wastage Rate %], 0, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p4_vis03' = Nexora.BarColor ( dim_supplier[domestic_import_classification], [Total Procurement Value (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p5_vis02' = Nexora.BarColor ( fact_inventory_snapshot_monthly[stock_type], [Closing Inventory Value (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p5_vis03' = Nexora.BarColor ( fact_inventory_snapshot_monthly[ageing_bucket], [Closing Inventory Value (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p6_vis01' = Nexora.BarColor ( dim_company[company_name], [Production Line Efficiency %], 1, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p6_vis03' = Nexora.BarColor ( fact_workforce_monthly[department_name], [Total Workforce Payroll (USD)], 0, 1, "#0B2C5F" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p7_vis01' = Nexora.BarColor ( dim_company[company_name], [AQL Defect Rate %], 0, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p7_vis02' = Nexora.BarColor ( fact_shipment_line[delay_reason], [Late Shipped Quantity (PCS)], 0, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	measure 'Color | p7_vis03' = Nexora.BarColor ( fact_shipment_line[shipping_mode], [Shipped FOB Revenue (USD)], 1, 1, "#B54708" )
+		displayFolder: 90. Storytelling
+
+	column Measure_Group
+		dataType: string
+		isHidden
+		lineageTag: 1c3e1632-9247-5e7b-9263-96ef752e8c78
+		summarizeBy: none
+		sourceColumn: Measure_Group
+
+	partition Executive_Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table({"Measure_Group"}, {{"Nexora RMG Executive Intelligence"}})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

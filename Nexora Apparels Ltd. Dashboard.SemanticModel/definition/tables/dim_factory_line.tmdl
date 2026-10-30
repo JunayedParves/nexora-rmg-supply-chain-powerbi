@@ -1,0 +1,105 @@
+table dim_factory_line
+	lineageTag: c02f2896-3db5-532a-803b-ffb40605eda0
+
+	column production_line_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 8d846bef-848f-550e-b716-b8cf8098ba9f
+		summarizeBy: none
+		sourceColumn: production_line_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ea5957e1-82c6-5daf-9873-52a10eb0b0bc
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 17d88ac2-6c95-5503-8ade-f7e9c7d0fed2
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column line_code
+		dataType: string
+		lineageTag: 89ec62c4-efa9-587b-b127-28d92dc8e3e9
+		summarizeBy: none
+		sourceColumn: line_code
+
+	column line_name
+		dataType: string
+		lineageTag: 965289d0-7e03-5ba8-970c-a704fbb4b34f
+		summarizeBy: none
+		sourceColumn: line_name
+
+	column line_specialization
+		dataType: string
+		lineageTag: 9c7d594a-997d-5b19-8fa4-4da1789276e6
+		summarizeBy: none
+		sourceColumn: line_specialization
+
+	column shift_pattern
+		dataType: string
+		lineageTag: b257d040-0b93-5218-b602-bd16dc047ab2
+		summarizeBy: none
+		sourceColumn: shift_pattern
+
+	column standard_daily_hours
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d2ad3b25-c3a1-5827-8962-3d282a744321
+		summarizeBy: none
+		sourceColumn: standard_daily_hours
+
+	column operators_per_line
+		dataType: int64
+		formatString: 0
+		lineageTag: df7d8952-59e6-517e-b2e3-df71db940aa9
+		summarizeBy: none
+		sourceColumn: operators_per_line
+
+	column helpers_per_line
+		dataType: int64
+		formatString: 0
+		lineageTag: 772bed8a-5ee1-5e2a-a8ab-e2f30daee427
+		summarizeBy: none
+		sourceColumn: helpers_per_line
+
+	column monthly_standard_capacity_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 80c3dd6b-2ef5-51e7-a367-9f977f2b5577
+		summarizeBy: none
+		sourceColumn: monthly_standard_capacity_pcs
+
+	column active_from_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: f75ad38d-9c1d-5779-93d9-dcefd78975ef
+		summarizeBy: none
+		sourceColumn: active_from_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column active_to_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 90feb207-3fcd-5d8e-a4a4-e8b545457656
+		summarizeBy: none
+		sourceColumn: active_to_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_factory_line = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_factory_line\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

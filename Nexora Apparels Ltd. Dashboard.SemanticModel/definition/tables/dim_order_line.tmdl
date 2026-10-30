@@ -1,0 +1,115 @@
+table dim_order_line
+	lineageTag: 980524c2-6201-55a4-bdd9-b830dc381c52
+
+	column order_line_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 00fb4aed-3890-5221-9bda-ba1736367b25
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+	column sales_order_id
+		dataType: string
+		lineageTag: 577f5527-dda9-527e-a2a8-b58f110499b7
+		summarizeBy: none
+		sourceColumn: sales_order_id
+
+	column order_line_code
+		dataType: string
+		lineageTag: 644cd1f8-ef0c-512d-bdf0-62c58dc76cb0
+		summarizeBy: none
+		sourceColumn: order_line_code
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 743d9f81-9486-5457-9c8d-98ad5106c182
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 99dbbdbc-55fb-5940-8b36-1eda67bffb21
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column buyer_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d913c62b-02c8-5695-a612-243c277e703d
+		summarizeBy: none
+		sourceColumn: buyer_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c0c14c3-e01c-541e-ba58-93c132583d13
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column order_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5d6aff38-8bcd-5049-8735-57b3211032bf
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column requested_delivery_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 69e0f008-195d-579c-b5bc-63bffd20e649
+		summarizeBy: none
+		sourceColumn: requested_delivery_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_status
+		dataType: string
+		lineageTag: d49205bb-258f-5f25-b798-bf7fe525c675
+		summarizeBy: none
+		sourceColumn: order_status
+
+	column incoterm
+		dataType: string
+		lineageTag: f2660150-20cb-59f2-81a7-55b665841273
+		summarizeBy: none
+		sourceColumn: incoterm
+
+	column destination_country
+		dataType: string
+		lineageTag: b0e14f6f-6c54-500c-a6ca-32de80a79a13
+		summarizeBy: none
+		sourceColumn: destination_country
+
+	column payment_terms
+		dataType: string
+		lineageTag: 1bb4c267-c2ff-5ff3-80c5-d783167136eb
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+	column knit_woven_classification
+		dataType: string
+		lineageTag: 9406b940-67ae-568f-983a-8ea8c60590a7
+		summarizeBy: none
+		sourceColumn: knit_woven_classification
+
+	column product_category
+		dataType: string
+		lineageTag: 2817c16a-a2ce-5118-895d-e053700e0dcd
+		summarizeBy: none
+		sourceColumn: product_category
+
+	partition dim_order_line = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_order_line\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

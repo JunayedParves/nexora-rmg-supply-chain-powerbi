@@ -1,0 +1,162 @@
+[
+  {
+    "name": "inventory_snapshot_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "snapshot_month_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "item_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "stock_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "uom",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "opening_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "receipts_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "production_additions_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "consumption_issues_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "shipment_issues_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "adjustment_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "closing_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "reserved_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "safety_stock_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_below_safety_stock",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_stockout_incident",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "average_ageing_days",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ageing_bucket",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_valuation_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inventory_value_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inventory_value_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

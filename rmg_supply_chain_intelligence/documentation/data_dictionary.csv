@@ -1,0 +1,486 @@
+table_name,table_category,column_name,parquet_logical_type,bigquery_data_type,is_primary_key,is_foreign_key,is_nullable,unit_of_measure,business_definition
+dim_date,dimension,date_key,int64,INT64,True,False,False,Dimension / Attribute,Date Key in dim_date (dimension table).
+dim_date,dimension,full_date,date32[day],DATE,False,False,True,Dimension / Attribute,Full Date in dim_date (dimension table).
+dim_date,dimension,day_of_month,int64,INT64,False,False,True,Dimension / Attribute,Day Of Month in dim_date (dimension table).
+dim_date,dimension,day_of_year,int64,INT64,False,False,True,Dimension / Attribute,Day Of Year in dim_date (dimension table).
+dim_date,dimension,iso_weekday,int64,INT64,False,False,True,Dimension / Attribute,Iso Weekday in dim_date (dimension table).
+dim_date,dimension,weekday_name,string,STRING,False,False,True,Dimension / Attribute,Weekday Name in dim_date (dimension table).
+dim_date,dimension,iso_week_of_year,int64,INT64,False,False,True,Dimension / Attribute,Iso Week Of Year in dim_date (dimension table).
+dim_date,dimension,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in dim_date (dimension table).
+dim_date,dimension,month_name,string,STRING,False,False,True,Dimension / Attribute,Month Name in dim_date (dimension table).
+dim_date,dimension,month_short,string,STRING,False,False,True,Dimension / Attribute,Month Short in dim_date (dimension table).
+dim_date,dimension,year_month,string,STRING,False,False,True,Dimension / Attribute,Year Month in dim_date (dimension table).
+dim_date,dimension,calendar_quarter,int64,INT64,False,False,True,Dimension / Attribute,Calendar Quarter in dim_date (dimension table).
+dim_date,dimension,calendar_quarter_label,string,STRING,False,False,True,Dimension / Attribute,Calendar Quarter Label in dim_date (dimension table).
+dim_date,dimension,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in dim_date (dimension table).
+dim_date,dimension,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in dim_date (dimension table).
+dim_date,dimension,fiscal_year_numeric,int64,INT64,False,False,True,Dimension / Attribute,Fiscal Year Numeric in dim_date (dimension table).
+dim_date,dimension,fiscal_quarter,int64,INT64,False,False,True,Dimension / Attribute,Fiscal Quarter in dim_date (dimension table).
+dim_date,dimension,fiscal_quarter_label,string,STRING,False,False,True,Dimension / Attribute,Fiscal Quarter Label in dim_date (dimension table).
+dim_date,dimension,fiscal_month,int64,INT64,False,False,True,Dimension / Attribute,Fiscal Month in dim_date (dimension table).
+dim_date,dimension,is_leap_year,bool,BOOL,False,False,True,Dimension / Attribute,Is Leap Year in dim_date (dimension table).
+dim_date,dimension,is_weekend,bool,BOOL,False,False,True,Dimension / Attribute,Is Weekend in dim_date (dimension table).
+dim_date,dimension,is_month_start,bool,BOOL,False,False,True,Dimension / Attribute,Is Month Start in dim_date (dimension table).
+dim_date,dimension,is_month_end,bool,BOOL,False,False,True,Dimension / Attribute,Is Month End in dim_date (dimension table).
+dim_date,dimension,is_public_holiday,bool,BOOL,False,False,True,Dimension / Attribute,Is Public Holiday in dim_date (dimension table).
+dim_date,dimension,holiday_name,string,STRING,False,False,True,Dimension / Attribute,Holiday Name in dim_date (dimension table).
+dim_date,dimension,is_ramadan_period,bool,BOOL,False,False,True,Dimension / Attribute,Is Ramadan Period in dim_date (dimension table).
+dim_date,dimension,is_eid_festival_window,bool,BOOL,False,False,True,Dimension / Attribute,Is Eid Festival Window in dim_date (dimension table).
+dim_date,dimension,is_working_day,bool,BOOL,False,False,True,Dimension / Attribute,Is Working Day in dim_date (dimension table).
+dim_date,dimension,apparel_buying_season,string,STRING,False,False,True,Dimension / Attribute,Apparel Buying Season in dim_date (dimension table).
+dim_date,dimension,bangladesh_climate_season,string,STRING,False,False,True,Dimension / Attribute,Bangladesh Climate Season in dim_date (dimension table).
+dim_company,dimension,company_key,int64,INT64,True,False,False,Dimension / Attribute,Company Key in dim_company (dimension table).
+dim_company,dimension,company_code,string,STRING,False,False,True,Dimension / Attribute,Company Code in dim_company (dimension table).
+dim_company,dimension,company_name,string,STRING,False,False,True,Dimension / Attribute,Company Name in dim_company (dimension table).
+dim_company,dimension,operating_archetype,string,STRING,False,False,True,Dimension / Attribute,Operating Archetype in dim_company (dimension table).
+dim_company,dimension,year_established,int64,INT64,False,False,True,Dimension / Attribute,Year Established in dim_company (dimension table).
+dim_company,dimension,primary_product_specialization,string,STRING,False,False,True,Dimension / Attribute,Primary Product Specialization in dim_company (dimension table).
+dim_company,dimension,business_model,string,STRING,False,False,True,Dimension / Attribute,Business Model in dim_company (dimension table).
+dim_company,dimension,trade_association,string,STRING,False,False,True,Dimension / Attribute,Trade Association in dim_company (dimension table).
+dim_company,dimension,headquarters_city,string,STRING,False,False,True,Dimension / Attribute,Headquarters City in dim_company (dimension table).
+dim_company,dimension,backward_linkage_level,string,STRING,False,False,True,Dimension / Attribute,Backward Linkage Level in dim_company (dimension table).
+dim_company,dimension,active_from_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active From Date in dim_company (dimension table).
+dim_company,dimension,active_to_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active To Date in dim_company (dimension table).
+dim_company,dimension,is_currently_active,bool,BOOL,False,False,True,Dimension / Attribute,Is Currently Active in dim_company (dimension table).
+dim_company,dimension,base_market_share_weight,double,FLOAT64,False,False,True,Dimension / Attribute,Base Market Share Weight in dim_company (dimension table).
+dim_factory,dimension,factory_key,int64,INT64,True,False,False,Dimension / Attribute,Factory Key in dim_factory (dimension table).
+dim_factory,dimension,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in dim_factory (dimension table).
+dim_factory,dimension,factory_code,string,STRING,False,False,True,Dimension / Attribute,Factory Code in dim_factory (dimension table).
+dim_factory,dimension,factory_name,string,STRING,False,False,True,Dimension / Attribute,Factory Name in dim_factory (dimension table).
+dim_factory,dimension,location_city,string,STRING,False,False,True,Dimension / Attribute,Location City in dim_factory (dimension table).
+dim_factory,dimension,industrial_zone,string,STRING,False,False,True,Dimension / Attribute,Industrial Zone in dim_factory (dimension table).
+dim_factory,dimension,product_specialization,string,STRING,False,False,True,Dimension / Attribute,Product Specialization in dim_factory (dimension table).
+dim_factory,dimension,production_technology,string,STRING,False,False,True,Dimension / Attribute,Production Technology in dim_factory (dimension table).
+dim_factory,dimension,design_line_count,int64,INT64,False,False,True,Dimension / Attribute,Design Line Count in dim_factory (dimension table).
+dim_factory,dimension,base_monthly_capacity_pcs,int64,INT64,False,False,True,PCS / Count,Base Monthly Capacity Pcs in dim_factory (dimension table).
+dim_factory,dimension,opening_date,date32[day],DATE,False,False,True,Dimension / Attribute,Opening Date in dim_factory (dimension table).
+dim_factory,dimension,closure_date,date32[day],DATE,False,False,True,Dimension / Attribute,Closure Date in dim_factory (dimension table).
+dim_factory,dimension,is_closed,bool,BOOL,False,False,True,Dimension / Attribute,Is Closed in dim_factory (dimension table).
+dim_factory,dimension,compliance_profile,string,STRING,False,False,True,Dimension / Attribute,Compliance Profile in dim_factory (dimension table).
+dim_factory,dimension,base_efficiency_factor,double,FLOAT64,False,False,True,Dimension / Attribute,Base Efficiency Factor in dim_factory (dimension table).
+dim_factory,dimension,unit_cost_multiplier,"decimal128(18, 3)",NUMERIC,False,False,True,Dimension / Attribute,Unit Cost Multiplier in dim_factory (dimension table).
+dim_factory_line,dimension,production_line_key,int64,INT64,True,False,False,Dimension / Attribute,Production Line Key in dim_factory_line (dimension table).
+dim_factory_line,dimension,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in dim_factory_line (dimension table).
+dim_factory_line,dimension,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in dim_factory_line (dimension table).
+dim_factory_line,dimension,line_code,string,STRING,False,False,True,Dimension / Attribute,Line Code in dim_factory_line (dimension table).
+dim_factory_line,dimension,line_name,string,STRING,False,False,True,Dimension / Attribute,Line Name in dim_factory_line (dimension table).
+dim_factory_line,dimension,line_specialization,string,STRING,False,False,True,Dimension / Attribute,Line Specialization in dim_factory_line (dimension table).
+dim_factory_line,dimension,shift_pattern,string,STRING,False,False,True,Dimension / Attribute,Shift Pattern in dim_factory_line (dimension table).
+dim_factory_line,dimension,standard_daily_hours,double,FLOAT64,False,False,True,Hours,Standard Daily Hours in dim_factory_line (dimension table).
+dim_factory_line,dimension,operators_per_line,int64,INT64,False,False,True,Dimension / Attribute,Operators Per Line in dim_factory_line (dimension table).
+dim_factory_line,dimension,helpers_per_line,int64,INT64,False,False,True,Dimension / Attribute,Helpers Per Line in dim_factory_line (dimension table).
+dim_factory_line,dimension,monthly_standard_capacity_pcs,int64,INT64,False,False,True,PCS / Count,Monthly Standard Capacity Pcs in dim_factory_line (dimension table).
+dim_factory_line,dimension,active_from_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active From Date in dim_factory_line (dimension table).
+dim_factory_line,dimension,active_to_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active To Date in dim_factory_line (dimension table).
+dim_buyer,dimension,buyer_key,int64,INT64,True,False,False,Dimension / Attribute,Buyer Key in dim_buyer (dimension table).
+dim_buyer,dimension,buyer_code,string,STRING,False,False,True,Dimension / Attribute,Buyer Code in dim_buyer (dimension table).
+dim_buyer,dimension,buyer_name,string,STRING,False,False,True,Dimension / Attribute,Buyer Name in dim_buyer (dimension table).
+dim_buyer,dimension,customer_segment,string,STRING,False,False,True,Dimension / Attribute,Customer Segment in dim_buyer (dimension table).
+dim_buyer,dimension,destination_country,string,STRING,False,False,True,Dimension / Attribute,Destination Country in dim_buyer (dimension table).
+dim_buyer,dimension,market_region,string,STRING,False,False,True,Dimension / Attribute,Market Region in dim_buyer (dimension table).
+dim_buyer,dimension,market_classification,string,STRING,False,False,True,Dimension / Attribute,Market Classification in dim_buyer (dimension table).
+dim_buyer,dimension,product_preference,string,STRING,False,False,True,Dimension / Attribute,Product Preference in dim_buyer (dimension table).
+dim_buyer,dimension,order_size_tier,string,STRING,False,False,True,Dimension / Attribute,Order Size Tier in dim_buyer (dimension table).
+dim_buyer,dimension,payment_terms,string,STRING,False,False,True,Dimension / Attribute,Payment Terms in dim_buyer (dimension table).
+dim_buyer,dimension,quality_tolerance_aql,double,FLOAT64,False,False,True,Dimension / Attribute,Quality Tolerance Aql in dim_buyer (dimension table).
+dim_buyer,dimension,compliance_strictness,string,STRING,False,False,True,Dimension / Attribute,Compliance Strictness in dim_buyer (dimension table).
+dim_buyer,dimension,relationship_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Relationship Start Date in dim_buyer (dimension table).
+dim_buyer,dimension,relationship_end_date,date32[day],DATE,False,False,True,Dimension / Attribute,Relationship End Date in dim_buyer (dimension table).
+dim_buyer,dimension,demand_share_weight,double,FLOAT64,False,False,True,Dimension / Attribute,Demand Share Weight in dim_buyer (dimension table).
+dim_material,dimension,material_key,int64,INT64,True,False,False,Dimension / Attribute,Material Key in dim_material (dimension table).
+dim_material,dimension,material_code,string,STRING,False,False,True,Dimension / Attribute,Material Code in dim_material (dimension table).
+dim_material,dimension,material_name,string,STRING,False,False,True,Dimension / Attribute,Material Name in dim_material (dimension table).
+dim_material,dimension,material_category,string,STRING,False,False,True,Dimension / Attribute,Material Category in dim_material (dimension table).
+dim_material,dimension,material_group,string,STRING,False,False,True,Dimension / Attribute,Material Group in dim_material (dimension table).
+dim_material,dimension,base_uom,string,STRING,False,False,True,Dimension / Attribute,Base Uom in dim_material (dimension table).
+dim_material,dimension,sourcing_profile,string,STRING,False,False,True,Dimension / Attribute,Sourcing Profile in dim_material (dimension table).
+dim_material,dimension,sourcing_classification,string,STRING,False,False,True,Dimension / Attribute,Sourcing Classification in dim_material (dimension table).
+dim_material,dimension,is_primarily_imported,bool,BOOL,False,False,True,Dimension / Attribute,Is Primarily Imported in dim_material (dimension table).
+dim_material,dimension,standard_lead_time_days,int64,INT64,False,False,True,Days,Standard Lead Time Days in dim_material (dimension table).
+dim_material,dimension,base_unit_cost_usd_2015,"decimal128(18, 3)",NUMERIC,False,False,True,Dimension / Attribute,Base Unit Cost Usd 2015 in dim_material (dimension table).
+dim_material,dimension,storage_characteristics,string,STRING,False,False,True,Dimension / Attribute,Storage Characteristics in dim_material (dimension table).
+dim_material,dimension,is_critical_path_material,bool,BOOL,False,False,True,Dimension / Attribute,Is Critical Path Material in dim_material (dimension table).
+dim_supplier,dimension,supplier_key,int64,INT64,True,False,False,Dimension / Attribute,Supplier Key in dim_supplier (dimension table).
+dim_supplier,dimension,supplier_code,string,STRING,False,False,True,Dimension / Attribute,Supplier Code in dim_supplier (dimension table).
+dim_supplier,dimension,supplier_name,string,STRING,False,False,True,Dimension / Attribute,Supplier Name in dim_supplier (dimension table).
+dim_supplier,dimension,supplier_type,string,STRING,False,False,True,Dimension / Attribute,Supplier Type in dim_supplier (dimension table).
+dim_supplier,dimension,origin_country,string,STRING,False,False,True,Dimension / Attribute,Origin Country in dim_supplier (dimension table).
+dim_supplier,dimension,domestic_import_classification,string,STRING,False,False,True,Dimension / Attribute,Domestic Import Classification in dim_supplier (dimension table).
+dim_supplier,dimension,major_materials_supplied,string,STRING,False,False,True,Dimension / Attribute,Major Materials Supplied in dim_supplier (dimension table).
+dim_supplier,dimension,average_lead_time_days,int64,INT64,False,False,True,Days,Average Lead Time Days in dim_supplier (dimension table).
+dim_supplier,dimension,lead_time_variability_days,double,FLOAT64,False,False,True,Days,Lead Time Variability Days in dim_supplier (dimension table).
+dim_supplier,dimension,payment_terms,string,STRING,False,False,True,Dimension / Attribute,Payment Terms in dim_supplier (dimension table).
+dim_supplier,dimension,baseline_reliability_score,double,FLOAT64,False,False,True,Dimension / Attribute,Baseline Reliability Score in dim_supplier (dimension table).
+dim_supplier,dimension,minimum_order_value_usd,int64,INT64,False,False,True,USD,Minimum Order Value Usd in dim_supplier (dimension table).
+dim_supplier,dimension,active_from_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active From Date in dim_supplier (dimension table).
+dim_supplier,dimension,active_to_date,date32[day],DATE,False,False,True,Dimension / Attribute,Active To Date in dim_supplier (dimension table).
+dim_supplier,dimension,is_currently_active,bool,BOOL,False,False,True,Dimension / Attribute,Is Currently Active in dim_supplier (dimension table).
+dim_supplier,dimension,spend_share_weight,double,FLOAT64,False,False,True,Dimension / Attribute,Spend Share Weight in dim_supplier (dimension table).
+dim_product,dimension,product_key,int64,INT64,True,False,False,Dimension / Attribute,Product Key in dim_product (dimension table).
+dim_product,dimension,product_code,string,STRING,False,False,True,Dimension / Attribute,Product Code in dim_product (dimension table).
+dim_product,dimension,style_name,string,STRING,False,False,True,Dimension / Attribute,Style Name in dim_product (dimension table).
+dim_product,dimension,product_category,string,STRING,False,False,True,Dimension / Attribute,Product Category in dim_product (dimension table).
+dim_product,dimension,knit_woven_classification,string,STRING,False,False,True,Dimension / Attribute,Knit Woven Classification in dim_product (dimension table).
+dim_product,dimension,garment_type,string,STRING,False,False,True,Dimension / Attribute,Garment Type in dim_product (dimension table).
+dim_product,dimension,fabric_type,string,STRING,False,False,True,Dimension / Attribute,Fabric Type in dim_product (dimension table).
+dim_product,dimension,fiber_composition,string,STRING,False,False,True,Dimension / Attribute,Fiber Composition in dim_product (dimension table).
+dim_product,dimension,target_market_segment,string,STRING,False,False,True,Dimension / Attribute,Target Market Segment in dim_product (dimension table).
+dim_product,dimension,value_tier,string,STRING,False,False,True,Dimension / Attribute,Value Tier in dim_product (dimension table).
+dim_product,dimension,manufacturing_complexity,string,STRING,False,False,True,Dimension / Attribute,Manufacturing Complexity in dim_product (dimension table).
+dim_product,dimension,standard_minute_value_smv,double,FLOAT64,False,False,True,Dimension / Attribute,Standard Minute Value Smv in dim_product (dimension table).
+dim_product,dimension,primary_material_key,int64,INT64,False,True,False,Dimension / Attribute,Primary Material Key in dim_product (dimension table).
+dim_product,dimension,primary_material_consumption_per_unit,double,FLOAT64,False,False,True,Dimension / Attribute,Primary Material Consumption Per Unit in dim_product (dimension table).
+dim_product,dimension,primary_material_uom,string,STRING,False,False,True,Dimension / Attribute,Primary Material Uom in dim_product (dimension table).
+dim_product,dimension,base_fob_unit_price_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Base Fob Unit Price Usd in dim_product (dimension table).
+dim_product,dimension,seasonality_profile,string,STRING,False,False,True,Dimension / Attribute,Seasonality Profile in dim_product (dimension table).
+dim_product,dimension,introduction_date,date32[day],DATE,False,False,True,Dimension / Attribute,Introduction Date in dim_product (dimension table).
+dim_product,dimension,discontinuation_date,date32[day],DATE,False,False,True,Dimension / Attribute,Discontinuation Date in dim_product (dimension table).
+dim_product,dimension,is_active_style,bool,BOOL,False,False,True,Dimension / Attribute,Is Active Style in dim_product (dimension table).
+dim_cost_category,dimension,cost_category_key,int64,INT64,True,False,False,Dimension / Attribute,Cost Category Key in dim_cost_category (dimension table).
+dim_cost_category,dimension,cost_category_code,string,STRING,False,False,True,Dimension / Attribute,Cost Category Code in dim_cost_category (dimension table).
+dim_cost_category,dimension,cost_category_name,string,STRING,False,False,True,Dimension / Attribute,Cost Category Name in dim_cost_category (dimension table).
+dim_cost_category,dimension,cost_group,string,STRING,False,False,True,Dimension / Attribute,Cost Group in dim_cost_category (dimension table).
+dim_cost_category,dimension,cost_behavior,string,STRING,False,False,True,Dimension / Attribute,Cost Behavior in dim_cost_category (dimension table).
+dim_cost_category,dimension,allocation_basis,string,STRING,False,False,True,Dimension / Attribute,Allocation Basis in dim_cost_category (dimension table).
+dim_cost_category,dimension,income_statement_classification,string,STRING,False,False,True,Dimension / Attribute,Income Statement Classification in dim_cost_category (dimension table).
+dim_cost_category,dimension,is_direct_production_cost,bool,BOOL,False,False,True,Dimension / Attribute,Is Direct Production Cost in dim_cost_category (dimension table).
+dim_order_line,dimension,order_line_key,int64,INT64,True,False,False,Dimension / Attribute,Order Line Key in dim_order_line (dimension table).
+dim_order_line,dimension,sales_order_id,string,STRING,False,False,True,Dimension / Attribute,Sales Order Id in dim_order_line (dimension table).
+dim_order_line,dimension,order_line_code,string,STRING,False,False,True,Dimension / Attribute,Order Line Code in dim_order_line (dimension table).
+dim_order_line,dimension,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in dim_order_line (dimension table).
+dim_order_line,dimension,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in dim_order_line (dimension table).
+dim_order_line,dimension,buyer_key,int64,INT64,False,True,False,Dimension / Attribute,Buyer Key in dim_order_line (dimension table).
+dim_order_line,dimension,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in dim_order_line (dimension table).
+dim_order_line,dimension,order_date,date32[day],DATE,False,False,True,Dimension / Attribute,Order Date in dim_order_line (dimension table).
+dim_order_line,dimension,requested_delivery_date,date32[day],DATE,False,False,True,Dimension / Attribute,Requested Delivery Date in dim_order_line (dimension table).
+dim_order_line,dimension,order_status,string,STRING,False,False,True,Dimension / Attribute,Order Status in dim_order_line (dimension table).
+dim_order_line,dimension,incoterm,string,STRING,False,False,True,Dimension / Attribute,Incoterm in dim_order_line (dimension table).
+dim_order_line,dimension,destination_country,string,STRING,False,False,True,Dimension / Attribute,Destination Country in dim_order_line (dimension table).
+dim_order_line,dimension,payment_terms,string,STRING,False,False,True,Dimension / Attribute,Payment Terms in dim_order_line (dimension table).
+dim_order_line,dimension,knit_woven_classification,string,STRING,False,False,True,Dimension / Attribute,Knit Woven Classification in dim_order_line (dimension table).
+dim_order_line,dimension,product_category,string,STRING,False,False,True,Dimension / Attribute,Product Category in dim_order_line (dimension table).
+fact_sales_order_line,fact,order_line_key,int64,INT64,True,False,False,Dimension / Attribute,Order Line Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,sales_order_id,string,STRING,False,False,True,Dimension / Attribute,Sales Order Id in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,order_line_number,int64,INT64,False,False,True,Dimension / Attribute,Order Line Number in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,calendar_quarter,int64,INT64,False,False,True,Dimension / Attribute,Calendar Quarter in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,fiscal_month,int64,INT64,False,False,True,Dimension / Attribute,Fiscal Month in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,buyer_key,int64,INT64,False,True,False,Dimension / Attribute,Buyer Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,ordered_qty_pcs,int64,INT64,False,False,True,PCS / Count,Ordered Qty Pcs in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,amended_order_qty_pcs,int64,INT64,False,False,True,PCS / Count,Amended Order Qty Pcs in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,unit_price_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Unit Price Usd in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,gross_order_value_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Gross Order Value Usd in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,discount_rate,double,FLOAT64,False,False,True,Percentage (%),Discount Rate in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,discount_amount_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Discount Amount Usd in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,net_order_value_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Net Order Value Usd in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,net_order_value_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Net Order Value Bdt in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,order_status,string,STRING,False,False,True,Dimension / Attribute,Order Status in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,is_cancelled,bool,BOOL,False,False,True,Dimension / Attribute,Is Cancelled in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,is_amended,bool,BOOL,False,False,True,Dimension / Attribute,Is Amended in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,is_partial_fulfilment,bool,BOOL,False,False,True,Dimension / Attribute,Is Partial Fulfilment in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,order_date,date32[day],DATE,False,False,True,Dimension / Attribute,Order Date in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,order_date_key,int64,INT64,False,True,False,Dimension / Attribute,Order Date Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,requested_delivery_date,date32[day],DATE,False,False,True,Dimension / Attribute,Requested Delivery Date in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,requested_delivery_date_key,int64,INT64,False,True,False,Dimension / Attribute,Requested Delivery Date Key in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,incoterm,string,STRING,False,False,True,Dimension / Attribute,Incoterm in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,shipped_qty_pcs,int64,INT64,False,False,True,PCS / Count,Shipped Qty Pcs in fact_sales_order_line (fact table).
+fact_sales_order_line,fact,unfulfilled_backlog_qty_pcs,int64,INT64,False,False,True,PCS / Count,Unfulfilled Backlog Qty Pcs in fact_sales_order_line (fact table).
+fact_purchase_order_line,fact,purchase_order_line_key,int64,INT64,True,False,False,Dimension / Attribute,Purchase Order Line Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,purchase_order_id,string,STRING,False,False,True,Dimension / Attribute,Purchase Order Id in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,po_line_number,int64,INT64,False,False,True,Dimension / Attribute,Po Line Number in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,supplier_key,int64,INT64,False,True,False,Dimension / Attribute,Supplier Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,receiving_factory_key,int64,INT64,False,True,False,Dimension / Attribute,Receiving Factory Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,material_key,int64,INT64,False,True,False,Dimension / Attribute,Material Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,po_order_date_key,int64,INT64,False,True,False,Dimension / Attribute,Po Order Date Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,po_order_date,date32[day],DATE,False,False,True,Dimension / Attribute,Po Order Date in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,expected_delivery_date_key,int64,INT64,False,True,False,Dimension / Attribute,Expected Delivery Date Key in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,expected_delivery_date,date32[day],DATE,False,False,True,Dimension / Attribute,Expected Delivery Date in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,ordered_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Ordered Qty in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,unit_cost_usd,"decimal128(18, 3)",NUMERIC,False,False,True,USD,Unit Cost Usd in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,order_value_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Order Value Usd in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,order_value_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Order Value Bdt in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,purchase_status,string,STRING,False,False,True,Dimension / Attribute,Purchase Status in fact_purchase_order_line (fact table).
+fact_purchase_order_line,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_purchase_order_line (fact table).
+fact_supplier_delivery,fact,delivery_key,int64,INT64,True,False,False,Dimension / Attribute,Delivery Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,delivery_id,string,STRING,False,False,True,Dimension / Attribute,Delivery Id in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,purchase_order_line_key,int64,INT64,False,True,False,Dimension / Attribute,Purchase Order Line Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,purchase_order_id,string,STRING,False,False,True,Dimension / Attribute,Purchase Order Id in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,supplier_key,int64,INT64,False,True,False,Dimension / Attribute,Supplier Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,receiving_factory_key,int64,INT64,False,True,False,Dimension / Attribute,Receiving Factory Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,material_key,int64,INT64,False,True,False,Dimension / Attribute,Material Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,dispatch_date_key,int64,INT64,False,True,False,Dimension / Attribute,Dispatch Date Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,dispatch_date,date32[day],DATE,False,False,True,Dimension / Attribute,Dispatch Date in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,receipt_date_key,int64,INT64,False,True,False,Dimension / Attribute,Receipt Date Key in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,receipt_date,date32[day],DATE,False,False,True,Dimension / Attribute,Receipt Date in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,received_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Received Qty in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,accepted_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Accepted Qty in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,rejected_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Rejected Qty in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,delivery_delay_days,int64,INT64,False,False,True,Days,Delivery Delay Days in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,is_on_time_delivery,bool,BOOL,False,False,True,Dimension / Attribute,Is On Time Delivery in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,unit_cost_usd,"decimal128(18, 3)",NUMERIC,False,False,True,USD,Unit Cost Usd in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,documented_material_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Documented Material Cost Usd in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,documented_material_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Documented Material Cost Bdt in fact_supplier_delivery (fact table).
+fact_supplier_delivery,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_supplier_delivery (fact table).
+fact_production_batch,fact,production_batch_key,int64,INT64,True,False,False,Dimension / Attribute,Production Batch Key in fact_production_batch (fact table).
+fact_production_batch,fact,batch_id,string,STRING,False,False,True,Dimension / Attribute,Batch Id in fact_production_batch (fact table).
+fact_production_batch,fact,order_line_key,int64,INT64,False,True,False,Dimension / Attribute,Order Line Key in fact_production_batch (fact table).
+fact_production_batch,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_production_batch (fact table).
+fact_production_batch,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_production_batch (fact table).
+fact_production_batch,fact,production_line_key,int64,INT64,False,True,False,Dimension / Attribute,Production Line Key in fact_production_batch (fact table).
+fact_production_batch,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_production_batch (fact table).
+fact_production_batch,fact,planned_start_date_key,int64,INT64,False,True,False,Dimension / Attribute,Planned Start Date Key in fact_production_batch (fact table).
+fact_production_batch,fact,planned_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Planned Start Date in fact_production_batch (fact table).
+fact_production_batch,fact,actual_start_date_key,int64,INT64,False,True,False,Dimension / Attribute,Actual Start Date Key in fact_production_batch (fact table).
+fact_production_batch,fact,actual_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Actual Start Date in fact_production_batch (fact table).
+fact_production_batch,fact,planned_completion_date_key,int64,INT64,False,True,False,Dimension / Attribute,Planned Completion Date Key in fact_production_batch (fact table).
+fact_production_batch,fact,planned_completion_date,date32[day],DATE,False,False,True,Dimension / Attribute,Planned Completion Date in fact_production_batch (fact table).
+fact_production_batch,fact,actual_completion_date_key,int64,INT64,False,True,False,Dimension / Attribute,Actual Completion Date Key in fact_production_batch (fact table).
+fact_production_batch,fact,actual_completion_date,date32[day],DATE,False,False,True,Dimension / Attribute,Actual Completion Date in fact_production_batch (fact table).
+fact_production_batch,fact,planned_qty_pcs,int64,INT64,False,False,True,PCS / Count,Planned Qty Pcs in fact_production_batch (fact table).
+fact_production_batch,fact,gross_produced_qty_pcs,int64,INT64,False,False,True,PCS / Count,Gross Produced Qty Pcs in fact_production_batch (fact table).
+fact_production_batch,fact,actual_good_output_pcs,int64,INT64,False,False,True,PCS / Count,Actual Good Output Pcs in fact_production_batch (fact table).
+fact_production_batch,fact,rework_qty_pcs,int64,INT64,False,False,True,PCS / Count,Rework Qty Pcs in fact_production_batch (fact table).
+fact_production_batch,fact,rejected_scrap_qty_pcs,int64,INT64,False,False,True,PCS / Count,Rejected Scrap Qty Pcs in fact_production_batch (fact table).
+fact_production_batch,fact,standard_minute_value_smv,double,FLOAT64,False,False,True,Dimension / Attribute,Standard Minute Value Smv in fact_production_batch (fact table).
+fact_production_batch,fact,earned_standard_minutes,double,FLOAT64,False,False,True,Dimension / Attribute,Earned Standard Minutes in fact_production_batch (fact table).
+fact_production_batch,fact,actual_production_line_hours,double,FLOAT64,False,False,True,Hours,Actual Production Line Hours in fact_production_batch (fact table).
+fact_production_batch,fact,actual_labour_hours,double,FLOAT64,False,False,True,Hours,Actual Labour Hours in fact_production_batch (fact table).
+fact_production_batch,fact,machine_downtime_hours,double,FLOAT64,False,False,True,Hours,Machine Downtime Hours in fact_production_batch (fact table).
+fact_production_batch,fact,line_efficiency_pct,double,FLOAT64,False,False,True,Percentage (%),Line Efficiency Pct in fact_production_batch (fact table).
+fact_production_batch,fact,schedule_delay_days,int64,INT64,False,False,True,Days,Schedule Delay Days in fact_production_batch (fact table).
+fact_production_batch,fact,production_status,string,STRING,False,False,True,Dimension / Attribute,Production Status in fact_production_batch (fact table).
+fact_production_batch,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_production_batch (fact table).
+fact_material_consumption,fact,consumption_key,int64,INT64,True,False,False,Dimension / Attribute,Consumption Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,production_batch_key,int64,INT64,False,True,False,Dimension / Attribute,Production Batch Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,batch_id,string,STRING,False,False,True,Dimension / Attribute,Batch Id in fact_material_consumption (fact table).
+fact_material_consumption,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,material_key,int64,INT64,False,True,False,Dimension / Attribute,Material Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,consumption_date_key,int64,INT64,False,True,False,Dimension / Attribute,Consumption Date Key in fact_material_consumption (fact table).
+fact_material_consumption,fact,consumption_date,date32[day],DATE,False,False,True,Dimension / Attribute,Consumption Date in fact_material_consumption (fact table).
+fact_material_consumption,fact,planned_material_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Planned Material Qty in fact_material_consumption (fact table).
+fact_material_consumption,fact,actual_material_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Actual Material Qty in fact_material_consumption (fact table).
+fact_material_consumption,fact,wastage_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Wastage Qty in fact_material_consumption (fact table).
+fact_material_consumption,fact,wastage_rate_pct,double,FLOAT64,False,False,True,Percentage (%),Wastage Rate Pct in fact_material_consumption (fact table).
+fact_material_consumption,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_material_consumption (fact table).
+fact_material_consumption,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_material_consumption (fact table).
+fact_material_consumption,fact,unit_cost_usd,"decimal128(18, 3)",NUMERIC,False,False,True,USD,Unit Cost Usd in fact_material_consumption (fact table).
+fact_material_consumption,fact,total_material_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Total Material Cost Usd in fact_material_consumption (fact table).
+fact_material_consumption,fact,total_material_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Total Material Cost Bdt in fact_material_consumption (fact table).
+fact_material_consumption,fact,wastage_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Wastage Cost Usd in fact_material_consumption (fact table).
+fact_material_consumption,fact,wastage_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Wastage Cost Bdt in fact_material_consumption (fact table).
+fact_material_consumption,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_material_consumption (fact table).
+fact_quality_inspection,fact,inspection_key,int64,INT64,True,False,False,Dimension / Attribute,Inspection Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspection_id,string,STRING,False,False,True,Dimension / Attribute,Inspection Id in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,production_batch_key,int64,INT64,False,True,False,Dimension / Attribute,Production Batch Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,batch_id,string,STRING,False,False,True,Dimension / Attribute,Batch Id in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,order_line_key,int64,INT64,False,True,False,Dimension / Attribute,Order Line Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,production_line_key,int64,INT64,False,True,False,Dimension / Attribute,Production Line Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspection_date_key,int64,INT64,False,True,False,Dimension / Attribute,Inspection Date Key in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspection_date,date32[day],DATE,False,False,True,Dimension / Attribute,Inspection Date in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspection_stage,string,STRING,False,False,True,Dimension / Attribute,Inspection Stage in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspected_qty_pcs,int64,INT64,False,False,True,PCS / Count,Inspected Qty Pcs in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,defective_qty_pcs,int64,INT64,False,False,True,PCS / Count,Defective Qty Pcs in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,rework_qty_pcs,int64,INT64,False,False,True,PCS / Count,Rework Qty Pcs in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,rejected_qty_pcs,int64,INT64,False,False,True,PCS / Count,Rejected Qty Pcs in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,accepted_qty_pcs,int64,INT64,False,False,True,PCS / Count,Accepted Qty Pcs in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,defect_rate_pct,double,FLOAT64,False,False,True,Percentage (%),Defect Rate Pct in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,first_pass_yield_pct,double,FLOAT64,False,False,True,Percentage (%),First Pass Yield Pct in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,primary_defect_category,string,STRING,False,False,True,Dimension / Attribute,Primary Defect Category in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,aql_standard_threshold,double,FLOAT64,False,False,True,Dimension / Attribute,Aql Standard Threshold in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,passed_first_inspection,bool,BOOL,False,False,True,Dimension / Attribute,Passed First Inspection in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,inspection_status,string,STRING,False,False,True,Dimension / Attribute,Inspection Status in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,estimated_quality_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Estimated Quality Cost Usd in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,estimated_quality_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Estimated Quality Cost Bdt in fact_quality_inspection (fact table).
+fact_quality_inspection,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_quality_inspection (fact table).
+fact_shipment_line,fact,shipment_line_key,int64,INT64,True,False,False,Dimension / Attribute,Shipment Line Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,shipment_id,string,STRING,False,False,True,Dimension / Attribute,Shipment Id in fact_shipment_line (fact table).
+fact_shipment_line,fact,order_line_key,int64,INT64,False,True,False,Dimension / Attribute,Order Line Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,sales_order_id,string,STRING,False,False,True,Dimension / Attribute,Sales Order Id in fact_shipment_line (fact table).
+fact_shipment_line,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,buyer_key,int64,INT64,False,True,False,Dimension / Attribute,Buyer Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,dispatch_date_key,int64,INT64,False,True,False,Dimension / Attribute,Dispatch Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,dispatch_date,date32[day],DATE,False,False,True,Dimension / Attribute,Dispatch Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,expected_ship_date_key,int64,INT64,False,True,False,Dimension / Attribute,Expected Ship Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,expected_ship_date,date32[day],DATE,False,False,True,Dimension / Attribute,Expected Ship Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,actual_ship_date_key,int64,INT64,False,True,False,Dimension / Attribute,Actual Ship Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,actual_ship_date,date32[day],DATE,False,False,True,Dimension / Attribute,Actual Ship Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,estimated_arrival_date_key,int64,INT64,False,True,False,Dimension / Attribute,Estimated Arrival Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,estimated_arrival_date,date32[day],DATE,False,False,True,Dimension / Attribute,Estimated Arrival Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,actual_arrival_date_key,int64,INT64,False,True,False,Dimension / Attribute,Actual Arrival Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,actual_arrival_date,date32[day],DATE,False,False,True,Dimension / Attribute,Actual Arrival Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,confirmed_delivery_date_key,int64,INT64,False,True,False,Dimension / Attribute,Confirmed Delivery Date Key in fact_shipment_line (fact table).
+fact_shipment_line,fact,confirmed_delivery_date,date32[day],DATE,False,False,True,Dimension / Attribute,Confirmed Delivery Date in fact_shipment_line (fact table).
+fact_shipment_line,fact,shipped_qty_pcs,int64,INT64,False,False,True,PCS / Count,Shipped Qty Pcs in fact_shipment_line (fact table).
+fact_shipment_line,fact,delivered_qty_pcs,int64,INT64,False,False,True,PCS / Count,Delivered Qty Pcs in fact_shipment_line (fact table).
+fact_shipment_line,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_shipment_line (fact table).
+fact_shipment_line,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_shipment_line (fact table).
+fact_shipment_line,fact,fob_revenue_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Fob Revenue Usd in fact_shipment_line (fact table).
+fact_shipment_line,fact,fob_revenue_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Fob Revenue Bdt in fact_shipment_line (fact table).
+fact_shipment_line,fact,delivered_revenue_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Delivered Revenue Usd in fact_shipment_line (fact table).
+fact_shipment_line,fact,delivered_revenue_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Delivered Revenue Bdt in fact_shipment_line (fact table).
+fact_shipment_line,fact,freight_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Freight Cost Usd in fact_shipment_line (fact table).
+fact_shipment_line,fact,freight_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Freight Cost Bdt in fact_shipment_line (fact table).
+fact_shipment_line,fact,inland_logistics_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Inland Logistics Cost Usd in fact_shipment_line (fact table).
+fact_shipment_line,fact,inland_logistics_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Inland Logistics Cost Bdt in fact_shipment_line (fact table).
+fact_shipment_line,fact,shipping_mode,string,STRING,False,False,True,Dimension / Attribute,Shipping Mode in fact_shipment_line (fact table).
+fact_shipment_line,fact,port_of_loading,string,STRING,False,False,True,Dimension / Attribute,Port Of Loading in fact_shipment_line (fact table).
+fact_shipment_line,fact,export_destination_country,string,STRING,False,False,True,Dimension / Attribute,Export Destination Country in fact_shipment_line (fact table).
+fact_shipment_line,fact,shipment_delay_days,int64,INT64,False,False,True,Days,Shipment Delay Days in fact_shipment_line (fact table).
+fact_shipment_line,fact,delivery_delay_days,int64,INT64,False,False,True,Days,Delivery Delay Days in fact_shipment_line (fact table).
+fact_shipment_line,fact,is_on_time_shipment,bool,BOOL,False,False,True,Dimension / Attribute,Is On Time Shipment in fact_shipment_line (fact table).
+fact_shipment_line,fact,is_on_time_delivery,bool,BOOL,False,False,True,Dimension / Attribute,Is On Time Delivery in fact_shipment_line (fact table).
+fact_shipment_line,fact,is_partial_shipment,bool,BOOL,False,False,True,Dimension / Attribute,Is Partial Shipment in fact_shipment_line (fact table).
+fact_shipment_line,fact,delivery_status,string,STRING,False,False,True,Dimension / Attribute,Delivery Status in fact_shipment_line (fact table).
+fact_shipment_line,fact,delay_reason,string,STRING,False,False,True,Dimension / Attribute,Delay Reason in fact_shipment_line (fact table).
+fact_shipment_line,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_shipment_line (fact table).
+fact_inventory_snapshot_monthly,fact,inventory_snapshot_key,int64,INT64,True,False,False,Dimension / Attribute,Inventory Snapshot Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,date_key,int64,INT64,False,True,False,Dimension / Attribute,Date Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,snapshot_month_date,date32[day],DATE,False,False,True,Dimension / Attribute,Snapshot Month Date in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,item_code,string,STRING,False,False,True,Dimension / Attribute,Item Code in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,material_key,int64,INT64,False,True,False,Dimension / Attribute,Material Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,product_key,int64,INT64,False,True,False,Dimension / Attribute,Product Key in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,stock_type,string,STRING,False,False,True,Dimension / Attribute,Stock Type in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,uom,string,STRING,False,False,True,Dimension / Attribute,Uom in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,opening_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Opening Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,receipts_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Receipts Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,production_additions_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Production Additions Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,consumption_issues_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Consumption Issues Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,shipment_issues_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Shipment Issues Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,adjustment_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Adjustment Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,closing_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Closing Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,reserved_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Reserved Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,safety_stock_qty,double,FLOAT64,False,False,True,Dimension / Attribute,Safety Stock Qty in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,is_below_safety_stock,bool,BOOL,False,False,True,Dimension / Attribute,Is Below Safety Stock in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,is_stockout_incident,bool,BOOL,False,False,True,Dimension / Attribute,Is Stockout Incident in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,average_ageing_days,double,FLOAT64,False,False,True,Days,Average Ageing Days in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,ageing_bucket,string,STRING,False,False,True,Dimension / Attribute,Ageing Bucket in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,unit_valuation_usd,"decimal128(18, 3)",NUMERIC,False,False,True,USD,Unit Valuation Usd in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,inventory_value_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Inventory Value Usd in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,inventory_value_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Inventory Value Bdt in fact_inventory_snapshot_monthly (fact table).
+fact_inventory_snapshot_monthly,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_inventory_snapshot_monthly (fact table).
+fact_cost_transaction,fact,cost_transaction_key,int64,INT64,True,False,False,Dimension / Attribute,Cost Transaction Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,cost_transaction_id,string,STRING,False,False,True,Dimension / Attribute,Cost Transaction Id in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,transaction_date_key,int64,INT64,False,True,False,Dimension / Attribute,Transaction Date Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,transaction_date,date32[day],DATE,False,False,True,Dimension / Attribute,Transaction Date in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,cost_category_key,int64,INT64,False,True,False,Dimension / Attribute,Cost Category Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,production_batch_key,int64,INT64,False,True,False,Dimension / Attribute,Production Batch Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,order_line_key,int64,INT64,False,True,False,Dimension / Attribute,Order Line Key in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,reference_quantity,double,FLOAT64,False,False,True,Dimension / Attribute,Reference Quantity in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,currency_code,string,STRING,False,False,True,Dimension / Attribute,Currency Code in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,amount_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Amount Usd in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,amount_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Amount Bdt in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,allocation_method,string,STRING,False,False,True,Dimension / Attribute,Allocation Method in fact_cost_transaction (fact table).
+fact_cost_transaction,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_cost_transaction (fact table).
+fact_workforce_monthly,fact,workforce_month_key,int64,INT64,True,False,False,Dimension / Attribute,Workforce Month Key in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,date_key,int64,INT64,False,True,False,Dimension / Attribute,Date Key in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,month_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Month Start Date in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,department_name,string,STRING,False,False,True,Dimension / Attribute,Department Name in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,worker_grade_role,string,STRING,False,False,True,Dimension / Attribute,Worker Grade Role in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,active_headcount,int64,INT64,False,False,True,PCS / Count,Active Headcount in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,monthly_hires,int64,INT64,False,False,True,PCS / Count,Monthly Hires in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,monthly_separations,int64,INT64,False,False,True,PCS / Count,Monthly Separations in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,statutory_entry_min_wage_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Statutory Entry Min Wage Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,average_monthly_wage_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Average Monthly Wage Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,overtime_hours,double,FLOAT64,False,False,True,Hours,Overtime Hours in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,base_payroll_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Base Payroll Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,allowances_and_bonus_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Allowances And Bonus Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,overtime_expense_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Overtime Expense Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,total_payroll_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Total Payroll Bdt in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,total_payroll_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Total Payroll Usd in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,absenteeism_rate_pct,double,FLOAT64,False,False,True,Percentage (%),Absenteeism Rate Pct in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,training_hours,double,FLOAT64,False,False,True,Hours,Training Hours in fact_workforce_monthly (fact table).
+fact_workforce_monthly,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_workforce_monthly (fact table).
+fact_sustainability_monthly,fact,sustainability_month_key,int64,INT64,True,False,False,Dimension / Attribute,Sustainability Month Key in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,date_key,int64,INT64,False,True,False,Dimension / Attribute,Date Key in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,month_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Month Start Date in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,company_key,int64,INT64,False,True,False,Dimension / Attribute,Company Key in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,factory_key,int64,INT64,False,True,False,Dimension / Attribute,Factory Key in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,monthly_output_pcs,int64,INT64,False,False,True,PCS / Count,Monthly Output Pcs in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,electricity_consumption_kwh,double,FLOAT64,False,False,True,kWh,Electricity Consumption Kwh in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,renewable_solar_kwh,double,FLOAT64,False,False,True,kWh,Renewable Solar Kwh in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,renewable_energy_share_pct,double,FLOAT64,False,False,True,Percentage (%),Renewable Energy Share Pct in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,natural_gas_consumption_m3,double,FLOAT64,False,False,True,Cubic Meters (m3),Natural Gas Consumption M3 in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,water_withdrawal_m3,double,FLOAT64,False,False,True,Cubic Meters (m3),Water Withdrawal M3 in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,wastewater_treated_m3,double,FLOAT64,False,False,True,Cubic Meters (m3),Wastewater Treated M3 in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,solid_fabric_waste_kg,double,FLOAT64,False,False,True,Kilograms (kg),Solid Fabric Waste Kg in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,recycled_material_kg,double,FLOAT64,False,False,True,Kilograms (kg),Recycled Material Kg in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,waste_recycling_rate_pct,double,FLOAT64,False,False,True,Percentage (%),Waste Recycling Rate Pct in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,estimated_carbon_emissions_kg_co2e,double,FLOAT64,False,False,True,Kilograms (kg),Estimated Carbon Emissions Kg Co2E in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,emissions_per_garment_kg_co2e,double,FLOAT64,False,False,True,Kilograms (kg),Emissions Per Garment Kg Co2E in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,utility_cost_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Utility Cost Bdt in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,utility_cost_usd,"decimal128(18, 2)",NUMERIC,False,False,True,USD,Utility Cost Usd in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,estimation_methodology,string,STRING,False,False,True,Dimension / Attribute,Estimation Methodology in fact_sustainability_monthly (fact table).
+fact_sustainability_monthly,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_sustainability_monthly (fact table).
+fact_macro_monthly,fact,macro_month_key,int64,INT64,True,False,False,Dimension / Attribute,Macro Month Key in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,date_key,int64,INT64,False,True,False,Dimension / Attribute,Date Key in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,month_start_date,date32[day],DATE,False,False,True,Dimension / Attribute,Month Start Date in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,calendar_year,int64,INT64,False,False,True,Dimension / Attribute,Calendar Year in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,calendar_month,int64,INT64,False,False,True,Dimension / Attribute,Calendar Month in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,year_month,string,STRING,False,False,True,Dimension / Attribute,Year Month in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,fiscal_year,string,STRING,False,False,True,Dimension / Attribute,Fiscal Year in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,fiscal_month,int64,INT64,False,False,True,Dimension / Attribute,Fiscal Month in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,geographic_scope,string,STRING,False,False,True,Dimension / Attribute,Geographic Scope in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,bdt_usd_exchange_rate,double,FLOAT64,False,False,True,BDT per USD,Bdt Usd Exchange Rate in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,cpi_inflation_yoy_pct,double,FLOAT64,False,False,True,Percentage (%),Cpi Inflation Yoy Pct in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,cpi_index_2006_base,double,FLOAT64,False,False,True,Dimension / Attribute,Cpi Index 2006 Base in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,statutory_min_wage_entry_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Statutory Min Wage Entry Bdt in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,modeled_industry_floor_wage_bdt,"decimal128(18, 2)",NUMERIC,False,False,True,BDT,Modeled Industry Floor Wage Bdt in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,global_cotton_price_index,double,FLOAT64,False,False,True,Dimension / Attribute,Global Cotton Price Index in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,carded_cotton_yarn_usd_per_kg,"decimal128(18, 3)",NUMERIC,False,False,True,Kilograms (kg),Carded Cotton Yarn Usd Per Kg in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,industrial_energy_tariff_index,double,FLOAT64,False,False,True,Dimension / Attribute,Industrial Energy Tariff Index in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,industrial_electricity_bdt_per_kwh,"decimal128(18, 2)",NUMERIC,False,False,True,kWh,Industrial Electricity Bdt Per Kwh in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,industrial_gas_bdt_per_m3,"decimal128(18, 2)",NUMERIC,False,False,True,Cubic Meters (m3),Industrial Gas Bdt Per M3 in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,container_freight_rate_index,double,FLOAT64,False,False,True,Dimension / Attribute,Container Freight Rate Index in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,working_capital_interest_rate_pct,double,FLOAT64,False,False,True,Percentage (%),Working Capital Interest Rate Pct in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,bgmea_fy_woven_export_usd_bn,"decimal128(18, 2)",NUMERIC,False,False,True,Dimension / Attribute,Bgmea Fy Woven Export Usd Bn in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,bgmea_fy_knit_export_usd_bn,"decimal128(18, 2)",NUMERIC,False,False,True,Dimension / Attribute,Bgmea Fy Knit Export Usd Bn in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,bgmea_fy_total_rmg_export_usd_bn,"decimal128(18, 2)",NUMERIC,False,False,True,Dimension / Attribute,Bgmea Fy Total Rmg Export Usd Bn in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,epb_fy_national_export_usd_bn,"decimal128(18, 2)",NUMERIC,False,False,True,Dimension / Attribute,Epb Fy National Export Usd Bn in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,annual_export_measurement_frequency,string,STRING,False,False,True,Dimension / Attribute,Annual Export Measurement Frequency in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,monthly_series_methodology,string,STRING,False,False,True,Dimension / Attribute,Monthly Series Methodology in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,macro_regime_label,string,STRING,False,False,True,Dimension / Attribute,Macro Regime Label in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,industry_demand_multiplier,double,FLOAT64,False,False,True,Dimension / Attribute,Industry Demand Multiplier in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,source_status,string,STRING,False,False,True,Dimension / Attribute,Source Status in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,quality_flag,string,STRING,False,False,True,Dimension / Attribute,Quality Flag in fact_macro_monthly (fact table).
+fact_macro_monthly,fact,event_year,int64,INT64,False,False,True,Dimension / Attribute,Event Year in fact_macro_monthly (fact table).

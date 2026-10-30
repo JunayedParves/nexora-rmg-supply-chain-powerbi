@@ -1,0 +1,142 @@
+[
+  {
+    "name": "inspection_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "inspection_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "production_batch_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "batch_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_line_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "production_line_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inspection_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inspection_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inspection_stage",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inspected_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "defective_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rework_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rejected_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "accepted_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "defect_rate_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "first_pass_yield_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "primary_defect_category",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "aql_standard_threshold",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "passed_first_inspection",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "inspection_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimated_quality_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "estimated_quality_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

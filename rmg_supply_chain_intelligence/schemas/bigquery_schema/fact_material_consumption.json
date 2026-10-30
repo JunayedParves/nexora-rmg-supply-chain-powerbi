@@ -1,0 +1,107 @@
+[
+  {
+    "name": "consumption_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "production_batch_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "batch_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "consumption_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "consumption_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "planned_material_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "actual_material_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wastage_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wastage_rate_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "total_material_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "total_material_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wastage_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wastage_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

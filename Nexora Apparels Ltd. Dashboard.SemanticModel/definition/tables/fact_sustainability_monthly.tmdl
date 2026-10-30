@@ -1,0 +1,184 @@
+table fact_sustainability_monthly
+	lineageTag: 9eba2111-8fae-5a75-867f-3e7369e4bb2f
+
+	column sustainability_month_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 4be16b94-0d68-5a30-b304-027586df22f0
+		summarizeBy: none
+		sourceColumn: sustainability_month_key
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b6508a0c-764a-5420-b2f1-98c7586db252
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column month_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 9827284d-14d0-5ca3-aaf2-fb33310844df
+		summarizeBy: none
+		sourceColumn: month_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b9315b7-5eee-55e3-8016-eb162ebcd5ad
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: af5d9eb7-846d-5d26-b96b-c8490656b2e9
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column fiscal_year
+		dataType: string
+		lineageTag: 82e721ca-1e87-571f-95ec-448a450b55cc
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 689bf3f7-a123-5063-89af-e21bfa533866
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ce81ac2-effb-53f8-9cef-5032ab245bca
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column monthly_output_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 8944ca04-56e5-5da7-bc46-b401fd57206b
+		summarizeBy: none
+		sourceColumn: monthly_output_pcs
+
+	column electricity_consumption_kwh
+		dataType: double
+		formatString: #,0.00
+		lineageTag: bfe0529e-fa07-5998-8e83-02becf663869
+		summarizeBy: sum
+		sourceColumn: electricity_consumption_kwh
+
+	column renewable_solar_kwh
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7a01e105-ba6a-5e25-b5ce-06fe2a879a5c
+		summarizeBy: sum
+		sourceColumn: renewable_solar_kwh
+
+	column renewable_energy_share_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 308795a0-c95b-5c38-9c3c-43a7c4e62843
+		summarizeBy: sum
+		sourceColumn: renewable_energy_share_pct
+
+	column natural_gas_consumption_m3
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 3585ef3a-40e6-58cd-82fd-dc3b86facb65
+		summarizeBy: sum
+		sourceColumn: natural_gas_consumption_m3
+
+	column water_withdrawal_m3
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 84f87345-9ea4-5369-b99c-6421aa213422
+		summarizeBy: sum
+		sourceColumn: water_withdrawal_m3
+
+	column wastewater_treated_m3
+		dataType: double
+		formatString: #,0.00
+		lineageTag: aa89d4bd-3862-5958-ae8e-201e686f45e8
+		summarizeBy: sum
+		sourceColumn: wastewater_treated_m3
+
+	column solid_fabric_waste_kg
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b09d3b6a-8add-5d1a-9d59-bf0d7b3a596e
+		summarizeBy: sum
+		sourceColumn: solid_fabric_waste_kg
+
+	column recycled_material_kg
+		dataType: double
+		formatString: #,0.00
+		lineageTag: f2baad71-470c-58b8-b6e2-18eb391c459a
+		summarizeBy: sum
+		sourceColumn: recycled_material_kg
+
+	column waste_recycling_rate_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 9609e301-26fd-563f-8168-7d955c0024a3
+		summarizeBy: sum
+		sourceColumn: waste_recycling_rate_pct
+
+	column estimated_carbon_emissions_kg_co2e
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b561e560-863a-55a5-879b-14f490aadbae
+		summarizeBy: sum
+		sourceColumn: estimated_carbon_emissions_kg_co2e
+
+	column emissions_per_garment_kg_co2e
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 964b0d96-af17-5dce-8b34-c2d5f77c9e15
+		summarizeBy: sum
+		sourceColumn: emissions_per_garment_kg_co2e
+
+	column utility_cost_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: e0096a6e-0c7f-5379-b00d-3f94b42f7656
+		summarizeBy: sum
+		sourceColumn: utility_cost_bdt
+
+	column utility_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 7aed652f-6314-5f6d-9826-56e44468e416
+		summarizeBy: sum
+		sourceColumn: utility_cost_usd
+
+	column estimation_methodology
+		dataType: string
+		lineageTag: affe8208-6636-503b-b9cc-47979dd04862
+		summarizeBy: none
+		sourceColumn: estimation_methodology
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d2fe71e-a6e5-5f6e-a76c-cd67fae5d7f7
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_sustainability_monthly = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_sustainability_monthly"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,101 @@
+supplier_key,supplier_code,supplier_name,supplier_type,origin_country,domestic_import_classification,major_materials_supplied,average_lead_time_days,lead_time_variability_days,payment_terms,baseline_reliability_score,minimum_order_value_usd,active_from_date,active_to_date,is_currently_active,spend_share_weight
+1,SUP-001,Titas Spinning BAN-001 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,14,4.5,Back-to-Back L/C 60 Days,0.797,1000,2012-01-01,9999-12-31,True,0.009142
+2,SUP-002,Sundarban Spinning BAN-002 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,16,4.7,Back-to-Back L/C 60 Days,0.788,500,2007-01-01,9999-12-31,True,0.004921
+3,SUP-003,Gazipur Spinning BAN-003 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,18,1.7,Back-to-Back L/C 60 Days,0.921,2500,2006-01-01,9999-12-31,True,0.005064
+4,SUP-004,Golden Spinning BAN-004 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,18,3.5,Back-to-Back L/C 60 Days,0.843,500,2006-01-01,9999-12-31,True,0.00191
+5,SUP-005,Prime Spinning BAN-005 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,13,4.6,Back-to-Back L/C 60 Days,0.789,2500,2006-01-01,9999-12-31,True,0.002139
+6,SUP-006,Standard Spinning BAN-006 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,11,3.6,Back-to-Back L/C 60 Days,0.837,2500,2010-01-01,9999-12-31,True,0.012431
+7,SUP-007,Guangdong Spinning BAN-007 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,3.6,Back-to-Back L/C 60 Days,0.837,500,2012-01-01,9999-12-31,True,0.001322
+8,SUP-008,Hangzhou Spinning BAN-008 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,6.8,Back-to-Back L/C 60 Days,0.692,1000,2007-01-01,9999-12-31,True,0.001384
+9,SUP-009,Tirupur Spinning BAN-009 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,3.1,Back-to-Back L/C 60 Days,0.857,2500,2012-01-01,9999-12-31,True,0.004774
+10,SUP-010,Lahore Spinning BAN-010 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,12,2.8,Back-to-Back L/C 60 Days,0.872,1000,2008-01-01,9999-12-31,True,0.001753
+11,SUP-011,Bandung Spinning BAN-011 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,18,3.1,Back-to-Back L/C 60 Days,0.859,2500,2008-01-01,9999-12-31,True,0.012328
+12,SUP-012,Delta Spinning BAN-012 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,18,4.3,Back-to-Back L/C 60 Days,0.806,1000,2006-01-01,9999-12-31,True,0.001678
+13,SUP-013,Sonargaon Spinning BAN-013 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,14,4.1,Back-to-Back L/C 60 Days,0.815,1000,2006-01-01,9999-12-31,True,0.017549
+14,SUP-014,Eastern Spinning BAN-014 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,2.9,Back-to-Back L/C 60 Days,0.867,500,2010-01-01,9999-12-31,True,0.004574
+15,SUP-015,Narayanganj Spinning BAN-015 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,16,4.8,Back-to-Back L/C 60 Days,0.781,1000,2010-01-01,9999-12-31,True,0.003121
+16,SUP-016,Crown Spinning BAN-016 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,14,2.5,Back-to-Back L/C 60 Days,0.887,2500,2015-01-01,9999-12-31,True,0.004345
+17,SUP-017,United Spinning BAN-017 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,12,1.2,Back-to-Back L/C 60 Days,0.944,500,2008-01-01,9999-12-31,True,0.002092
+18,SUP-018,Shandong Spinning BAN-018 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,15,2.4,Back-to-Back L/C 60 Days,0.893,1000,2012-01-01,9999-12-31,True,0.002424
+19,SUP-019,Shaoxing Spinning BAN-019 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,14,4.3,Back-to-Back L/C 60 Days,0.803,2500,2010-01-01,9999-12-31,True,0.002253
+20,SUP-020,Gujarat Spinning BAN-020 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,16,5.0,Back-to-Back L/C 60 Days,0.774,2500,2007-01-01,9999-12-31,True,0.00917
+21,SUP-021,Coimbatore Spinning BAN-021 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,1.9,Back-to-Back L/C 60 Days,0.914,2500,2015-01-01,9999-12-31,True,0.003224
+22,SUP-022,Faisalabad Spinning BAN-022 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,3.1,Back-to-Back L/C 60 Days,0.857,500,2010-01-01,9999-12-31,True,0.005137
+23,SUP-023,Taipei Spinning BAN-023 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,14,3.1,Back-to-Back L/C 60 Days,0.857,1000,2007-01-01,9999-12-31,True,0.003158
+24,SUP-024,Karnaphuli Spinning BAN-024 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,2.5,Back-to-Back L/C 60 Days,0.888,500,2006-01-01,9999-12-31,True,0.001298
+25,SUP-025,Purbachal Spinning BAN-025 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,13,2.2,Back-to-Back L/C 60 Days,0.899,2500,2006-01-01,9999-12-31,True,0.001552
+26,SUP-026,Bengal Spinning BAN-026 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,15,2.2,Back-to-Back L/C 60 Days,0.9,2500,2012-01-01,9999-12-31,True,0.001841
+27,SUP-027,Chattogram Spinning BAN-027 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,13,3.2,Back-to-Back L/C 60 Days,0.855,1000,2007-01-01,9999-12-31,True,0.001656
+28,SUP-028,Pioneer Spinning BAN-028 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,12,2.1,Back-to-Back L/C 60 Days,0.905,1000,2006-01-01,9999-12-31,True,0.006385
+29,SUP-029,Reliance Spinning BAN-029 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,15,4.1,Back-to-Back L/C 60 Days,0.814,2500,2007-01-01,2020-12-31,False,0.00242
+30,SUP-030,Zhejiang Spinning BAN-030 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,16,1.7,Back-to-Back L/C 60 Days,0.922,2500,2010-01-01,9999-12-31,True,0.001778
+31,SUP-031,Ningbo Spinning BAN-031 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,15,2.8,Back-to-Back L/C 60 Days,0.871,500,2010-01-01,9999-12-31,True,0.002904
+32,SUP-032,TamilNadu Spinning BAN-032 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,17,2.6,Back-to-Back L/C 60 Days,0.881,2500,2006-01-01,9999-12-31,True,0.002219
+33,SUP-033,Ludhiana Spinning BAN-033 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,15,5.2,Back-to-Back L/C 60 Days,0.763,2500,2010-01-01,9999-12-31,True,0.00173
+34,SUP-034,Bursa Spinning BAN-034 Ltd.,Spinning & Knit Yarn Mill,Bangladesh,Domestic,Cotton & Yarn,13,4.3,Back-to-Back L/C 60 Days,0.806,2500,2006-01-01,9999-12-31,True,0.002512
+35,SUP-035,Gazipur Garment BAN-035 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,12,1.2,Back-to-Back L/C 45 Days,0.956,500,2006-01-01,9999-12-31,True,0.034356
+36,SUP-036,Golden Garment BAN-036 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,1.2,Back-to-Back L/C 45 Days,0.948,500,2010-01-01,9999-12-31,True,0.002384
+37,SUP-037,Prime Garment BAN-037 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,9,3.4,Back-to-Back L/C 45 Days,0.846,500,2015-01-01,9999-12-31,True,0.002454
+38,SUP-038,Standard Garment BAN-038 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,8,2.5,Back-to-Back L/C 45 Days,0.885,500,2012-01-01,9999-12-31,True,0.001656
+39,SUP-039,Guangdong Garment BAN-039 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,10,3.6,Back-to-Back L/C 45 Days,0.836,500,2015-01-01,9999-12-31,True,0.001962
+40,SUP-040,Hangzhou Garment BAN-040 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,12,2.5,Back-to-Back L/C 45 Days,0.886,500,2010-01-01,9999-12-31,True,0.010511
+41,SUP-041,Tirupur Garment BAN-041 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,4.6,Back-to-Back L/C 45 Days,0.791,2500,2006-01-01,9999-12-31,True,0.005077
+42,SUP-042,Lahore Garment BAN-042 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,10,2.3,Back-to-Back L/C 45 Days,0.896,2500,2015-01-01,9999-12-31,True,0.001812
+43,SUP-043,Bandung Garment BAN-043 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,11,4.4,Back-to-Back L/C 45 Days,0.802,500,2007-01-01,9999-12-31,True,0.002122
+44,SUP-044,Delta Garment BAN-044 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,6,4.3,Back-to-Back L/C 45 Days,0.805,1000,2008-01-01,9999-12-31,True,0.011696
+45,SUP-045,Sonargaon Garment BAN-045 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,10,2.6,Back-to-Back L/C 45 Days,0.884,1000,2012-01-01,9999-12-31,True,0.002044
+46,SUP-046,Eastern Garment BAN-046 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,4.6,Back-to-Back L/C 45 Days,0.789,500,2008-01-01,9999-12-31,True,0.002277
+47,SUP-047,Narayanganj Garment BAN-047 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,8,4.6,Back-to-Back L/C 45 Days,0.789,500,2008-01-01,9999-12-31,True,0.002583
+48,SUP-048,Crown Garment BAN-048 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,8,2.1,Back-to-Back L/C 45 Days,0.903,500,2015-01-01,9999-12-31,True,0.001405
+49,SUP-049,United Garment BAN-049 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,9,4.6,Back-to-Back L/C 45 Days,0.793,500,2015-01-01,9999-12-31,True,0.006867
+50,SUP-050,Shandong Garment BAN-050 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,6,4.8,Back-to-Back L/C 45 Days,0.783,2500,2010-01-01,9999-12-31,True,0.002154
+51,SUP-051,Shaoxing Garment BAN-051 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,11,4.3,Back-to-Back L/C 45 Days,0.804,2500,2006-01-01,9999-12-31,True,0.005001
+52,SUP-052,Gujarat Garment BAN-052 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,6,1.2,Back-to-Back L/C 45 Days,0.98,1000,2007-01-01,9999-12-31,True,0.00561
+53,SUP-053,Coimbatore Garment BAN-053 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,9,2.3,Back-to-Back L/C 45 Days,0.896,500,2008-01-01,9999-12-31,True,0.002606
+54,SUP-054,Faisalabad Garment BAN-054 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,3.8,Back-to-Back L/C 45 Days,0.826,1000,2015-01-01,9999-12-31,True,0.002614
+55,SUP-055,Taipei Garment BAN-055 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,1.9,Back-to-Back L/C 45 Days,0.912,500,2008-01-01,9999-12-31,True,0.001756
+56,SUP-056,Karnaphuli Garment BAN-056 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,6,3.2,Back-to-Back L/C 45 Days,0.856,1000,2012-01-01,9999-12-31,True,0.007529
+57,SUP-057,Purbachal Garment BAN-057 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,2.5,Back-to-Back L/C 45 Days,0.886,500,2007-01-01,9999-12-31,True,0.01316
+58,SUP-058,Bengal Garment BAN-058 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,5.7,Back-to-Back L/C 45 Days,0.742,2500,2015-01-01,9999-12-31,True,0.001894
+59,SUP-059,Chattogram Garment BAN-059 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,1.2,Back-to-Back L/C 45 Days,0.98,1000,2015-01-01,9999-12-31,True,0.00244
+60,SUP-060,Pioneer Garment BAN-060 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,6,3.6,Back-to-Back L/C 45 Days,0.836,500,2007-01-01,9999-12-31,True,0.005221
+61,SUP-061,Reliance Garment BAN-061 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,11,4.8,Back-to-Back L/C 45 Days,0.78,2500,2010-01-01,9999-12-31,True,0.001921
+62,SUP-062,Zhejiang Garment BAN-062 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,4.4,Back-to-Back L/C 45 Days,0.799,500,2015-01-01,9999-12-31,True,0.002617
+63,SUP-063,Ningbo Garment BAN-063 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,3.3,Back-to-Back L/C 45 Days,0.851,2500,2008-01-01,9999-12-31,True,0.002836
+64,SUP-064,TamilNadu Garment BAN-064 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,8,3.9,Back-to-Back L/C 45 Days,0.824,1000,2007-01-01,9999-12-31,True,0.009774
+65,SUP-065,Ludhiana Garment BAN-065 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,6.5,Back-to-Back L/C 45 Days,0.705,1000,2006-01-01,9999-12-31,True,0.002808
+66,SUP-066,Bursa Garment BAN-066 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,3.1,Back-to-Back L/C 45 Days,0.86,1000,2010-01-01,9999-12-31,True,0.010578
+67,SUP-067,Rhine Garment BAN-067 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,9,1.2,Back-to-Back L/C 45 Days,0.959,500,2007-01-01,9999-12-31,True,0.008469
+68,SUP-068,Shitalakhya Garment BAN-068 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,11,1.2,Back-to-Back L/C 45 Days,0.971,1000,2007-01-01,9999-12-31,True,0.004108
+69,SUP-069,Barendra Garment BAN-069 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,11,2.5,Back-to-Back L/C 45 Days,0.887,1000,2006-01-01,9999-12-31,True,0.001544
+70,SUP-070,Dhaka Garment BAN-070 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,7,3.1,Back-to-Back L/C 45 Days,0.861,500,2007-01-01,9999-12-31,True,0.001303
+71,SUP-071,Silver Garment BAN-071 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,13,2.6,Back-to-Back L/C 45 Days,0.882,1000,2006-01-01,9999-12-31,True,0.006313
+72,SUP-072,Apex Garment BAN-072 Ltd.,"Garment Trims, Labels & Packaging Manufacturer",Bangladesh,Domestic,Trims & Packaging,8,4.4,Back-to-Back L/C 45 Days,0.798,500,2006-01-01,9999-12-31,True,0.00131
+73,SUP-073,Hangzhou Knit BAN-073 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,18,2.5,Back-to-Back L/C 60 Days,0.887,1000,2006-01-01,9999-12-31,True,0.003239
+74,SUP-074,Tirupur Knit BAN-074 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,17,3.2,Back-to-Back L/C 60 Days,0.853,2500,2007-01-01,9999-12-31,True,0.003701
+75,SUP-075,Lahore Knit BAN-075 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,17,5.2,Back-to-Back L/C 60 Days,0.762,2500,2010-01-01,9999-12-31,True,0.001379
+76,SUP-076,Bandung Knit BAN-076 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,17,1.6,Back-to-Back L/C 60 Days,0.929,1000,2006-01-01,9999-12-31,True,0.00164
+77,SUP-077,Delta Knit BAN-077 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,1.6,Back-to-Back L/C 60 Days,0.927,2500,2012-01-01,9999-12-31,True,0.007868
+78,SUP-078,Sonargaon Knit BAN-078 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,18,5.1,Back-to-Back L/C 60 Days,0.768,1000,2006-01-01,9999-12-31,True,0.005307
+79,SUP-079,Eastern Knit BAN-079 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,15,2.1,Back-to-Back L/C 60 Days,0.903,500,2006-01-01,9999-12-31,True,0.001802
+80,SUP-080,Narayanganj Knit BAN-080 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,3.4,Back-to-Back L/C 60 Days,0.845,2500,2006-01-01,9999-12-31,True,0.003081
+81,SUP-081,Crown Knit BAN-081 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,20,5.1,Back-to-Back L/C 60 Days,0.768,500,2006-01-01,9999-12-31,True,0.00228
+82,SUP-082,United Knit BAN-082 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,4.9,Back-to-Back L/C 60 Days,0.778,1000,2006-01-01,9999-12-31,True,0.010302
+83,SUP-083,Shandong Knit BAN-083 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,19,7.4,Back-to-Back L/C 60 Days,0.664,500,2008-01-01,9999-12-31,True,0.001858
+84,SUP-084,Shaoxing Knit BAN-084 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,17,3.3,Back-to-Back L/C 60 Days,0.851,2500,2015-01-01,9999-12-31,True,0.004124
+85,SUP-085,Gujarat Knit BAN-085 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,21,4.1,Back-to-Back L/C 60 Days,0.813,1000,2006-01-01,9999-12-31,True,0.003127
+86,SUP-086,Coimbatore Knit BAN-086 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,1.2,Back-to-Back L/C 60 Days,0.964,2500,2006-01-01,9999-12-31,True,0.002582
+87,SUP-087,Faisalabad Knit BAN-087 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,18,2.3,Back-to-Back L/C 60 Days,0.896,500,2007-01-01,2020-12-31,False,0.001536
+88,SUP-088,Taipei Knit BAN-088 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,5.7,Back-to-Back L/C 60 Days,0.74,500,2006-01-01,9999-12-31,True,0.002435
+89,SUP-089,Karnaphuli Knit BAN-089 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,16,4.0,Back-to-Back L/C 60 Days,0.818,2500,2006-01-01,9999-12-31,True,0.001751
+90,SUP-090,Purbachal Knit BAN-090 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,18,3.1,Back-to-Back L/C 60 Days,0.859,500,2012-01-01,9999-12-31,True,0.001944
+91,SUP-091,Bengal Knit BAN-091 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,17,1.2,Back-to-Back L/C 60 Days,0.953,1000,2010-01-01,9999-12-31,True,0.001976
+92,SUP-092,Chattogram Knit BAN-092 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,19,2.7,Back-to-Back L/C 60 Days,0.876,2500,2006-01-01,9999-12-31,True,0.002856
+93,SUP-093,Pioneer Knit BAN-093 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,18,1.7,Back-to-Back L/C 60 Days,0.922,1000,2012-01-01,9999-12-31,True,0.001982
+94,SUP-094,Reliance Knit BAN-094 Ltd.,Knit & Denim Fabric Composite Mill,Bangladesh,Domestic,Fabric,14,2.0,Back-to-Back L/C 60 Days,0.911,500,2012-01-01,9999-12-31,True,0.001906
+95,SUP-095,Titas Industrial BAN-095 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,8,6.0,Local Credit 30 Days,0.729,1000,2015-01-01,9999-12-31,True,0.007345
+96,SUP-096,Sundarban Industrial BAN-096 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,11,2.5,Local Credit 30 Days,0.885,2500,2012-01-01,9999-12-31,True,0.003182
+97,SUP-097,Gazipur Industrial BAN-097 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,10,3.1,Local Credit 30 Days,0.857,1000,2006-01-01,9999-12-31,True,0.002486
+98,SUP-098,Golden Industrial BAN-098 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,8,4.6,Local Credit 30 Days,0.789,1000,2010-01-01,9999-12-31,True,0.005475
+99,SUP-099,Prime Industrial BAN-099 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,8,4.2,Local Credit 30 Days,0.809,2500,2006-01-01,9999-12-31,True,0.005421
+100,SUP-100,Standard Industrial BAN-100 Ltd.,Industrial Chemical & Auxiliary Distributor,Bangladesh,Domestic,Dyes & Chemicals,9,1.2,Local Credit 30 Days,0.98,1000,2010-01-01,9999-12-31,True,0.006522

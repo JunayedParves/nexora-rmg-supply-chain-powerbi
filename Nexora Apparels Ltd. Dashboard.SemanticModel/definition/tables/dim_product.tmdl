@@ -1,0 +1,145 @@
+table dim_product
+	lineageTag: fdbf318d-c2fb-5624-bad5-20151331a191
+
+	column product_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: f0ce16a2-3027-5475-8b4d-6e078e1dc9fd
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column product_code
+		dataType: string
+		lineageTag: 49e88547-9ce7-51d6-8018-6805a4c632b2
+		summarizeBy: none
+		sourceColumn: product_code
+
+	column style_name
+		dataType: string
+		lineageTag: 322500f9-eb4e-5048-b766-595c6e635413
+		summarizeBy: none
+		sourceColumn: style_name
+
+	column product_category
+		dataType: string
+		lineageTag: de71b5f0-c5b1-5660-be37-63ae8e2a8ae4
+		summarizeBy: none
+		sourceColumn: product_category
+
+	column knit_woven_classification
+		dataType: string
+		lineageTag: 68563068-f8b9-5d53-8650-c58ac7c7d7e0
+		summarizeBy: none
+		sourceColumn: knit_woven_classification
+
+	column garment_type
+		dataType: string
+		lineageTag: 728fff07-2b47-591b-ad3b-fc7477657125
+		summarizeBy: none
+		sourceColumn: garment_type
+
+	column fabric_type
+		dataType: string
+		lineageTag: 302dde83-4c90-5c9c-a96a-95160ca003c5
+		summarizeBy: none
+		sourceColumn: fabric_type
+
+	column fiber_composition
+		dataType: string
+		lineageTag: 80036ef8-b02b-5e96-a1df-358b00ff9ef1
+		summarizeBy: none
+		sourceColumn: fiber_composition
+
+	column target_market_segment
+		dataType: string
+		lineageTag: 6b4ef5f8-e33d-5bf4-8d69-edc872a3c387
+		summarizeBy: none
+		sourceColumn: target_market_segment
+
+	column value_tier
+		dataType: string
+		lineageTag: 6838da24-0279-5c59-a8fc-48155e94774a
+		summarizeBy: none
+		sourceColumn: value_tier
+
+	column manufacturing_complexity
+		dataType: string
+		lineageTag: e9712e4d-f82c-57ce-910e-b6e748cade43
+		summarizeBy: none
+		sourceColumn: manufacturing_complexity
+
+	column standard_minute_value_smv
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 94282d8b-4995-5e09-be66-92cf2b429b3f
+		summarizeBy: none
+		sourceColumn: standard_minute_value_smv
+
+	column primary_material_key
+		dataType: int64
+		formatString: 0
+		lineageTag: a704aed1-861c-58af-9dd0-414f68409972
+		summarizeBy: none
+		sourceColumn: primary_material_key
+
+	column primary_material_consumption_per_unit
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c8afc290-bee8-533f-a82f-7c1f3cc2a2df
+		summarizeBy: none
+		sourceColumn: primary_material_consumption_per_unit
+
+	column primary_material_uom
+		dataType: string
+		lineageTag: 21b8471b-07cf-53fd-b149-07458f4050d5
+		summarizeBy: none
+		sourceColumn: primary_material_uom
+
+	column base_fob_unit_price_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 0f54e996-58d0-57d4-8f89-178b30d92ab0
+		summarizeBy: none
+		sourceColumn: base_fob_unit_price_usd
+
+	column seasonality_profile
+		dataType: string
+		lineageTag: 20a98cb8-fa8c-5220-9352-add1303a8fa4
+		summarizeBy: none
+		sourceColumn: seasonality_profile
+
+	column introduction_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: b265687d-eb4f-5537-b9c2-6ca262e514c9
+		summarizeBy: none
+		sourceColumn: introduction_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column discontinuation_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: dcce41ae-b70a-56ad-a5aa-1d986351f3e4
+		summarizeBy: none
+		sourceColumn: discontinuation_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_active_style
+		dataType: boolean
+		lineageTag: 1bae20f6-2ce0-59c0-8e63-059adbbaf0ad
+		summarizeBy: none
+		sourceColumn: is_active_style
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_product\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

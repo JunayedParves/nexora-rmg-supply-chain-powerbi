@@ -1,0 +1,117 @@
+[
+  {
+    "name": "delivery_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "delivery_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "purchase_order_line_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "purchase_order_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "supplier_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "receiving_factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dispatch_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dispatch_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "receipt_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "receipt_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "received_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "accepted_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "rejected_qty",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "delivery_delay_days",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_on_time_delivery",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "documented_material_cost_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "documented_material_cost_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

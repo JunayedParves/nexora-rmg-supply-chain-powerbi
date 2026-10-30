@@ -1,0 +1,234 @@
+table fact_macro_monthly
+	lineageTag: 924d1d3b-8d78-5d29-b37f-1a85264056a8
+
+	column macro_month_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 6e4d4742-4465-5bf6-9486-4902921a6612
+		summarizeBy: none
+		sourceColumn: macro_month_key
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 67063128-82ad-5fbe-98e2-1f84540855df
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column month_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: db9826ab-e61e-5e82-b3df-97bd1ef7fec5
+		summarizeBy: none
+		sourceColumn: month_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f7202ac-6a39-593a-8a5d-f7a5808d3692
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 23c966e0-b429-5c29-b8d4-afee65fe9ba1
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column year_month
+		dataType: string
+		lineageTag: 11bcbd79-88d3-5e90-a76f-60b482cbefeb
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column fiscal_year
+		dataType: string
+		lineageTag: 4eb611a9-06c5-51bf-8f5e-03f71ad86e33
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+	column fiscal_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c602c2c-9017-5dc8-992e-379f8a54f80d
+		summarizeBy: none
+		sourceColumn: fiscal_month
+
+	column geographic_scope
+		dataType: string
+		lineageTag: 03541fee-cce8-593f-ada6-5d2ec32b9491
+		summarizeBy: none
+		sourceColumn: geographic_scope
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 02cb2eb3-0d1d-5f74-93a9-177c40ac4894
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column cpi_inflation_yoy_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2a88ef74-9df7-514a-b15a-2f7d224d8226
+		summarizeBy: sum
+		sourceColumn: cpi_inflation_yoy_pct
+
+	column cpi_index_2006_base
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e15b6cb7-c7c4-551e-80d8-0921f4e4029e
+		summarizeBy: sum
+		sourceColumn: cpi_index_2006_base
+
+	column statutory_min_wage_entry_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 488b7840-41d9-5e1c-86ca-3c5ebb8323be
+		summarizeBy: sum
+		sourceColumn: statutory_min_wage_entry_bdt
+
+	column modeled_industry_floor_wage_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 095ee5a0-0e26-515c-8f18-a23162abad27
+		summarizeBy: sum
+		sourceColumn: modeled_industry_floor_wage_bdt
+
+	column global_cotton_price_index
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d3ee8c11-5e21-53b1-8213-8e76d5ba4c8a
+		summarizeBy: sum
+		sourceColumn: global_cotton_price_index
+
+	column carded_cotton_yarn_usd_per_kg
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 929e2ffa-b013-5d95-bfbf-8055722d00d0
+		summarizeBy: sum
+		sourceColumn: carded_cotton_yarn_usd_per_kg
+
+	column industrial_energy_tariff_index
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b22bb897-759f-52f7-8c2e-c7a981ff7144
+		summarizeBy: sum
+		sourceColumn: industrial_energy_tariff_index
+
+	column industrial_electricity_bdt_per_kwh
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: a5c8626e-48c6-5b82-b6f3-e7cfe027a04c
+		summarizeBy: sum
+		sourceColumn: industrial_electricity_bdt_per_kwh
+
+	column industrial_gas_bdt_per_m3
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: e596f38a-d8b2-5824-97be-dbbeba4470d3
+		summarizeBy: sum
+		sourceColumn: industrial_gas_bdt_per_m3
+
+	column container_freight_rate_index
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 33d8cb00-cec1-5fb6-9d51-030930312417
+		summarizeBy: sum
+		sourceColumn: container_freight_rate_index
+
+	column working_capital_interest_rate_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 1c755449-bd5a-5d64-9c1f-6e6049bcc373
+		summarizeBy: sum
+		sourceColumn: working_capital_interest_rate_pct
+
+	column bgmea_fy_woven_export_usd_bn
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: bb59a202-8c09-5ce9-9200-027d116e73e5
+		summarizeBy: sum
+		sourceColumn: bgmea_fy_woven_export_usd_bn
+
+	column bgmea_fy_knit_export_usd_bn
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 0642f315-16d8-52a8-b132-883a84b21831
+		summarizeBy: sum
+		sourceColumn: bgmea_fy_knit_export_usd_bn
+
+	column bgmea_fy_total_rmg_export_usd_bn
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 87959b28-dc8d-50f4-b52e-5d6a0451ac26
+		summarizeBy: sum
+		sourceColumn: bgmea_fy_total_rmg_export_usd_bn
+
+	column epb_fy_national_export_usd_bn
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 8c26301b-712c-56b7-8dee-7638ca1501c5
+		summarizeBy: sum
+		sourceColumn: epb_fy_national_export_usd_bn
+
+	column annual_export_measurement_frequency
+		dataType: string
+		lineageTag: eca5facb-4e1c-5f89-847a-e12bec33f387
+		summarizeBy: none
+		sourceColumn: annual_export_measurement_frequency
+
+	column monthly_series_methodology
+		dataType: string
+		lineageTag: b548281b-8dec-5aea-9df8-9a56e0bf77b8
+		summarizeBy: none
+		sourceColumn: monthly_series_methodology
+
+	column macro_regime_label
+		dataType: string
+		lineageTag: 38aad7d6-ba93-5bb3-9d7c-fe0089623a47
+		summarizeBy: none
+		sourceColumn: macro_regime_label
+
+	column industry_demand_multiplier
+		dataType: double
+		formatString: #,0.00
+		lineageTag: ebcffb25-f79b-575d-81d3-d9efd2d3c4c9
+		summarizeBy: sum
+		sourceColumn: industry_demand_multiplier
+
+	column source_status
+		dataType: string
+		lineageTag: c84efafd-bf8e-5be7-b0cb-94d4e1bd1882
+		summarizeBy: none
+		sourceColumn: source_status
+
+	column quality_flag
+		dataType: string
+		lineageTag: 5b3d53b6-806d-531e-aceb-2a0712133e91
+		summarizeBy: none
+		sourceColumn: quality_flag
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 82d4f9cf-0072-5fca-8bfe-89fc63d3d6cc
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_macro_monthly = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_macro_monthly"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

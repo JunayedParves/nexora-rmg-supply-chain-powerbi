@@ -1,0 +1,77 @@
+[
+  {
+    "name": "order_line_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "sales_order_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_line_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "buyer_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "order_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requested_delivery_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "incoterm",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "destination_country",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "payment_terms",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "knit_woven_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_category",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

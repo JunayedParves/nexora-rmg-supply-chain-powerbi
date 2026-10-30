@@ -1,0 +1,95 @@
+table dim_material
+	lineageTag: 0c9fd1bf-2fd0-583f-938a-38d22454b6a5
+
+	column material_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 7d44dc95-1fb1-5cdc-8577-63e967ac4d9e
+		summarizeBy: none
+		sourceColumn: material_key
+
+	column material_code
+		dataType: string
+		lineageTag: a4917b15-7309-59e7-b51a-23b55a585681
+		summarizeBy: none
+		sourceColumn: material_code
+
+	column material_name
+		dataType: string
+		lineageTag: 2ae774b6-d24a-53f8-a4f6-f05d7dca930c
+		summarizeBy: none
+		sourceColumn: material_name
+
+	column material_category
+		dataType: string
+		lineageTag: f05a30eb-9959-5bfd-bd42-d7d6ddcb42b5
+		summarizeBy: none
+		sourceColumn: material_category
+
+	column material_group
+		dataType: string
+		lineageTag: 61a3c226-e370-5fef-ae2b-134b51946dd3
+		summarizeBy: none
+		sourceColumn: material_group
+
+	column base_uom
+		dataType: string
+		lineageTag: e7b9aa75-1995-55e0-89b6-c265833f88f9
+		summarizeBy: none
+		sourceColumn: base_uom
+
+	column sourcing_profile
+		dataType: string
+		lineageTag: 33f622c9-d3ba-50bd-afcf-39ec7b31bc9b
+		summarizeBy: none
+		sourceColumn: sourcing_profile
+
+	column sourcing_classification
+		dataType: string
+		lineageTag: 712fd690-f39c-5c9a-861f-83efe0f6fe3c
+		summarizeBy: none
+		sourceColumn: sourcing_classification
+
+	column is_primarily_imported
+		dataType: boolean
+		lineageTag: 6623d6ff-6361-5fe4-aaa2-41cae1d76f0e
+		summarizeBy: none
+		sourceColumn: is_primarily_imported
+
+	column standard_lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 8312d1d0-909c-5931-bc02-0676a36b3977
+		summarizeBy: none
+		sourceColumn: standard_lead_time_days
+
+	column base_unit_cost_usd_2015
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 0aa97cb2-1609-574f-b472-20853955c8f7
+		summarizeBy: none
+		sourceColumn: base_unit_cost_usd_2015
+
+	column storage_characteristics
+		dataType: string
+		lineageTag: fe359a6f-a841-5686-b244-2ab4df6bbfb9
+		summarizeBy: none
+		sourceColumn: storage_characteristics
+
+	column is_critical_path_material
+		dataType: boolean
+		lineageTag: b8eda722-d53c-5b3f-ab33-cea081a75df7
+		summarizeBy: none
+		sourceColumn: is_critical_path_material
+
+	partition dim_material = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_material\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

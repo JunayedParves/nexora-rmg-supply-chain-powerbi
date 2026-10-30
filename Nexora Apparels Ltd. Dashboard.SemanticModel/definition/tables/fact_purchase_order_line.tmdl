@@ -1,0 +1,150 @@
+table fact_purchase_order_line
+	lineageTag: 6e22bcd7-1aea-5efb-95f8-c8451e05b509
+
+	column purchase_order_line_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 940bca26-7613-58fd-a073-1384436a086c
+		summarizeBy: none
+		sourceColumn: purchase_order_line_key
+
+	column purchase_order_id
+		dataType: string
+		lineageTag: 6a2f890c-be7f-5568-9cc9-4be3b876c47d
+		summarizeBy: none
+		sourceColumn: purchase_order_id
+
+	column po_line_number
+		dataType: int64
+		formatString: 0
+		lineageTag: a2cd9554-89ec-558f-887e-9781c4d55404
+		summarizeBy: none
+		sourceColumn: po_line_number
+
+	column supplier_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bff860e4-53a4-5df3-94c0-e80a0da6f9c5
+		summarizeBy: none
+		sourceColumn: supplier_key
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1952cddb-7ad5-549c-8b11-9f3f67e07f92
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column receiving_factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: b25083d1-4163-5742-8ee3-96f2dfd26570
+		summarizeBy: none
+		sourceColumn: receiving_factory_key
+
+	column material_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bb402be1-fc66-5c7a-aabb-ca96e20366fa
+		summarizeBy: none
+		sourceColumn: material_key
+
+	column po_order_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f6aa5cab-65e1-58fa-8616-910443da1cb6
+		summarizeBy: none
+		sourceColumn: po_order_date_key
+
+	column po_order_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 05eae9db-c3fa-5c67-9938-13bfd2de538d
+		summarizeBy: none
+		sourceColumn: po_order_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column expected_delivery_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fac7687-c652-56d7-8b68-f173117c3159
+		summarizeBy: none
+		sourceColumn: expected_delivery_date_key
+
+	column expected_delivery_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 1acad660-1f67-5c5e-8ee8-010745b676a6
+		summarizeBy: none
+		sourceColumn: expected_delivery_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ordered_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 0bc9be6f-792d-5bdd-b2a7-bab1aef07568
+		summarizeBy: sum
+		sourceColumn: ordered_qty
+
+	column currency_code
+		dataType: string
+		lineageTag: d9885e3e-5deb-5afc-b2e0-3c66a924f5e4
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: ba91b0f3-b931-5e03-b6d6-a0342686bf3d
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column unit_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 1c4dc988-83e5-576e-ac22-b27d11744f84
+		summarizeBy: sum
+		sourceColumn: unit_cost_usd
+
+	column order_value_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: f6b44152-dc5c-53fc-ae21-079024ca6b82
+		summarizeBy: sum
+		sourceColumn: order_value_usd
+
+	column order_value_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 0fbaf1ec-0619-5615-9da0-c3ef655eff3d
+		summarizeBy: sum
+		sourceColumn: order_value_bdt
+
+	column purchase_status
+		dataType: string
+		lineageTag: 6607e5a1-31e7-5b3c-b721-a5afd909a837
+		summarizeBy: none
+		sourceColumn: purchase_status
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0184d2f7-1262-59fe-b8f5-7811cad76d3c
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_purchase_order_line = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_purchase_order_line"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

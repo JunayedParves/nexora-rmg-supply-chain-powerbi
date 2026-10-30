@@ -1,0 +1,122 @@
+table dim_factory
+	lineageTag: f7b3959c-7385-581a-95dc-3ad29bee8917
+
+	column factory_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: c720e385-6cd0-57fd-880a-c9c433985f71
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3454e51b-d6d4-546d-b3fe-4fb4af5f58ff
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_code
+		dataType: string
+		lineageTag: fcd32f5e-060d-568a-a6ff-6ccc84242dcd
+		summarizeBy: none
+		sourceColumn: factory_code
+
+	column factory_name
+		dataType: string
+		lineageTag: 8a0a7508-5c87-52b6-9be1-b233bf12d282
+		summarizeBy: none
+		sourceColumn: factory_name
+
+	column location_city
+		dataType: string
+		lineageTag: e2dad035-4a6d-559c-80c6-0ff8d65d9c77
+		summarizeBy: none
+		sourceColumn: location_city
+
+	column industrial_zone
+		dataType: string
+		lineageTag: b10d39ac-acee-5c2f-8883-eea35c0187b4
+		summarizeBy: none
+		sourceColumn: industrial_zone
+
+	column product_specialization
+		dataType: string
+		lineageTag: c00116a2-fff9-54d0-8ff4-757da57bda7d
+		summarizeBy: none
+		sourceColumn: product_specialization
+
+	column production_technology
+		dataType: string
+		lineageTag: b6c7de3b-5739-57df-8ece-3374fd089f72
+		summarizeBy: none
+		sourceColumn: production_technology
+
+	column design_line_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 66a22f23-704a-50d9-b65d-85964d211571
+		summarizeBy: none
+		sourceColumn: design_line_count
+
+	column base_monthly_capacity_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: c6a9f0c9-7c4e-59ec-9ddb-eb8da07065d4
+		summarizeBy: none
+		sourceColumn: base_monthly_capacity_pcs
+
+	column opening_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 78086806-dca4-53b2-b871-23b04f9289e5
+		summarizeBy: none
+		sourceColumn: opening_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column closure_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 0f3ff319-b8de-5afa-a681-6070387c6dbd
+		summarizeBy: none
+		sourceColumn: closure_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_closed
+		dataType: boolean
+		lineageTag: 180ec97a-b33b-55c2-b650-482855d63f20
+		summarizeBy: none
+		sourceColumn: is_closed
+
+	column compliance_profile
+		dataType: string
+		lineageTag: e0ac4eaf-8fdb-5dd9-8922-7a9d2d8525ea
+		summarizeBy: none
+		sourceColumn: compliance_profile
+
+	column base_efficiency_factor
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 25c50953-b6dc-55c5-96a2-108e2c2a0c7f
+		summarizeBy: none
+		sourceColumn: base_efficiency_factor
+
+	column unit_cost_multiplier
+		dataType: double
+		formatString: #,0.000
+		lineageTag: 7d15f48b-4ebe-5e75-836a-77676770c193
+		summarizeBy: none
+		sourceColumn: unit_cost_multiplier
+
+	partition dim_factory = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_factory\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

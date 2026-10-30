@@ -1,0 +1,162 @@
+[
+  {
+    "name": "macro_month_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "month_start_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_month",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "geographic_scope",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cpi_inflation_yoy_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cpi_index_2006_base",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "statutory_min_wage_entry_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "modeled_industry_floor_wage_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "global_cotton_price_index",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "carded_cotton_yarn_usd_per_kg",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industrial_energy_tariff_index",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industrial_electricity_bdt_per_kwh",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industrial_gas_bdt_per_m3",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "container_freight_rate_index",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "working_capital_interest_rate_pct",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bgmea_fy_woven_export_usd_bn",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bgmea_fy_knit_export_usd_bn",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bgmea_fy_total_rmg_export_usd_bn",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "epb_fy_national_export_usd_bn",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "annual_export_measurement_frequency",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "monthly_series_methodology",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "macro_regime_label",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "industry_demand_multiplier",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "quality_flag",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

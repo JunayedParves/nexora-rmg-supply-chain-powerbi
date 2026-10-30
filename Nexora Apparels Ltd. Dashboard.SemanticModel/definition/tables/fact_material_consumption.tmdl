@@ -1,0 +1,163 @@
+table fact_material_consumption
+	lineageTag: 81f862ab-6da5-5ff5-8308-e49f378bcd67
+
+	column consumption_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 452520a0-cc60-5cc9-96a2-50a2befd9e9c
+		summarizeBy: none
+		sourceColumn: consumption_key
+
+	column production_batch_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e301d4ca-9948-5e2a-80f2-2fafe53078d1
+		summarizeBy: none
+		sourceColumn: production_batch_key
+
+	column batch_id
+		dataType: string
+		lineageTag: bdb7e6ef-9c9e-58e3-81a7-3e4ab0695449
+		summarizeBy: none
+		sourceColumn: batch_id
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 11503675-152e-56cb-93dc-b7d35f92885c
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ff6f5373-de72-5e18-a112-d576e342a6f7
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 03cfbf8d-d8a1-53e4-9a81-ec514f41bbb7
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column material_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 420a4a9d-a027-5591-b2f5-64a94bc3a22b
+		summarizeBy: none
+		sourceColumn: material_key
+
+	column consumption_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: d5c27720-a22d-58a1-abd3-70fc6f3ea18f
+		summarizeBy: none
+		sourceColumn: consumption_date_key
+
+	column consumption_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5d0e6511-98c2-507a-9827-d56f986ca730
+		summarizeBy: none
+		sourceColumn: consumption_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column planned_material_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c1874045-d2f9-5749-83e9-c20e8355ae87
+		summarizeBy: sum
+		sourceColumn: planned_material_qty
+
+	column actual_material_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 53d70721-730e-5575-80c0-817467501787
+		summarizeBy: sum
+		sourceColumn: actual_material_qty
+
+	column wastage_qty
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7d4697fa-908b-5947-b519-0fc786452011
+		summarizeBy: sum
+		sourceColumn: wastage_qty
+
+	column wastage_rate_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c98e31d6-995f-5814-a7d7-8f1488e78de6
+		summarizeBy: sum
+		sourceColumn: wastage_rate_pct
+
+	column currency_code
+		dataType: string
+		lineageTag: aff0c6d2-4c3f-573f-acee-7cc25114bae9
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 664fa7e0-373a-5418-9732-ce25be483f5a
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column unit_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: db527a2e-ee4a-5bcc-a176-bab4107f8442
+		summarizeBy: sum
+		sourceColumn: unit_cost_usd
+
+	column total_material_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: df1723ab-864d-5ea7-be99-548ed7445cac
+		summarizeBy: sum
+		sourceColumn: total_material_cost_usd
+
+	column total_material_cost_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: fa87468a-4aed-5ce9-af70-f9b59fb879d9
+		summarizeBy: sum
+		sourceColumn: total_material_cost_bdt
+
+	column wastage_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: ff54ac71-5166-5c90-a0c4-0ce854a2d013
+		summarizeBy: sum
+		sourceColumn: wastage_cost_usd
+
+	column wastage_cost_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: e4510b9b-cbc1-5c19-a22e-a4d8d6f7ce4d
+		summarizeBy: sum
+		sourceColumn: wastage_cost_bdt
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 182c78fc-077a-5456-8d45-98e7ef7657db
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_material_consumption = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_material_consumption"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

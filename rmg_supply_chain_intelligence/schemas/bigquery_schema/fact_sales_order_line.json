@@ -1,0 +1,172 @@
+[
+  {
+    "name": "order_line_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "sales_order_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_line_number",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "calendar_quarter",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "fiscal_month",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "company_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "factory_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "buyer_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "product_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ordered_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "amended_order_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unit_price_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "currency_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "bdt_usd_exchange_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gross_order_value_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "discount_rate",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "discount_amount_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "net_order_value_usd",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "net_order_value_bdt",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_cancelled",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_amended",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_partial_fulfilment",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "event_year",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "order_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requested_delivery_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "requested_delivery_date_key",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "incoterm",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "shipped_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "unfulfilled_backlog_qty_pcs",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,127 @@
+table fact_cost_transaction
+	lineageTag: 144a8b97-ae54-5126-bf73-566ab9b04521
+
+	column cost_transaction_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: f9c1a429-f93a-5758-a52a-2cb650de0a07
+		summarizeBy: none
+		sourceColumn: cost_transaction_key
+
+	column cost_transaction_id
+		dataType: string
+		lineageTag: 407a4b59-4ec7-5b4b-b650-58150d98b271
+		summarizeBy: none
+		sourceColumn: cost_transaction_id
+
+	column transaction_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ac131f0-dbda-5435-a94e-941a2c4bccae
+		summarizeBy: none
+		sourceColumn: transaction_date_key
+
+	column transaction_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 6a61df34-0065-55c3-bd19-5317eb364df6
+		summarizeBy: none
+		sourceColumn: transaction_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 32a9296d-e854-5f2e-b675-b0fc3afc16a9
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: facc584f-7b78-568e-b98d-e9b0e558758d
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column cost_category_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bd22894-39ba-5ce3-a57a-9545e12bf571
+		summarizeBy: none
+		sourceColumn: cost_category_key
+
+	column production_batch_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 60796c3b-b89c-5115-ad41-1923cd9113c4
+		summarizeBy: none
+		sourceColumn: production_batch_key
+
+	column order_line_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f26f07c-2796-5461-b1cf-9107f562ca40
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+	column reference_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e1eea4d7-2d04-5015-b87b-bc0aaf08d1dd
+		summarizeBy: sum
+		sourceColumn: reference_quantity
+
+	column currency_code
+		dataType: string
+		lineageTag: b13cf945-a789-5738-9d36-aac0e7942f70
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 4e7ea720-3038-580f-9c4c-38c23d2a6bb0
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column amount_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: cf106667-9927-51bf-bdc1-119bbabfa519
+		summarizeBy: sum
+		sourceColumn: amount_usd
+
+	column amount_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: 2072db37-2303-5d0f-9144-65013484a22e
+		summarizeBy: sum
+		sourceColumn: amount_bdt
+
+	column allocation_method
+		dataType: string
+		lineageTag: 16c263be-9663-5c0e-a715-c60291ae2b82
+		summarizeBy: none
+		sourceColumn: allocation_method
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: cf3d00b1-7729-5396-bec9-c56a5b0fb70a
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_cost_transaction = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_cost_transaction"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

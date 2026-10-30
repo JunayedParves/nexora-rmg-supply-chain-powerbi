@@ -1,0 +1,67 @@
+[
+  {
+    "name": "material_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "material_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_category",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "material_group",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_uom",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sourcing_profile",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sourcing_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_primarily_imported",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "standard_lead_time_days",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "base_unit_cost_usd_2015",
+    "type": "NUMERIC",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "storage_characteristics",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_critical_path_material",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  }
+]

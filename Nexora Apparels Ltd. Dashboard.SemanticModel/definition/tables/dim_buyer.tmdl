@@ -1,0 +1,113 @@
+table dim_buyer
+	lineageTag: 0f35e2b2-defd-5690-8bfe-bb164208dce2
+
+	column buyer_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 7f6a7a5c-1d2c-5162-93e9-8f5a6baf9e8c
+		summarizeBy: none
+		sourceColumn: buyer_key
+
+	column buyer_code
+		dataType: string
+		lineageTag: 8550ff83-bdf9-540a-8fac-d5f215d49b29
+		summarizeBy: none
+		sourceColumn: buyer_code
+
+	column buyer_name
+		dataType: string
+		lineageTag: 145a379c-82cd-5081-962b-c99288846d9b
+		summarizeBy: none
+		sourceColumn: buyer_name
+
+	column customer_segment
+		dataType: string
+		lineageTag: cc55fd8a-17a4-5ee5-b602-27601a670f5e
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+	column destination_country
+		dataType: string
+		lineageTag: 2713f3ad-5c79-590d-8548-9c26ef997a52
+		summarizeBy: none
+		sourceColumn: destination_country
+
+	column market_region
+		dataType: string
+		lineageTag: f0dd45c8-46b9-50b6-95da-adf3b76055a1
+		summarizeBy: none
+		sourceColumn: market_region
+
+	column market_classification
+		dataType: string
+		lineageTag: 8d48c194-7b8c-550b-a5c6-25b41ed73ac1
+		summarizeBy: none
+		sourceColumn: market_classification
+
+	column product_preference
+		dataType: string
+		lineageTag: 6ca81b4d-05c3-5ab8-a9d8-967b6e0ea7a2
+		summarizeBy: none
+		sourceColumn: product_preference
+
+	column order_size_tier
+		dataType: string
+		lineageTag: 9fe92d2f-e666-5e40-becd-0dbb4b09fc06
+		summarizeBy: none
+		sourceColumn: order_size_tier
+
+	column payment_terms
+		dataType: string
+		lineageTag: d9dc2913-cb0d-5440-af20-dc9750daca8f
+		summarizeBy: none
+		sourceColumn: payment_terms
+
+	column quality_tolerance_aql
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 1b76cb54-3446-5afb-b4ba-fa069eebd00c
+		summarizeBy: none
+		sourceColumn: quality_tolerance_aql
+
+	column compliance_strictness
+		dataType: string
+		lineageTag: cf129e24-09e6-5a1c-bbba-e60b51603efd
+		summarizeBy: none
+		sourceColumn: compliance_strictness
+
+	column relationship_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 1548e89f-7910-5c74-b239-d7d1522cc464
+		summarizeBy: none
+		sourceColumn: relationship_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column relationship_end_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: a4288d89-d965-5c5c-afdf-742d9d1c85b5
+		summarizeBy: none
+		sourceColumn: relationship_end_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column demand_share_weight
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b991e18b-5a16-567f-840a-6662f548bbf9
+		summarizeBy: none
+		sourceColumn: demand_share_weight
+
+	partition dim_buyer = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_buyer\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

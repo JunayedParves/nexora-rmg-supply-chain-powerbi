@@ -1,0 +1,42 @@
+[
+  {
+    "name": "cost_category_key",
+    "type": "INT64",
+    "mode": "REQUIRED"
+  },
+  {
+    "name": "cost_category_code",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cost_category_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cost_group",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cost_behavior",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "allocation_basis",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "income_statement_classification",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "is_direct_production_cost",
+    "type": "BOOL",
+    "mode": "NULLABLE"
+  }
+]

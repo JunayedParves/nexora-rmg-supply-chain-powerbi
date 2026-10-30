@@ -1,0 +1,63 @@
+table dim_cost_category
+	lineageTag: 0f570778-4a4f-58c7-b6ab-3aec20e7880d
+
+	column cost_category_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 7b2a02b3-4d4e-522b-9602-5a1e8b4ac415
+		summarizeBy: none
+		sourceColumn: cost_category_key
+
+	column cost_category_code
+		dataType: string
+		lineageTag: 5f4ed4e9-5edb-5955-8ac0-d570006570f4
+		summarizeBy: none
+		sourceColumn: cost_category_code
+
+	column cost_category_name
+		dataType: string
+		lineageTag: 88d17d69-61a0-5e00-bd53-170cb845448e
+		summarizeBy: none
+		sourceColumn: cost_category_name
+
+	column cost_group
+		dataType: string
+		lineageTag: 71ce346e-52ea-5a04-a106-b2f4d7059916
+		summarizeBy: none
+		sourceColumn: cost_group
+
+	column cost_behavior
+		dataType: string
+		lineageTag: 040ae9c6-c2c7-516e-8f0d-6ffc898a3f89
+		summarizeBy: none
+		sourceColumn: cost_behavior
+
+	column allocation_basis
+		dataType: string
+		lineageTag: 2092b3cb-fd93-5fa8-b821-d5111e815187
+		summarizeBy: none
+		sourceColumn: allocation_basis
+
+	column income_statement_classification
+		dataType: string
+		lineageTag: e60a5180-1a15-56db-92e5-56ff29fd54a5
+		summarizeBy: none
+		sourceColumn: income_statement_classification
+
+	column is_direct_production_cost
+		dataType: boolean
+		lineageTag: 97661963-09ee-57e9-8ea9-eb56702d4aa5
+		summarizeBy: none
+		sourceColumn: is_direct_production_cost
+
+	partition dim_cost_category = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\dimensions\dim_cost_category\part-00000.parquet"))
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

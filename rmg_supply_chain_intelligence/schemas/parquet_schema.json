@@ -1,0 +1,2581 @@
+{
+  "dim_date": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 7305,
+    "columns": [
+      {
+        "name": "date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "full_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "day_of_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "day_of_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "iso_weekday",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "weekday_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "iso_week_of_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "month_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "month_short",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "year_month",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "calendar_quarter",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_quarter_label",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiscal_year_numeric",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_quarter",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_quarter_label",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiscal_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "is_leap_year",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_weekend",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_month_start",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_month_end",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_public_holiday",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "holiday_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "is_ramadan_period",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_eid_festival_window",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_working_day",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "apparel_buying_season",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bangladesh_climate_season",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      }
+    ]
+  },
+  "dim_company": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 8,
+    "columns": [
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "operating_archetype",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "year_established",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "primary_product_specialization",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "business_model",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "trade_association",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "headquarters_city",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "backward_linkage_level",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "active_from_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "active_to_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "is_currently_active",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "base_market_share_weight",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      }
+    ]
+  },
+  "dim_factory": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 26,
+    "columns": [
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "factory_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "location_city",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "industrial_zone",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "product_specialization",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "production_technology",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "design_line_count",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "base_monthly_capacity_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "opening_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "closure_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "is_closed",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "compliance_profile",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "base_efficiency_factor",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "unit_cost_multiplier",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      }
+    ]
+  },
+  "dim_factory_line": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 191,
+    "columns": [
+      {
+        "name": "production_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "line_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "line_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "line_specialization",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "shift_pattern",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "standard_daily_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "operators_per_line",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "helpers_per_line",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "monthly_standard_capacity_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "active_from_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "active_to_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      }
+    ]
+  },
+  "dim_buyer": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 52,
+    "columns": [
+      {
+        "name": "buyer_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "buyer_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "buyer_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "customer_segment",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "destination_country",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "market_region",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "market_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "product_preference",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_size_tier",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "payment_terms",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "quality_tolerance_aql",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "compliance_strictness",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "relationship_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "relationship_end_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "demand_share_weight",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      }
+    ]
+  },
+  "dim_material": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 64,
+    "columns": [
+      {
+        "name": "material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "material_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "material_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "material_category",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "material_group",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "base_uom",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "sourcing_profile",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "sourcing_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "is_primarily_imported",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "standard_lead_time_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "base_unit_cost_usd_2015",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "storage_characteristics",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "is_critical_path_material",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      }
+    ]
+  },
+  "dim_supplier": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 180,
+    "columns": [
+      {
+        "name": "supplier_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "supplier_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "supplier_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "supplier_type",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "origin_country",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "domestic_import_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "major_materials_supplied",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "average_lead_time_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "lead_time_variability_days",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "payment_terms",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "baseline_reliability_score",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "minimum_order_value_usd",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "active_from_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "active_to_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "is_currently_active",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "spend_share_weight",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      }
+    ]
+  },
+  "dim_product": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 125,
+    "columns": [
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "style_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "product_category",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "knit_woven_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "garment_type",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fabric_type",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiber_composition",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "target_market_segment",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "value_tier",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "manufacturing_complexity",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "standard_minute_value_smv",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "primary_material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "primary_material_consumption_per_unit",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "primary_material_uom",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "base_fob_unit_price_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "seasonality_profile",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "introduction_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "discontinuation_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "is_active_style",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      }
+    ]
+  },
+  "dim_cost_category": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 12,
+    "columns": [
+      {
+        "name": "cost_category_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "cost_category_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "cost_category_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "cost_group",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "cost_behavior",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "allocation_basis",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "income_statement_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "is_direct_production_cost",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      }
+    ]
+  },
+  "dim_order_line": {
+    "table_type": "dimension",
+    "partition_field": null,
+    "row_count": 240000,
+    "columns": [
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "sales_order_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_line_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "buyer_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "order_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "requested_delivery_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "order_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "incoterm",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "destination_country",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "payment_terms",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "knit_woven_classification",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "product_category",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      }
+    ]
+  },
+  "fact_sales_order_line": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 240000,
+    "columns": [
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "sales_order_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_line_number",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_quarter",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiscal_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "buyer_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "ordered_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "amended_order_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "unit_price_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "gross_order_value_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "discount_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "discount_amount_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "net_order_value_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "net_order_value_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "order_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "is_cancelled",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_amended",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_partial_fulfilment",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "order_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "order_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "requested_delivery_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "requested_delivery_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "incoterm",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "shipped_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "unfulfilled_backlog_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_purchase_order_line": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 245000,
+    "columns": [
+      {
+        "name": "purchase_order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "purchase_order_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "po_line_number",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "supplier_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "receiving_factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "po_order_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "po_order_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "expected_delivery_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "expected_delivery_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "ordered_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "unit_cost_usd",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "order_value_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "order_value_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "purchase_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_supplier_delivery": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 281638,
+    "columns": [
+      {
+        "name": "delivery_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "delivery_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "purchase_order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "purchase_order_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "supplier_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "receiving_factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "dispatch_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "dispatch_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "receipt_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "receipt_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "received_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "accepted_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "rejected_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "delivery_delay_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "is_on_time_delivery",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "unit_cost_usd",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "documented_material_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "documented_material_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_production_batch": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 254183,
+    "columns": [
+      {
+        "name": "production_batch_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "batch_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "production_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "planned_start_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "planned_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "actual_start_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "actual_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "planned_completion_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "planned_completion_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "actual_completion_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "actual_completion_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "planned_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "gross_produced_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "actual_good_output_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "rework_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "rejected_scrap_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "standard_minute_value_smv",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "earned_standard_minutes",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "actual_production_line_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "actual_labour_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "machine_downtime_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "line_efficiency_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "schedule_delay_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "production_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_material_consumption": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 508366,
+    "columns": [
+      {
+        "name": "consumption_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "production_batch_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "batch_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "consumption_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "consumption_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "planned_material_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "actual_material_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "wastage_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "wastage_rate_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "unit_cost_usd",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "total_material_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "total_material_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "wastage_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "wastage_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_quality_inspection": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 254183,
+    "columns": [
+      {
+        "name": "inspection_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "inspection_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "production_batch_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "batch_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "production_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "inspection_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "inspection_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "inspection_stage",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "inspected_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "defective_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "rework_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "rejected_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "accepted_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "defect_rate_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "first_pass_yield_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "primary_defect_category",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "aql_standard_threshold",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "passed_first_inspection",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "inspection_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "estimated_quality_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "estimated_quality_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_shipment_line": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 241126,
+    "columns": [
+      {
+        "name": "shipment_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "shipment_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "sales_order_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "buyer_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "dispatch_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "dispatch_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "expected_ship_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "expected_ship_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "actual_ship_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "actual_ship_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "estimated_arrival_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "estimated_arrival_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "actual_arrival_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "actual_arrival_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "confirmed_delivery_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "confirmed_delivery_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "shipped_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "delivered_qty_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "fob_revenue_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "fob_revenue_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "delivered_revenue_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "delivered_revenue_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "freight_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "freight_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "inland_logistics_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "inland_logistics_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "shipping_mode",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "port_of_loading",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "export_destination_country",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "shipment_delay_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "delivery_delay_days",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "is_on_time_shipment",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_on_time_delivery",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_partial_shipment",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "delivery_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "delay_reason",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_inventory_snapshot_monthly": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 227760,
+    "columns": [
+      {
+        "name": "inventory_snapshot_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "snapshot_month_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "item_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "material_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "product_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "stock_type",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "uom",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "opening_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "receipts_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "production_additions_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "consumption_issues_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "shipment_issues_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "adjustment_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "closing_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "reserved_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "safety_stock_qty",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "is_below_safety_stock",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "is_stockout_incident",
+        "parquet_type": "bool",
+        "bigquery_type": "BOOL"
+      },
+      {
+        "name": "average_ageing_days",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "ageing_bucket",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "unit_valuation_usd",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "inventory_value_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "inventory_value_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_cost_transaction": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 301611,
+    "columns": [
+      {
+        "name": "cost_transaction_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "cost_transaction_id",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "transaction_date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "transaction_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "cost_category_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "production_batch_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "order_line_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "reference_quantity",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "currency_code",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "amount_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "amount_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "allocation_method",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_workforce_monthly": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 42705,
+    "columns": [
+      {
+        "name": "workforce_month_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "month_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "department_name",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "worker_grade_role",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "active_headcount",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "monthly_hires",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "monthly_separations",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "statutory_entry_min_wage_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "average_monthly_wage_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "overtime_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "base_payroll_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "allowances_and_bonus_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "overtime_expense_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "total_payroll_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "total_payroll_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "absenteeism_rate_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "training_hours",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_sustainability_monthly": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 4745,
+    "columns": [
+      {
+        "name": "sustainability_month_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "month_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "company_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "factory_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "monthly_output_pcs",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "electricity_consumption_kwh",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "renewable_solar_kwh",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "renewable_energy_share_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "natural_gas_consumption_m3",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "water_withdrawal_m3",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "wastewater_treated_m3",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "solid_fabric_waste_kg",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "recycled_material_kg",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "waste_recycling_rate_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "estimated_carbon_emissions_kg_co2e",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "emissions_per_garment_kg_co2e",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "utility_cost_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "utility_cost_usd",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "estimation_methodology",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  },
+  "fact_macro_monthly": {
+    "table_type": "fact",
+    "partition_field": "event_year",
+    "row_count": 240,
+    "columns": [
+      {
+        "name": "macro_month_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "date_key",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "month_start_date",
+        "parquet_type": "date32[day]",
+        "bigquery_type": "DATE"
+      },
+      {
+        "name": "calendar_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "calendar_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "year_month",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiscal_year",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "fiscal_month",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      },
+      {
+        "name": "geographic_scope",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "bdt_usd_exchange_rate",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "cpi_inflation_yoy_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "cpi_index_2006_base",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "statutory_min_wage_entry_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "modeled_industry_floor_wage_bdt",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "global_cotton_price_index",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "carded_cotton_yarn_usd_per_kg",
+        "parquet_type": "decimal128(18, 3)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "industrial_energy_tariff_index",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "industrial_electricity_bdt_per_kwh",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "industrial_gas_bdt_per_m3",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "container_freight_rate_index",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "working_capital_interest_rate_pct",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "bgmea_fy_woven_export_usd_bn",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "bgmea_fy_knit_export_usd_bn",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "bgmea_fy_total_rmg_export_usd_bn",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "epb_fy_national_export_usd_bn",
+        "parquet_type": "decimal128(18, 2)",
+        "bigquery_type": "NUMERIC"
+      },
+      {
+        "name": "annual_export_measurement_frequency",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "monthly_series_methodology",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "macro_regime_label",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "industry_demand_multiplier",
+        "parquet_type": "double",
+        "bigquery_type": "FLOAT64"
+      },
+      {
+        "name": "source_status",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "quality_flag",
+        "parquet_type": "string",
+        "bigquery_type": "STRING"
+      },
+      {
+        "name": "event_year",
+        "parquet_type": "int64",
+        "bigquery_type": "INT64"
+      }
+    ]
+  }
+}

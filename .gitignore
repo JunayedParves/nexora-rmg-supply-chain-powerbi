@@ -1,0 +1,11 @@
+# Power BI local state
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Large generated data: reproduce with rmg_supply_chain_intelligence/scripts/export_parquet.py
+rmg_supply_chain_intelligence/data/facts/
+rmg_supply_chain_intelligence/data/dimensions/
+
+# Python / Node
+**/__pycache__/
+node_modules/

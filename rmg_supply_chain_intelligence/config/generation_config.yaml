@@ -1,0 +1,85 @@
+# 20-Year Bangladesh RMG Supply Chain Intelligence Configuration
+project:
+  name: "Bangladesh RMG Supply Chain Intelligence Platform"
+  version: "1.0.0"
+  random_seed: 20261026
+  start_date: "2006-01-01"
+  end_date: "2025-12-31"
+  calendar_years: 20
+  reporting_currency: "BDT"
+  secondary_currency: "USD"
+  fiscal_year_start_month: 7  # July - June Bangladesh Fiscal Year
+
+scale:
+  num_companies: 8
+  num_factories: 26
+  num_factory_lines: 185
+  num_suppliers: 180
+  num_buyers: 52
+  num_products: 125
+  num_materials: 64
+  num_cost_categories: 12
+  target_sales_order_lines: 240000
+
+historical_shocks:
+  gfc_2008_2009:
+    start_date: "2008-09-01"
+    end_date: "2009-12-31"
+    demand_multiplier: 0.91
+    discount_bump: 0.015
+    cancellation_bump: 0.025
+  rana_plaza_remediation_2013_2015:
+    event_date: "2013-04-24"
+    audit_intensity_multiplier: 1.85
+    compliance_capex_bump_bdt: 450000
+    low_tier_buyer_diversion: 0.85
+  covid_shock_2020:
+    acute_start: "2020-03-15"
+    acute_end: "2020-06-30"
+    recovery_end: "2021-03-31"
+    cancellation_rate_acute: 0.22
+    capacity_utilization_drop: 0.58
+    port_delay_days_bump: 9
+  post_covid_boom_and_freight_crisis_2021_2022:
+    start_date: "2021-04-01"
+    end_date: "2022-06-30"
+    demand_multiplier: 1.24
+    freight_cost_multiplier: 2.35
+  macro_energy_fx_shock_2022_2025:
+    start_date: "2022-07-01"
+    end_date: "2025-12-31"
+    utility_tariff_multiplier: 1.75
+    working_capital_interest_rate: 0.115
+    fx_depreciation_regime: "crawling_peg_shock"
+
+minimum_wage_benchmarks_bdt:
+  - effective_date: "2006-01-01"
+    gazette_date: "1994-07-01"
+    entry_grade_min_wage: 930.00
+    note: "Pre-Oct 2006 statutory baseline (modeled transitional market floor ~1,550 BDT)"
+  - effective_date: "2006-10-22"
+    gazette_date: "2006-10-22"
+    entry_grade_min_wage: 1662.50
+    note: "2006 Minimum Wage Board Revision (Grade 7)"
+  - effective_date: "2010-11-01"
+    gazette_date: "2010-10-21"
+    entry_grade_min_wage: 3000.00
+    note: "2010 Minimum Wage Revision (Basic 2000, House Rent 800, Medical 200)"
+  - effective_date: "2013-12-01"
+    gazette_date: "2013-11-21"
+    entry_grade_min_wage: 5300.00
+    note: "2013 Post-Rana Plaza Wage Revision (Basic 3000 + Allowances)"
+  - effective_date: "2018-12-01"
+    gazette_date: "2018-11-25"
+    entry_grade_min_wage: 8000.00
+    note: "S.R.O. No. 345-Law/2018 Grade 7 Minimum Wage"
+  - effective_date: "2023-12-01"
+    gazette_date: "2023-11-12"
+    entry_grade_min_wage: 12500.00
+    note: "2023 Gazette Revision (5-tier structure, entry Grade 4)"
+
+parquet_settings:
+  compression: "snappy"
+  use_dictionary: true
+  write_statistics: true
+  partition_fact_tables_by: "event_year"

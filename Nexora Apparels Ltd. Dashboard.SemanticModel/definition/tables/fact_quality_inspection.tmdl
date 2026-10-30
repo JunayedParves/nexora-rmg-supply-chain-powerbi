@@ -1,0 +1,207 @@
+table fact_quality_inspection
+	lineageTag: e24715f5-0668-5563-9f2f-69549027aec7
+
+	column inspection_key
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: 8a744582-5122-5924-be2f-4d192b0fbfd6
+		summarizeBy: none
+		sourceColumn: inspection_key
+
+	column inspection_id
+		dataType: string
+		lineageTag: b7332f37-ba33-5ab4-acaa-1489ed5eca71
+		summarizeBy: none
+		sourceColumn: inspection_id
+
+	column production_batch_key
+		dataType: int64
+		formatString: 0
+		lineageTag: f102c75c-54e7-5c39-8e67-302e70e6a452
+		summarizeBy: none
+		sourceColumn: production_batch_key
+
+	column batch_id
+		dataType: string
+		lineageTag: 067ee91d-f802-527b-b30a-ffe70335d888
+		summarizeBy: none
+		sourceColumn: batch_id
+
+	column order_line_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e9303cc-013c-5165-baeb-e8bb259a7668
+		summarizeBy: none
+		sourceColumn: order_line_key
+
+	column company_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e0de76a-2e6c-5a1b-8324-7966f60264ab
+		summarizeBy: none
+		sourceColumn: company_key
+
+	column factory_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 19b6a356-0018-5c1b-8f5b-f3bc83f16244
+		summarizeBy: none
+		sourceColumn: factory_key
+
+	column production_line_key
+		dataType: int64
+		formatString: 0
+		lineageTag: ac948f8a-c235-5c90-8fa6-d1b839ae1949
+		summarizeBy: none
+		sourceColumn: production_line_key
+
+	column product_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 217dc089-3cd0-5c4a-af74-be49d289458d
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column inspection_date_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 98d7609a-070c-53d2-a42e-5365688338fb
+		summarizeBy: none
+		sourceColumn: inspection_date_key
+
+	column inspection_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: d61bd62b-34fb-5062-bd0d-6116437d9580
+		summarizeBy: none
+		sourceColumn: inspection_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column inspection_stage
+		dataType: string
+		lineageTag: bc48eb07-0f1f-528b-8d84-7d0ce34b8037
+		summarizeBy: none
+		sourceColumn: inspection_stage
+
+	column inspected_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: aac67474-7855-59ee-b044-4c45bce3691b
+		summarizeBy: sum
+		sourceColumn: inspected_qty_pcs
+
+	column defective_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: ae25c776-5d2a-5b54-a41c-3b7a2d0a5e0d
+		summarizeBy: sum
+		sourceColumn: defective_qty_pcs
+
+	column rework_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c53f6a3-1a7e-582d-ab19-85ee04ec01f8
+		summarizeBy: sum
+		sourceColumn: rework_qty_pcs
+
+	column rejected_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 6af283ad-1062-5cfb-b2dc-717ceeec7a3f
+		summarizeBy: sum
+		sourceColumn: rejected_qty_pcs
+
+	column accepted_qty_pcs
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b92368f-ccb5-58ea-aded-b62c66c661ae
+		summarizeBy: sum
+		sourceColumn: accepted_qty_pcs
+
+	column defect_rate_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: dcddccb4-cba6-505d-ace8-9b325a9a2278
+		summarizeBy: sum
+		sourceColumn: defect_rate_pct
+
+	column first_pass_yield_pct
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b8bf7725-864c-5305-824f-4e4fbee15503
+		summarizeBy: sum
+		sourceColumn: first_pass_yield_pct
+
+	column primary_defect_category
+		dataType: string
+		lineageTag: 62891d21-4e1c-528b-95b9-be00c8df0403
+		summarizeBy: none
+		sourceColumn: primary_defect_category
+
+	column aql_standard_threshold
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2347664c-90cf-53d0-8c80-7520e8b56c63
+		summarizeBy: sum
+		sourceColumn: aql_standard_threshold
+
+	column passed_first_inspection
+		dataType: boolean
+		lineageTag: ae95292d-2959-566c-ad4a-97d5a3d36c3f
+		summarizeBy: none
+		sourceColumn: passed_first_inspection
+
+	column inspection_status
+		dataType: string
+		lineageTag: ee2e1078-7dd2-5d25-822a-5c0d92c73ac4
+		summarizeBy: none
+		sourceColumn: inspection_status
+
+	column currency_code
+		dataType: string
+		lineageTag: ab3692df-81d5-5903-aa9f-52b08ef1e313
+		summarizeBy: none
+		sourceColumn: currency_code
+
+	column bdt_usd_exchange_rate
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: a25f1aba-07a1-597f-a3c5-373eb84cda78
+		summarizeBy: sum
+		sourceColumn: bdt_usd_exchange_rate
+
+	column estimated_quality_cost_usd
+		dataType: double
+		formatString: $#,0.00;($#,0.00);$#,0.00
+		lineageTag: 0fa10e42-b073-51c0-8dda-bf5ae8cbf045
+		summarizeBy: sum
+		sourceColumn: estimated_quality_cost_usd
+
+	column estimated_quality_cost_bdt
+		dataType: double
+		formatString: ৳#,0.00;(৳#,0.00);৳#,0.00
+		lineageTag: b8c6a5ad-5001-5e6e-9496-3b0f27b7097e
+		summarizeBy: sum
+		sourceColumn: estimated_quality_cost_bdt
+
+	column event_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c977001-a3e0-5614-9db9-13ac08cee40a
+		summarizeBy: none
+		sourceColumn: event_year
+
+	partition fact_quality_inspection = m
+		mode: import
+		source =
+				let
+				    Source = Folder.Files("c:\Users\Junayed\Documents\RMG Company\rmg_supply_chain_intelligence\data\facts\fact_quality_inspection"),
+				    FilteredFiles = Table.SelectRows(Source, each [Extension] = ".parquet"),
+				    CombinedParquet = Table.Combine(List.Transform(FilteredFiles[Content], each Parquet.Document(_)))
+				in
+				    CombinedParquet
+
+	annotation PBI_ResultType = Table
+

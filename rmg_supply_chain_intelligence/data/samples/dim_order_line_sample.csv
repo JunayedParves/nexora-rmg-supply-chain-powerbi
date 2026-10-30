@@ -1,0 +1,101 @@
+order_line_key,sales_order_id,order_line_code,company_key,factory_key,buyer_key,product_key,order_date,requested_delivery_date,order_status,incoterm,destination_country,payment_terms,knit_woven_classification,product_category
+1,SO-2006-100001,OL-000001,5,16,20,87,2006-01-03,2006-03-13,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Woven,Woven Bottoms
+2,SO-2006-100002,OL-000002,3,10,51,84,2006-01-28,2006-03-25,Partially Shipped,FOB Chattogram,South Korea,60 Days Deferred Usance L/C,Woven,Woven Bottoms
+3,SO-2006-100003,OL-000003,3,11,41,83,2006-01-07,2006-03-19,Fulfilled,FCA Dhaka Airport,United Kingdom,60 Days Deferred Usance L/C,Woven,Woven Bottoms
+4,SO-2006-100004,OL-000004,1,2,28,63,2006-01-01,2006-03-24,Fulfilled,CIF Destination Port,United States,Open Account / Telegraphic Transfer (TT) 45 Days,Knit,Knit Fleece & Hoodies
+5,SO-2006-100005,OL-000005,2,5,49,74,2006-01-16,2006-04-02,Amended & Fulfilled,FOB Chattogram,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Shirts
+6,SO-2006-100006,OL-000006,5,16,40,99,2006-01-15,2006-02-26,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+7,SO-2006-100007,OL-000007,2,6,40,92,2006-01-08,2006-03-07,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+8,SO-2006-100008,OL-000008,2,5,49,82,2006-01-10,2006-04-08,Partially Shipped,FCA Dhaka Airport,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+9,SO-2006-100009,OL-000009,2,8,9,84,2006-01-19,2006-04-18,Fulfilled,CIF Destination Port,France,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+10,SO-2006-100010,OL-000010,3,10,4,99,2006-01-16,2006-04-08,Fulfilled,FOB Chattogram,Germany,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Denim Apparel
+11,SO-2006-100011,OL-000011,3,11,40,97,2006-01-16,2006-03-15,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+12,SO-2006-100012,OL-000012,1,2,41,35,2006-01-12,2006-04-17,Fulfilled,FOB Chattogram,United Kingdom,60 Days Deferred Usance L/C,Knit,Knit Tops
+13,SO-2006-100013,OL-000013,1,1,9,38,2006-01-15,2006-02-27,Partially Shipped,FCA Dhaka Airport,France,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Knit Tops
+14,SO-2006-100014,OL-000014,8,26,40,6,2006-01-12,2006-03-20,Partially Shipped,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+15,SO-2006-100015,OL-000015,8,25,40,2,2006-01-06,2006-04-08,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+16,SO-2006-100016,OL-000016,1,2,16,23,2006-01-14,2006-03-06,Amended & Fulfilled,FOB Chattogram,Netherlands,60 Days Deferred Usance L/C,Knit,Knit Tops
+17,SO-2006-100017,OL-000017,1,2,2,9,2006-01-21,2006-03-18,Fulfilled,FOB Chattogram,Germany,90 Days Deferred Usance L/C,Knit,Knit Tops
+18,SO-2006-100018,OL-000018,1,1,9,2,2006-01-27,2006-03-25,Fulfilled,FCA Dhaka Airport,France,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Knit Tops
+19,SO-2006-100019,OL-000019,3,10,49,87,2006-01-22,2006-04-19,Fulfilled,CIF Destination Port,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+20,SO-2006-100020,OL-000020,1,1,40,34,2006-01-18,2006-03-11,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+21,SO-2006-100021,OL-000021,1,2,20,53,2006-01-13,2006-02-28,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Knit,Knit Fleece & Hoodies
+22,SO-2006-100022,OL-000022,3,11,49,82,2006-01-31,2006-03-27,Fulfilled,FOB Chattogram,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+23,SO-2006-100023,OL-000023,6,19,49,114,2006-01-13,2006-04-09,Fulfilled,FCA Dhaka Airport,India,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Sweaters & Flat-Knit
+24,SO-2006-100024,OL-000024,3,11,40,98,2006-01-22,2006-03-21,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+25,SO-2006-100025,OL-000025,2,6,40,76,2006-01-24,2006-04-28,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+26,SO-2006-100026,OL-000026,6,19,27,111,2006-01-26,2006-03-21,Fulfilled,FOB Chattogram,United States,90 Days Deferred Usance L/C,Knit,Sweaters & Flat-Knit
+27,SO-2006-100027,OL-000027,1,1,20,14,2006-01-21,2006-03-28,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Knit,Knit Tops
+28,SO-2006-100028,OL-000028,2,8,23,83,2006-01-21,2006-04-09,Fulfilled,FCA Dhaka Airport,Denmark,Open Account / Telegraphic Transfer (TT) 45 Days,Woven,Woven Bottoms
+29,SO-2006-100029,OL-000029,5,16,42,83,2006-01-13,2006-03-25,Fulfilled,CIF Destination Port,Canada,90 Days Deferred Usance L/C,Woven,Woven Bottoms
+30,SO-2006-100030,OL-000030,3,10,42,82,2006-01-18,2006-03-06,Cancelled,FOB Chattogram,Canada,90 Days Deferred Usance L/C,Woven,Woven Bottoms
+31,SO-2006-100031,OL-000031,5,16,40,82,2006-01-12,2006-04-18,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+32,SO-2006-100032,OL-000032,3,10,20,82,2006-01-15,2006-03-02,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Woven,Woven Bottoms
+33,SO-2006-100033,OL-000033,3,11,40,97,2006-01-24,2006-04-25,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+34,SO-2006-100034,OL-000034,2,6,40,76,2006-01-15,2006-03-07,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+35,SO-2006-100035,OL-000035,2,6,40,92,2006-01-06,2006-03-20,Amended & Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+36,SO-2006-100036,OL-000036,1,1,37,34,2006-01-01,2006-04-02,Fulfilled,FOB Chattogram,United Kingdom,90 Days Deferred Usance L/C,Knit,Knit Tops
+37,SO-2006-100037,OL-000037,3,10,5,82,2006-01-21,2006-03-08,Fulfilled,FOB Chattogram,Germany,At Sight Irrevocable L/C,Woven,Woven Bottoms
+38,SO-2006-100038,OL-000038,2,6,40,65,2006-01-17,2006-02-28,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+39,SO-2006-100039,OL-000039,1,1,40,23,2006-01-10,2006-04-08,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+40,SO-2006-100040,OL-000040,8,25,1,4,2006-01-07,2006-04-07,Fulfilled,FOB Chattogram,Germany,60 Days Deferred Usance L/C,Knit,Knit Tops
+41,SO-2006-100041,OL-000041,2,8,40,67,2006-01-30,2006-04-04,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+42,SO-2006-100042,OL-000042,2,5,40,84,2006-01-24,2006-04-20,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+43,SO-2006-100043,OL-000043,2,8,40,76,2006-01-04,2006-04-11,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+44,SO-2006-100044,OL-000044,1,1,40,114,2006-01-17,2006-04-22,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Knit,Sweaters & Flat-Knit
+45,SO-2006-100045,OL-000045,3,10,40,98,2006-01-31,2006-04-17,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+46,SO-2006-100046,OL-000046,3,10,40,98,2006-01-06,2006-03-07,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+47,SO-2006-100047,OL-000047,3,11,23,92,2006-01-02,2006-02-14,Fulfilled,FOB Chattogram,Denmark,Open Account / Telegraphic Transfer (TT) 45 Days,Woven,Woven Bottoms
+48,SO-2006-100048,OL-000048,2,6,40,84,2006-01-21,2006-04-16,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+49,SO-2006-100049,OL-000049,5,16,49,87,2006-01-08,2006-03-08,Fulfilled,CIF Destination Port,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+50,SO-2006-100050,OL-000050,1,2,40,110,2006-01-15,2006-03-21,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Sweaters & Flat-Knit
+51,SO-2006-100051,OL-000051,5,16,7,92,2006-01-02,2006-02-18,Fulfilled,FOB Chattogram,Spain,90 Days Deferred Usance L/C,Woven,Woven Bottoms
+52,SO-2006-100052,OL-000052,1,1,49,55,2006-01-24,2006-03-19,Fulfilled,FOB Chattogram,India,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Knit Fleece & Hoodies
+53,SO-2006-100053,OL-000053,2,6,49,93,2006-01-20,2006-03-22,Fulfilled,FCA Dhaka Airport,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+54,SO-2006-100054,OL-000054,5,16,40,87,2006-01-07,2006-03-26,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+55,SO-2006-100055,OL-000055,5,16,34,93,2006-01-26,2006-04-29,Fulfilled,FOB Chattogram,United States,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+56,SO-2006-100056,OL-000056,5,16,8,87,2006-01-11,2006-03-30,Cancelled,FOB Chattogram,Spain,Open Account / Telegraphic Transfer (TT) 45 Days,Woven,Woven Bottoms
+57,SO-2006-100057,OL-000057,3,10,1,82,2006-01-27,2006-03-21,Fulfilled,FOB Chattogram,Germany,60 Days Deferred Usance L/C,Woven,Woven Bottoms
+58,SO-2006-100058,OL-000058,2,5,27,68,2006-01-16,2006-04-11,Fulfilled,FCA Dhaka Airport,United States,90 Days Deferred Usance L/C,Woven,Woven Shirts
+59,SO-2006-100059,OL-000059,1,1,41,16,2006-01-29,2006-03-16,Cancelled,CIF Destination Port,United Kingdom,60 Days Deferred Usance L/C,Knit,Knit Tops
+60,SO-2006-100060,OL-000060,8,25,33,2,2006-01-26,2006-03-12,Fulfilled,FOB Chattogram,United States,Open Account / Telegraphic Transfer (TT) 45 Days,Knit,Knit Tops
+61,SO-2006-100061,OL-000061,8,26,42,15,2006-01-07,2006-04-01,Partially Shipped,FOB Chattogram,Canada,90 Days Deferred Usance L/C,Knit,Knit Tops
+62,SO-2006-100062,OL-000062,6,20,40,114,2006-01-24,2006-04-09,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Sweaters & Flat-Knit
+63,SO-2006-100063,OL-000063,8,25,20,16,2006-01-06,2006-02-21,Fulfilled,FCA Dhaka Airport,Sweden,At Sight Irrevocable L/C,Knit,Knit Tops
+64,SO-2006-100064,OL-000064,1,1,49,15,2006-01-15,2006-03-10,Fulfilled,CIF Destination Port,India,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Knit Tops
+65,SO-2006-100065,OL-000065,2,5,9,84,2006-01-20,2006-04-26,Fulfilled,FOB Chattogram,France,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+66,SO-2006-100066,OL-000066,8,25,40,16,2006-01-25,2006-04-24,Cancelled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+67,SO-2006-100067,OL-000067,2,6,40,76,2006-01-29,2006-03-17,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
+68,SO-2006-100068,OL-000068,2,8,16,74,2006-01-08,2006-04-14,Fulfilled,FCA Dhaka Airport,Netherlands,60 Days Deferred Usance L/C,Woven,Woven Shirts
+69,SO-2006-100069,OL-000069,5,16,40,99,2006-01-28,2006-03-25,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+70,SO-2006-100070,OL-000070,6,20,20,111,2006-01-03,2006-03-07,Partially Shipped,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Knit,Sweaters & Flat-Knit
+71,SO-2006-100071,OL-000071,1,1,40,16,2006-01-21,2006-03-14,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+72,SO-2006-100072,OL-000072,2,5,41,65,2006-01-09,2006-04-10,Fulfilled,FOB Chattogram,United Kingdom,60 Days Deferred Usance L/C,Woven,Woven Shirts
+73,SO-2006-100073,OL-000073,2,5,23,92,2006-01-09,2006-03-10,Fulfilled,FCA Dhaka Airport,Denmark,Open Account / Telegraphic Transfer (TT) 45 Days,Woven,Woven Bottoms
+74,SO-2006-100074,OL-000074,1,1,40,12,2006-01-14,2006-02-25,Amended & Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+75,SO-2006-100075,OL-000075,2,6,8,80,2006-01-19,2006-04-16,Fulfilled,FOB Chattogram,Spain,Open Account / Telegraphic Transfer (TT) 45 Days,Woven,Woven Shirts
+76,SO-2006-100076,OL-000076,1,1,20,25,2006-01-08,2006-02-27,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Knit,Knit Tops
+77,SO-2006-100077,OL-000077,2,5,30,68,2006-01-23,2006-03-25,Fulfilled,FOB Chattogram,United States,At Sight Irrevocable L/C,Woven,Woven Shirts
+78,SO-2006-100078,OL-000078,1,1,40,110,2006-01-08,2006-03-06,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Knit,Sweaters & Flat-Knit
+79,SO-2006-100079,OL-000079,5,16,20,98,2006-01-20,2006-04-27,Fulfilled,CIF Destination Port,Sweden,At Sight Irrevocable L/C,Woven,Denim Apparel
+80,SO-2006-100080,OL-000080,2,8,31,65,2006-01-21,2006-03-16,Fulfilled,FOB Chattogram,United States,60 Days Deferred Usance L/C,Woven,Woven Shirts
+81,SO-2006-100081,OL-000081,2,6,40,93,2006-01-09,2006-03-11,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+82,SO-2006-100082,OL-000082,1,1,20,49,2006-01-28,2006-04-28,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Knit,Knit Fleece & Hoodies
+83,SO-2006-100083,OL-000083,8,26,40,16,2006-01-16,2006-03-13,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+84,SO-2006-100084,OL-000084,2,5,49,92,2006-01-13,2006-03-28,Amended & Fulfilled,CIF Destination Port,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+85,SO-2006-100085,OL-000085,3,10,49,93,2006-01-27,2006-03-27,Fulfilled,FOB Chattogram,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Bottoms
+86,SO-2006-100086,OL-000086,2,5,15,93,2006-01-24,2006-04-13,Fulfilled,FOB Chattogram,Italy,At Sight Irrevocable L/C,Woven,Woven Bottoms
+87,SO-2006-100087,OL-000087,3,11,40,82,2006-01-17,2006-03-02,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Bottoms
+88,SO-2006-100088,OL-000088,2,8,37,68,2006-01-29,2006-04-25,Fulfilled,FCA Dhaka Airport,United Kingdom,90 Days Deferred Usance L/C,Woven,Woven Shirts
+89,SO-2006-100089,OL-000089,2,5,4,74,2006-01-04,2006-03-03,Partially Shipped,CIF Destination Port,Germany,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Woven Shirts
+90,SO-2006-100090,OL-000090,1,1,9,23,2006-01-05,2006-04-07,Fulfilled,FOB Chattogram,France,Open Account / Telegraphic Transfer (TT) 60 Days,Knit,Knit Tops
+91,SO-2006-100091,OL-000091,1,1,11,35,2006-01-31,2006-03-15,Fulfilled,FOB Chattogram,France,60 Days Deferred Usance L/C,Knit,Knit Tops
+92,SO-2006-100092,OL-000092,2,5,16,93,2006-01-24,2006-04-20,Fulfilled,FOB Chattogram,Netherlands,60 Days Deferred Usance L/C,Woven,Woven Bottoms
+93,SO-2006-100093,OL-000093,1,2,40,51,2006-01-18,2006-04-12,Fulfilled,FCA Dhaka Airport,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Fleece & Hoodies
+94,SO-2006-100094,OL-000094,2,6,31,74,2006-01-16,2006-03-06,Amended & Fulfilled,CIF Destination Port,United States,60 Days Deferred Usance L/C,Woven,Woven Shirts
+95,SO-2006-100095,OL-000095,8,26,45,16,2006-01-18,2006-04-21,Fulfilled,FOB Chattogram,Japan,At Sight Irrevocable L/C,Knit,Knit Tops
+96,SO-2006-100096,OL-000096,2,5,20,82,2006-01-12,2006-04-19,Fulfilled,FOB Chattogram,Sweden,At Sight Irrevocable L/C,Woven,Woven Bottoms
+97,SO-2006-100097,OL-000097,8,25,40,16,2006-01-15,2006-03-19,Fulfilled,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Knit,Knit Tops
+98,SO-2006-100098,OL-000098,3,10,49,97,2006-01-16,2006-03-27,Fulfilled,FCA Dhaka Airport,India,Open Account / Telegraphic Transfer (TT) 60 Days,Woven,Denim Apparel
+99,SO-2006-100099,OL-000099,3,10,40,98,2006-01-31,2006-04-04,Fulfilled,CIF Destination Port,United Kingdom,At Sight Irrevocable L/C,Woven,Denim Apparel
+100,SO-2006-100100,OL-000100,2,8,40,67,2006-01-02,2006-03-10,Partially Shipped,FOB Chattogram,United Kingdom,At Sight Irrevocable L/C,Woven,Woven Shirts
