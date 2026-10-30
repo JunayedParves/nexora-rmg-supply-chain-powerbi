@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
 
 annotation PBI_QueryOrder = ["Executive_Measures", "dim_date", "dim_company", "dim_factory", "dim_factory_line", "dim_buyer", "dim_supplier", "dim_product", "dim_material", "dim_cost_category", "dim_order_line", "fact_sales_order_line", "fact_purchase_order_line", "fact_supplier_delivery", "fact_production_batch", "fact_material_consumption", "fact_quality_inspection", "fact_shipment_line", "fact_inventory_snapshot_monthly", "fact_cost_transaction", "fact_workforce_monthly", "fact_sustainability_monthly", "fact_macro_monthly"]
 

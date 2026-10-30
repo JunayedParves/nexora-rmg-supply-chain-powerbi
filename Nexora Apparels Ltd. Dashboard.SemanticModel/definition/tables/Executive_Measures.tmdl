@@ -284,7 +284,7 @@ table Executive_Measures
 		lineageTag: ae1afa3a-7c2e-5790-b001-f7d646f930f4
 
 	/// Percentage of monthly inventory snapshots maintaining stock at or above safety threshold.
-	measure 'Safety Stock Compliance %' = 1 - DIVIDE ( CALCULATE ( COUNTROWS ( fact_inventory_snapshot_monthly ), fact_inventory_snapshot_monthly[is_below_safety_stock] = TRUE () ), COUNTROWS ( fact_inventory_snapshot_monthly ), 0 )
+	measure 'Safety Stock Compliance %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_inventory_snapshot_monthly ), fact_inventory_snapshot_monthly[is_below_safety_stock] = FALSE () ), COUNTROWS ( fact_inventory_snapshot_monthly ) )
 		formatString: 0.0%
 		displayFolder: 04. Inventory & Working Capital
 		lineageTag: 8f084083-b978-59b4-b1dc-e41ae00a4dc9
@@ -344,7 +344,7 @@ table Executive_Measures
 		lineageTag: 4c43c6e5-30e3-5c5a-a1fc-6fb981c9f376
 
 	/// Percentage of inspected garments passing inspection defect-free on the first pass.
-	measure 'First-Pass Yield (FPY) %' = 1 - DIVIDE ( [Defective Quantity (PCS)], [Inspected Quantity (PCS)], 0 )
+	measure 'First-Pass Yield (FPY) %' = DIVIDE ( [Inspected Quantity (PCS)] - [Defective Quantity (PCS)], [Inspected Quantity (PCS)] )
 		formatString: 0.0%
 		displayFolder: 06. Quality & Compliance
 		lineageTag: caf84f10-a77b-56c1-8c03-a54b32ca4777
@@ -520,396 +520,525 @@ table Executive_Measures
 	measure 'Late Shipped Quantity (PCS)' = CALCULATE ( [Shipped Quantity (PCS)], KEEPFILTERS ( fact_shipment_line[delay_reason] <> "On-Time Delivery (No Delay)" ) )
 		formatString: #,0
 		displayFolder: 90. Storytelling
+		lineageTag: 665bbbac-d009-4620-825c-f5a7e8dcac9d
 
 	measure 'Nexora revenue (index)' = Nexora.Index ( [Shipped FOB Revenue (USD)] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: 26d79dfe-f637-4d28-a7ef-ffc83f569bb9
 
 	measure 'National RMG exports (index)' = Nexora.Index ( [BGMEA National RMG Export ($B)] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: 136e6780-7aec-4cbf-a3c1-c9674017a5fe
 
 	measure 'Minimum wage (index)' = Nexora.Index ( [Statutory Minimum Wage (BDT)] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: c0f70dd5-fbaa-44ce-9d1d-726a4cf395a8
 
 	measure 'Output per labour hour (index)' = Nexora.Index ( [Output per Labour Hour (PCS)] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: 19841d74-c3fc-4128-836b-503ccd5e6a09
 
 	measure 'Payroll (index)' = Nexora.Index ( [Total Workforce Payroll (USD)] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: 589bc4a1-a9de-44b2-8fcf-5e43df029460
 
 	measure 'Headcount (index)' = Nexora.Index ( [Active Headcount] )
 		formatString: 0
 		displayFolder: 90. Storytelling
+		lineageTag: 4a1d7fa8-9e1e-487f-9580-96d09d1b41fa
 
 	measure 'KPI Context | Shipped FOB Revenue (USD)' = Nexora.KpiContext ( [Shipped FOB Revenue (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 174e34c6-0aa4-4d34-bb53-54aa930ea483
 
 	measure 'KPI Color | Shipped FOB Revenue (USD)' = Nexora.KpiColor ( [KPI Context | Shipped FOB Revenue (USD)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 1d586692-1e2f-4f99-9c91-832798079ed1
 
 	measure 'KPI Context | Order Intake Value (USD)' = Nexora.KpiContext ( [Order Intake Value (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: cdc255ad-73c2-4350-8e44-93afc86a801f
 
 	measure 'KPI Color | Order Intake Value (USD)' = Nexora.KpiColor ( [KPI Context | Order Intake Value (USD)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: d345b819-3e77-4ede-807b-e76effcaef0d
 
 	measure 'KPI Context | Operational Gross Margin %' = Nexora.KpiContext ( [Operational Gross Margin %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: fe5119b2-4958-4346-96df-6494d749c7bf
 
 	measure 'KPI Color | Operational Gross Margin %' = Nexora.KpiColor ( [KPI Context | Operational Gross Margin %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: b4aa814c-3cd3-4d15-be93-88963a05c49b
 
 	measure 'KPI Context | On-Time In-Full (OTIF) %' = Nexora.KpiContext ( [On-Time In-Full (OTIF) %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 812b96a1-843f-412b-acb4-148f691a71a6
 
 	measure 'KPI Color | On-Time In-Full (OTIF) %' = Nexora.KpiColor ( [KPI Context | On-Time In-Full (OTIF) %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 38edd118-62bf-4426-91cc-b4f5583c780d
 
 	measure 'KPI Context | Closing Inventory Value (USD)' = Nexora.KpiContext ( [Closing Inventory Value (USD)], "usd", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 24fb7bf5-5b31-4341-b635-033fe5325fc4
 
 	measure 'KPI Color | Closing Inventory Value (USD)' = Nexora.KpiColor ( [KPI Context | Closing Inventory Value (USD)], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 15606579-1ab8-4432-9d85-87d8ef53a87a
 
 	measure 'KPI Context | Actual Good Output (PCS)' = Nexora.KpiContext ( [Actual Good Output (PCS)], "cnt", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: e21584e4-83c5-42b5-88ad-be9fa749387d
 
 	measure 'KPI Color | Actual Good Output (PCS)' = Nexora.KpiColor ( [KPI Context | Actual Good Output (PCS)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: ee55cb49-64d4-4044-89e2-1a8822cc8a1a
 
 	measure 'KPI Context | Shipped Revenue YoY Growth %' = Nexora.KpiContext ( [Shipped Revenue YoY Growth %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: ce1d8c43-e4b0-4da5-98a1-1f5906cde7cc
 
 	measure 'KPI Color | Shipped Revenue YoY Growth %' = Nexora.KpiColor ( [KPI Context | Shipped Revenue YoY Growth %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 8eee6c46-0e42-4aa8-832c-fcecbc421f82
 
 	measure 'KPI Context | Average Selling Price (USD)' = Nexora.KpiContext ( [Average Selling Price (USD)], "usd", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 385ee199-cc87-4a0f-9fb6-b1ba30149b1e
 
 	measure 'KPI Color | Average Selling Price (USD)' = Nexora.KpiColor ( [KPI Context | Average Selling Price (USD)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 58eb9adb-96ac-4631-a2d8-5d7e2ce52ca3
 
 	measure 'KPI Context | Average BDT/USD Exchange Rate' = Nexora.KpiContext ( [Average BDT/USD Exchange Rate], "n1", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 7d76da09-5eb9-48bf-8c8e-13e36d8993ec
 
 	measure 'KPI Color | Average BDT/USD Exchange Rate' = Nexora.KpiColor ( [KPI Context | Average BDT/USD Exchange Rate], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: f61a6963-ebde-4c77-b3ae-6a6286baa404
 
 	measure 'KPI Context | Statutory Minimum Wage (BDT)' = Nexora.KpiContext ( [Statutory Minimum Wage (BDT)], "bdt", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 3604d2b1-6640-4a63-9343-8a03ecdb0491
 
 	measure 'KPI Color | Statutory Minimum Wage (BDT)' = Nexora.KpiColor ( [KPI Context | Statutory Minimum Wage (BDT)], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: a9fabf53-f954-4727-873d-da8243b44fa9
 
 	measure 'KPI Context | BGMEA National RMG Export ($B)' = Nexora.KpiContext ( [BGMEA National RMG Export ($B)], "usdbn", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 2e0e3607-c086-4594-a284-7bcf70642824
 
 	measure 'KPI Color | BGMEA National RMG Export ($B)' = Nexora.KpiColor ( [KPI Context | BGMEA National RMG Export ($B)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: c4682815-55dc-4d7b-b55b-12212dbcee4b
 
 	measure 'KPI Context | Container Freight Index' = Nexora.KpiContext ( [Container Freight Index], "n0", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 8ddfedc5-33d2-46c3-93b4-6249b0c1dd52
 
 	measure 'KPI Color | Container Freight Index' = Nexora.KpiColor ( [KPI Context | Container Freight Index], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: aac5d0c7-6ddd-4131-9812-8ce012be3eb2
 
 	measure 'KPI Context | Ordered Quantity (PCS)' = Nexora.KpiContext ( [Ordered Quantity (PCS)], "cnt", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 19b3131b-09a1-4390-9cae-90429421a62d
 
 	measure 'KPI Color | Ordered Quantity (PCS)' = Nexora.KpiColor ( [KPI Context | Ordered Quantity (PCS)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: d7ee2588-01ee-425e-a467-ba7e1ea576db
 
 	measure 'KPI Context | Unfulfilled Order Backlog (PCS)' = Nexora.KpiContext ( [Unfulfilled Order Backlog (PCS)], "cnt", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: c0f2f7ea-fd82-45d3-b885-b374ca544e70
 
 	measure 'KPI Color | Unfulfilled Order Backlog (PCS)' = Nexora.KpiColor ( [KPI Context | Unfulfilled Order Backlog (PCS)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: b5a545d0-81a1-45c7-8390-9e491e91d22b
 
 	measure 'KPI Context | Order Cancellation Rate %' = Nexora.KpiContext ( [Order Cancellation Rate %], "pct2", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 69589058-6c31-4099-98c5-8b45a2d74b8b
 
 	measure 'KPI Color | Order Cancellation Rate %' = Nexora.KpiColor ( [KPI Context | Order Cancellation Rate %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 1c2865ad-df4a-470d-9e7f-d93ef55610c6
 
 	measure 'KPI Context | Order Fulfilment Rate %' = Nexora.KpiContext ( [Order Fulfilment Rate %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 32d7ee78-b8d6-4e1a-a446-3cc89ac06382
 
 	measure 'KPI Color | Order Fulfilment Rate %' = Nexora.KpiColor ( [KPI Context | Order Fulfilment Rate %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: f3fa4b12-3553-4016-b037-0eb21c7bfac5
 
 	measure 'KPI Context | Total Procurement Value (USD)' = Nexora.KpiContext ( [Total Procurement Value (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 57b2dc74-057b-4a39-9a9a-b9832030b4fa
 
 	measure 'KPI Color | Total Procurement Value (USD)' = Nexora.KpiColor ( [KPI Context | Total Procurement Value (USD)], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 3e70c746-0b4f-4943-8bb5-696e37ef206c
 
 	measure 'KPI Context | Imported Procurement Share %' = Nexora.KpiContext ( [Imported Procurement Share %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 4c6957dc-8fa9-4be7-937a-9d625e0195a0
 
 	measure 'KPI Color | Imported Procurement Share %' = Nexora.KpiColor ( [KPI Context | Imported Procurement Share %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 23f31966-c48c-4299-9f66-806ee6820cf1
 
 	measure 'KPI Context | Supplier On-Time Delivery %' = Nexora.KpiContext ( [Supplier On-Time Delivery %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: e0b80d5e-3edf-4ad8-8624-ad10f339306c
 
 	measure 'KPI Color | Supplier On-Time Delivery %' = Nexora.KpiColor ( [KPI Context | Supplier On-Time Delivery %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 6b94d609-0045-4cb9-9ad0-4e6b878f5a77
 
 	measure 'KPI Context | Supplier Material Rejection Rate %' = Nexora.KpiContext ( [Supplier Material Rejection Rate %], "pct2", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 9032b15b-4e69-4d66-a47e-0b27fcb983d9
 
 	measure 'KPI Color | Supplier Material Rejection Rate %' = Nexora.KpiColor ( [KPI Context | Supplier Material Rejection Rate %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 5fe31cf6-74b5-4b8b-9aa6-855e607b4713
 
 	measure 'KPI Context | Avg Supplier Delay (Days)' = Nexora.KpiContext ( [Avg Supplier Delay (Days)], "n1", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 4d01be1c-9d03-43b7-a1c2-1e08dd3323c5
 
 	measure 'KPI Color | Avg Supplier Delay (Days)' = Nexora.KpiColor ( [KPI Context | Avg Supplier Delay (Days)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: f0650358-2dc4-4d34-91f1-7c8b1c6ca4f0
 
 	measure 'KPI Context | Material Wastage Cost (USD)' = Nexora.KpiContext ( [Material Wastage Cost (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 301eafad-8262-449b-84fb-8cecde1410ea
 
 	measure 'KPI Color | Material Wastage Cost (USD)' = Nexora.KpiColor ( [KPI Context | Material Wastage Cost (USD)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: da231f31-25fa-4915-99c7-41a795a6d0e2
 
 	measure 'KPI Context | Closing Inventory Value (BDT)' = Nexora.KpiContext ( [Closing Inventory Value (BDT)], "bdt", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 5917a65d-fd88-4f55-b2c6-dd6417eff1a2
 
 	measure 'KPI Color | Closing Inventory Value (BDT)' = Nexora.KpiColor ( [KPI Context | Closing Inventory Value (BDT)], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 6aaeb13f-8597-44de-bf7d-89bb198d86be
 
 	measure 'KPI Context | Inventory Turnover Ratio' = Nexora.KpiContext ( [Inventory Turnover Ratio], "n1", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 7b2f2dcb-e18f-4b1d-bd48-623edc991dd7
 
 	measure 'KPI Color | Inventory Turnover Ratio' = Nexora.KpiColor ( [KPI Context | Inventory Turnover Ratio], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 9e7e57a3-3cab-4229-af91-ec23cef85c36
 
 	measure 'KPI Context | Days Inventory Outstanding (DIO)' = Nexora.KpiContext ( [Days Inventory Outstanding (DIO)], "n0", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 86d43fb2-8da0-4cb5-83dd-570b98ede6d4
 
 	measure 'KPI Color | Days Inventory Outstanding (DIO)' = Nexora.KpiColor ( [KPI Context | Days Inventory Outstanding (DIO)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: acb6a85b-b398-4bdf-b5f5-00987b5a8459
 
 	measure 'KPI Context | Stockout Incident Rate %' = Nexora.KpiContext ( [Stockout Incident Rate %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: c989482a-f08b-4050-a588-15a896cb28a4
 
 	measure 'KPI Color | Stockout Incident Rate %' = Nexora.KpiColor ( [KPI Context | Stockout Incident Rate %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: b8b143e1-4197-4439-aed1-940dc6a0b5d6
 
 	measure 'KPI Context | Safety Stock Compliance %' = Nexora.KpiContext ( [Safety Stock Compliance %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: daf0ce13-dc72-4739-a408-d6d49448040d
 
 	measure 'KPI Color | Safety Stock Compliance %' = Nexora.KpiColor ( [KPI Context | Safety Stock Compliance %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 463e06f2-b6d0-40e6-ab88-40ddab8783cb
 
 	measure 'KPI Context | Plan vs Actual Attainment %' = Nexora.KpiContext ( [Plan vs Actual Attainment %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 95d411d2-55eb-4ecd-9e67-9789c90308dc
 
 	measure 'KPI Color | Plan vs Actual Attainment %' = Nexora.KpiColor ( [KPI Context | Plan vs Actual Attainment %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: fd9dad2e-34be-4854-902c-581dcad07b72
 
 	measure 'KPI Context | Production Line Efficiency %' = Nexora.KpiContext ( [Production Line Efficiency %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 43393d64-b6f3-43ff-90c6-b1d659848b28
 
 	measure 'KPI Color | Production Line Efficiency %' = Nexora.KpiColor ( [KPI Context | Production Line Efficiency %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: c64cc2a9-7b8b-4501-ac4b-2fad1ae06f7f
 
 	measure 'KPI Context | Output per Labour Hour (PCS)' = Nexora.KpiContext ( [Output per Labour Hour (PCS)], "n2", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 6d4484a3-e44f-4004-bc9a-4652d2d24ebe
 
 	measure 'KPI Color | Output per Labour Hour (PCS)' = Nexora.KpiColor ( [KPI Context | Output per Labour Hour (PCS)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 1391b4e0-bbdd-45c6-a7e4-da3a9bff57d0
 
 	measure 'KPI Context | Labour Cost per Garment (USD)' = Nexora.KpiContext ( [Labour Cost per Garment (USD)], "usd", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: d174f29b-5b28-4bfc-8ce5-02c9982c7831
 
 	measure 'KPI Color | Labour Cost per Garment (USD)' = Nexora.KpiColor ( [KPI Context | Labour Cost per Garment (USD)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 06245836-fbd8-47b6-82df-d3a852cab737
 
 	measure 'KPI Context | Active Headcount' = Nexora.KpiContext ( [Active Headcount], "cnt", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: 5932f907-8379-4c1d-9713-fc62e289cd56
 
 	measure 'KPI Color | Active Headcount' = Nexora.KpiColor ( [KPI Context | Active Headcount], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: ffcddd35-36cf-4db3-91e1-d2a195e48666
 
 	measure 'KPI Context | First-Pass Yield (FPY) %' = Nexora.KpiContext ( [First-Pass Yield (FPY) %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 7bf34b0e-8c3c-44f3-a315-e8d2ad4283db
 
 	measure 'KPI Color | First-Pass Yield (FPY) %' = Nexora.KpiColor ( [KPI Context | First-Pass Yield (FPY) %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: f72b2b3b-a1be-4262-a58c-62c3a041d641
 
 	measure 'KPI Context | AQL Defect Rate %' = Nexora.KpiContext ( [AQL Defect Rate %], "pct2", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: ca780639-06d4-456e-954a-e49dc6e448c8
 
 	measure 'KPI Color | AQL Defect Rate %' = Nexora.KpiColor ( [KPI Context | AQL Defect Rate %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 0f6e4bf2-66d8-4247-9b96-5434bce588b1
 
 	measure 'KPI Context | Garment Rework Rate %' = Nexora.KpiContext ( [Garment Rework Rate %], "pct2", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: fc536c45-b19d-4c25-a657-6e25042c3061
 
 	measure 'KPI Color | Garment Rework Rate %' = Nexora.KpiColor ( [KPI Context | Garment Rework Rate %], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: beff557a-3dde-434e-b755-f3cdd9fabf64
 
 	measure 'KPI Context | Total Cost of Poor Quality (USD)' = Nexora.KpiContext ( [Total Cost of Poor Quality (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 2c86583c-3d94-42e3-bc20-d2059a64d543
 
 	measure 'KPI Color | Total Cost of Poor Quality (USD)' = Nexora.KpiColor ( [KPI Context | Total Cost of Poor Quality (USD)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 271bcd40-0d15-4ff9-83a2-88aaa4e10837
 
 	measure 'KPI Context | On-Time Shipment (OTS) %' = Nexora.KpiContext ( [On-Time Shipment (OTS) %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: f8d96e3d-71be-4c20-b664-deff0f21c767
 
 	measure 'KPI Color | On-Time Shipment (OTS) %' = Nexora.KpiColor ( [KPI Context | On-Time Shipment (OTS) %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 03bc0324-fd3a-475a-8e4c-8db22ca48b91
 
 	measure 'KPI Context | Total Production Cost (COGS USD)' = Nexora.KpiContext ( [Total Production Cost (COGS USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: e70b53c6-0b92-4231-a8df-62f377b91c22
 
 	measure 'KPI Color | Total Production Cost (COGS USD)' = Nexora.KpiColor ( [KPI Context | Total Production Cost (COGS USD)], 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 5092c671-5327-4d06-a262-9fbfbb3ecf4e
 
 	measure 'KPI Context | Operational Gross Margin (USD)' = Nexora.KpiContext ( [Operational Gross Margin (USD)], "usd", "add" )
 		displayFolder: 90. Storytelling
+		lineageTag: 9741e946-35c6-4a68-a560-99a80bcff93f
 
 	measure 'KPI Color | Operational Gross Margin (USD)' = Nexora.KpiColor ( [KPI Context | Operational Gross Margin (USD)], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 009d308b-757c-434a-92b2-9029039c2b15
 
 	measure 'KPI Context | Electricity per Garment (kWh)' = Nexora.KpiContext ( [Electricity per Garment (kWh)], "n3", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: cbb99b21-8867-451a-b51b-e2605e9cb12c
 
 	measure 'KPI Color | Electricity per Garment (kWh)' = Nexora.KpiColor ( [KPI Context | Electricity per Garment (kWh)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: f9b18ace-99c1-4741-890b-91661ee344f2
 
 	measure 'KPI Context | Renewable Solar Share %' = Nexora.KpiContext ( [Renewable Solar Share %], "pct1", "rate" )
 		displayFolder: 90. Storytelling
+		lineageTag: 3d59ef61-b792-44c1-8d6b-56844528f63b
 
 	measure 'KPI Color | Renewable Solar Share %' = Nexora.KpiColor ( [KPI Context | Renewable Solar Share %], 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 56f9fb30-c6ef-4a90-841a-35cf2d424ffa
 
 	measure 'KPI Context | Carbon Footprint (kg CO2e/PC)' = Nexora.KpiContext ( [Carbon Footprint (kg CO2e/PC)], "n3", "level" )
 		displayFolder: 90. Storytelling
+		lineageTag: f53ec953-7030-4787-949a-9bdf0d06ba13
 
 	measure 'KPI Color | Carbon Footprint (kg CO2e/PC)' = Nexora.KpiColor ( [KPI Context | Carbon Footprint (kg CO2e/PC)], -1 )
 		displayFolder: 90. Storytelling
+		lineageTag: f1dafdde-12b6-4dae-9c3f-e752e871b9bb
 
 	measure 'Title | p1_vis01' = Nexora.TrendTitle ( [Shipped FOB Revenue (USD)], "Shipped revenue", "usd", "grew", "fell", 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: d93277bd-0c7b-4132-8508-4843fe67f906
 
 	measure 'Title | p1_vis02' = Nexora.TrendTitle ( [On-Time In-Full (OTIF) %], "On-time-in-full delivery", "pct0", "improved", "fell", 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 90781712-d4be-4db4-a889-fe9c9bc8d9dc
 
 	measure 'Title | p1_vis03' = Nexora.RankTitle ( dim_company[company_name], [Operational Gross Margin %], "pct1", 1, 1, "{name} trails at {value} gross margin vs {total} for the group" )
 		displayFolder: 90. Storytelling
+		lineageTag: 46d7a3b6-ccae-42f4-ae4b-a79dd1c349fe
 
 	measure 'Title | p2_vis01' = Nexora.TwoRatio ( [Shipped FOB Revenue (USD)], [BGMEA National RMG Export ($B)], "Since {y0}, Nexora revenue grew {a} vs {b} for national RMG exports" )
 		displayFolder: 90. Storytelling
+		lineageTag: 5e8afa68-8135-4e9f-9ce0-de8c6cdd7647
 
 	measure 'Title | p2_vis02' = Nexora.RankTitle ( dim_product[knit_woven_classification], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} garments generate {share} of revenue" )
 		displayFolder: 90. Storytelling
+		lineageTag: 641b1da3-2575-4a35-8b4f-5c8dc792f869
 
 	measure 'Title | p2_vis03' = Nexora.TwoRatio ( [Statutory Minimum Wage (BDT)], [Output per Labour Hour (PCS)], "Since {y0}, the minimum wage rose {a} while output per labour hour rose only {b}" )
 		displayFolder: 90. Storytelling
+		lineageTag: ed917563-d3ef-40d8-bc51-5e308b5f36b0
 
 	measure 'Title | p3_vis01' = Nexora.RankTitle ( dim_buyer[buyer_name], [Shipped FOB Revenue (USD)], "usd", 0, 2, "Two buyers ({name}) generate {share} of revenue" )
 		displayFolder: 90. Storytelling
+		lineageTag: bd228e28-8b02-4b8c-9006-dba842e2bedd
 
 	measure 'Title | p3_vis02' = Nexora.RankTitle ( dim_product[product_category], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} lead with {value}, {share} of revenue" )
 		displayFolder: 90. Storytelling
+		lineageTag: 5fe734ee-6190-4b57-aa1b-18f40bfc6c4a
 
 	measure 'Title | p3_vis03' = Nexora.RankTitle ( dim_buyer[market_classification], [Shipped FOB Revenue (USD)], "usd", 0, 1, "{name} markets still supply {share} of revenue" )
 		displayFolder: 90. Storytelling
+		lineageTag: 4f15432b-c746-4468-980f-057b392e4b78
 
 	measure 'Title | p4_vis01' = Nexora.RankTitle ( dim_supplier[origin_country], [Total Procurement Value (USD)], "usd", 0, 1, "{name} supplies {share} of procurement spend ({value})" )
 		displayFolder: 90. Storytelling
+		lineageTag: c9e9c9e0-8bbb-4dda-afab-0b3394e8c298
 
 	measure 'Title | p4_vis02' = Nexora.RankTitle ( dim_material[material_category], [BOM Material Wastage Rate %], "pct1", 0, 1, "{name} has the highest wastage rate at {value} (all materials: {total})" )
 		displayFolder: 90. Storytelling
+		lineageTag: 54cc3dd5-fb6a-40bc-afc8-4eaa132c29b6
 
 	measure 'Title | p4_vis03' = Nexora.RankTitle ( dim_supplier[domestic_import_classification], [Total Procurement Value (USD)], "usd", 0, 1, "{name} materials make up {share} of procurement spend" )
 		displayFolder: 90. Storytelling
+		lineageTag: 38631e0e-a730-43cb-949f-be7fabaed0d9
 
 	measure 'Title | p5_vis01' = Nexora.TrendTitle ( [Days Inventory Outstanding (DIO)], "Days of inventory on hand", "days", "rose", "fell", 0 )
 		displayFolder: 90. Storytelling
+		lineageTag: 450135b4-a39f-4e6f-b328-e77410ea7949
 
 	measure 'Title | p5_vis02' = Nexora.RankTitle ( fact_inventory_snapshot_monthly[stock_type], [Closing Inventory Value (USD)], "usd", 0, 1, "{name} ties up {share} of closing inventory ({value})" )
 		displayFolder: 90. Storytelling
+		lineageTag: 9248ceef-0628-4751-8c8d-8521261ee629
 
 	measure 'Title | p5_vis03' = Nexora.RankTitle ( fact_inventory_snapshot_monthly[ageing_bucket], [Closing Inventory Value (USD)], "usd", 0, 1, "{share} of closing inventory is {name} stock" )
 		displayFolder: 90. Storytelling
+		lineageTag: 7cb692bf-6085-41f3-84b3-675da06b1c0c
 
 	measure 'Title | p6_vis01' = Nexora.RankTitle ( dim_company[company_name], [Production Line Efficiency %], "pct1", 1, 1, "{name} trails at {value} line efficiency vs {total} for the group" )
 		displayFolder: 90. Storytelling
+		lineageTag: 71d0bd83-5628-4b42-b6c5-123efb2cf7eb
 
 	measure 'Title | p6_vis02' = Nexora.TwoRatio ( [Total Workforce Payroll (USD)], [Active Headcount], "Since {y0}, payroll grew {a} while headcount grew only {b}" )
 		displayFolder: 90. Storytelling
+		lineageTag: b576bdc2-00b3-4624-9a20-2a7a0549bbb7
 
 	measure 'Title | p6_vis03' = Nexora.RankTitle ( fact_workforce_monthly[department_name], [Total Workforce Payroll (USD)], "usd", 0, 1, "{name} absorbs {share} of payroll" )
 		displayFolder: 90. Storytelling
+		lineageTag: 55f46da6-e7be-4866-a46b-911d43ae1c22
 
 	measure 'Title | p7_vis01' = Nexora.RankTitle ( dim_company[company_name], [AQL Defect Rate %], "pct1", 0, 1, "{name} has the highest defect rate at {value} vs {total} for the group" )
 		displayFolder: 90. Storytelling
+		lineageTag: e9b630d0-7c91-4ad1-aa83-2c924ae15610
 
 	measure 'Title | p7_vis02' = Nexora.RankTitle ( fact_shipment_line[delay_reason], [Late Shipped Quantity (PCS)], "cnt", 0, 1, "{name} causes {share} of late shipment volume" )
 		displayFolder: 90. Storytelling
+		lineageTag: 4112e289-7cbf-412e-87e6-6897bc61207f
 
 	measure 'Title | p7_vis03' = "Air freight carries " & FORMAT ( [Air Freight Revenue Share %], "0.0%" ) & " of revenue, the costly exception lane"
 		displayFolder: 90. Storytelling
+		lineageTag: 7ae7d917-2942-4088-8453-c0778808f07d
 
 	measure 'Title | p8_vis01' = "Direct material makes up " & FORMAT ( DIVIDE ( [Direct Material Cost (USD)], [Total Cost Ledger (USD)] ), "0%" ) & " of total cost, the biggest lever on margin"
 		displayFolder: 90. Storytelling
+		lineageTag: b901a4fc-84c4-422d-b70c-618056aea265
 
 	measure 'Title | p8_vis02' = Nexora.TrendTitle ( [Carbon Footprint (kg CO2e/PC)], "Carbon per garment (kg CO2e)", "n3", "rose", "fell", 1 )
 		displayFolder: 90. Storytelling
+		lineageTag: 68f16862-4246-4a6f-9853-e9164111bf42
 
 	measure 'Title | p8_vis03' = "Gross margin keeps " & FORMAT ( [Operational Gross Margin %], "0%" ) & " of revenue; direct material takes " & FORMAT ( DIVIDE ( [Direct Material Cost (USD)], [Shipped FOB Revenue (USD)] ), "0%" )
 		displayFolder: 90. Storytelling
+		lineageTag: b6d934ce-ab32-42d3-a2af-e77f9f29bafe
 
 	measure 'Color | p1_vis03' = Nexora.BarColor ( dim_company[company_name], [Operational Gross Margin %], 1, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: d1c273b5-0c32-4283-9ae5-8f40d872b506
 
 	measure 'Color | p3_vis01' = Nexora.BarColor ( dim_buyer[buyer_name], [Shipped FOB Revenue (USD)], 0, 2, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 32800c7e-b60d-4b27-b585-258c8f5f2bc1
 
 	measure 'Color | p3_vis02' = Nexora.BarColor ( dim_product[product_category], [Shipped FOB Revenue (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 8fe7fbe1-6491-426b-8bea-f989175b4fe9
 
 	measure 'Color | p3_vis03' = Nexora.BarColor ( dim_buyer[market_classification], [Shipped FOB Revenue (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 4ad0ccbf-4747-49d9-be53-2fc265f5bbad
 
 	measure 'Color | p4_vis01' = Nexora.BarColor ( dim_supplier[origin_country], [Total Procurement Value (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 67c48ce1-6319-4216-b593-4cdae66d88dc
 
 	measure 'Color | p4_vis02' = Nexora.BarColor ( dim_material[material_category], [BOM Material Wastage Rate %], 0, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: e4e34317-9bc0-4ff5-941e-040a2be41d44
 
 	measure 'Color | p4_vis03' = Nexora.BarColor ( dim_supplier[domestic_import_classification], [Total Procurement Value (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: e0cabf5e-1479-4318-932e-8060bdefcbdf
 
 	measure 'Color | p5_vis02' = Nexora.BarColor ( fact_inventory_snapshot_monthly[stock_type], [Closing Inventory Value (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 82665e9b-d97c-4a5e-a274-3348aa7a0e2e
 
 	measure 'Color | p5_vis03' = Nexora.BarColor ( fact_inventory_snapshot_monthly[ageing_bucket], [Closing Inventory Value (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: 9f674402-9e5d-48e7-b896-e440f65ff7ac
 
 	measure 'Color | p6_vis01' = Nexora.BarColor ( dim_company[company_name], [Production Line Efficiency %], 1, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: 36845d34-e49c-4c8b-b66c-ead4289151a8
 
 	measure 'Color | p6_vis03' = Nexora.BarColor ( fact_workforce_monthly[department_name], [Total Workforce Payroll (USD)], 0, 1, "#0B2C5F" )
 		displayFolder: 90. Storytelling
+		lineageTag: cf258e7b-4dd9-4835-8243-1a20ff0a1786
 
 	measure 'Color | p7_vis01' = Nexora.BarColor ( dim_company[company_name], [AQL Defect Rate %], 0, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: 77412c1c-0468-4a14-9830-1a4440e84d96
 
 	measure 'Color | p7_vis02' = Nexora.BarColor ( fact_shipment_line[delay_reason], [Late Shipped Quantity (PCS)], 0, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: b2d1cbe0-a740-462d-8b39-4dd0fe4a0189
 
 	measure 'Color | p7_vis03' = Nexora.BarColor ( fact_shipment_line[shipping_mode], [Shipped FOB Revenue (USD)], 1, 1, "#B54708" )
 		displayFolder: 90. Storytelling
+		lineageTag: 1910c650-7706-443a-bbd8-75cefd9fbe2d
 
 	column Measure_Group
 		dataType: string

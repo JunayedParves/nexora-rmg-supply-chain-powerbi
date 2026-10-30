@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "p2_note1",
   "position": {
-    "x": 264,
+    "x": 640,
     "y": 102,
     "z": 310,
-    "width": 484,
-    "height": 62,
+    "width": 200,
+    "height": 70,
     "tabOrder": 310
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Macro indicators (FX, CPI, wage, BGMEA exports, freight) are Bangladesh-wide, so company and factory filters do not apply on this page.",
+                    "value": "National data (FX, CPI, wage, freight, RMG exports) ignores these filters.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

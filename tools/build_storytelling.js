@@ -9,7 +9,7 @@ const REPORT = process.argv[2];
 const DEF = path.join(REPORT, "definition");
 const PAGES = path.join(DEF, "pages");
 const RES = path.join(REPORT, "StaticResources", "RegisteredResources");
-const THEME_NAME = "NexoraBrand-5d8e2b17.json";
+const THEME_NAME = "NexoraBrand-a3f19c64.json";
 
 const C = {
   focus: "#0B2C5F", alert: "#B54708", context: "#868F9C", context2: "#A9B1BC", context3: "#CDD3DB",
@@ -74,8 +74,8 @@ const SPECS = {
 // ---------- builders ----------
 function chrome(id, sub) {
   return {
-    title: [{ properties: { show: bool(true), text: { expr: msrField(`Title | ${id}`) }, fontSize: num(14), fontFamily: str("Segoe UI Semibold"), fontColor: color(C.ink), titleWrap: bool(true) } }],
-    subTitle: [{ properties: { show: bool(true), text: str(sub), fontSize: num(10), fontColor: color(C.muted), titleWrap: bool(true) } }],
+    title: [{ properties: { show: bool(true), text: { expr: msrField(`Title | ${id}`) }, fontSize: num(16), fontFamily: str("Segoe UI Semibold"), fontColor: color(C.ink), titleWrap: bool(true) } }],
+    subTitle: [{ properties: { show: bool(true), text: str(sub), fontSize: num(12), fontColor: color(C.muted), titleWrap: bool(true) } }],
     background: [{ properties: { show: bool(true), color: color(C.white), transparency: num(0) } }],
     border: [{ properties: { show: bool(false) } }],
     dropShadow: [{ properties: { show: bool(false) } }],
@@ -84,8 +84,8 @@ function chrome(id, sub) {
 }
 
 const axisQuiet = (showValueAxis) => ({
-  categoryAxis: [{ properties: { show: bool(true), showAxisTitle: bool(false), fontSize: num(10), labelColor: color(C.ink2), gridlineShow: bool(false) } }],
-  valueAxis: [{ properties: { show: bool(showValueAxis), showAxisTitle: bool(false), fontSize: num(10), labelColor: color(C.muted), gridlineShow: bool(false) } }],
+  categoryAxis: [{ properties: { show: bool(true), showAxisTitle: bool(false), fontSize: num(12), labelColor: color(C.ink2), gridlineShow: bool(false) } }],
+  valueAxis: [{ properties: { show: bool(showValueAxis), showAxisTitle: bool(false), fontSize: num(12), labelColor: color(C.muted), gridlineShow: bool(false) } }],
 });
 
 function lineVisual(id, s) {
@@ -107,7 +107,7 @@ function lineVisual(id, s) {
       legend: [{ properties: { show: bool(false) } }],
       dataPoint: fills,
       lineStyles: [{ properties: { strokeWidth: lit("3L"), showMarker: bool(false) } }],
-      seriesLabels: [{ properties: { show: bool(multi), textSize: num(10), seriesMatchColor: bool(true) } }],
+      seriesLabels: [{ properties: { show: bool(multi), textSize: num(12), seriesMatchColor: bool(true) } }],
       labels: [{ properties: { show: bool(false) } }],
     },
     visualContainerObjects: chrome(id, s.sub),
@@ -128,7 +128,7 @@ function barVisual(id, s) {
     objects: {
       ...axisQuiet(false),
       legend: [{ properties: { show: bool(false) } }],
-      labels: [{ properties: { show: bool(true), fontSize: num(10), color: color(C.ink) } }],
+      labels: [{ properties: { show: bool(true), fontSize: num(12), color: color(C.ink) } }],
       dataPoint: [{ properties: { fill: measureColor(s.fill) }, selector: { data: [{ dataViewWildcard: { matchingOption: 1 } }] } }],
     },
     visualContainerObjects: chrome(id, s.sub),
@@ -145,8 +145,8 @@ function styleKpi(v) {
   o.label = [{ properties: { show: bool(false) }, selector: { id: "default" } }];
   o.value = [{ properties: { fontSize: num(28), fontFamily: str("Segoe UI Semibold"), fontColor: color(C.ink) }, selector: { id: "default" } }];
   const vco = (v.visual.visualContainerObjects ||= {});
-  vco.title = [{ properties: { show: bool(true), text: str(label), fontSize: num(11), fontFamily: str("Segoe UI"), fontColor: color(C.ink2) } }];
-  vco.subTitle = [{ properties: { show: bool(true), text: { expr: msrField(`KPI Context | ${m}`) }, fontSize: num(10), fontColor: { solid: { color: { expr: msrField(`KPI Color | ${m}`) } } } } }];
+  vco.title = [{ properties: { show: bool(true), text: str(label), fontSize: num(12), fontFamily: str("Segoe UI"), fontColor: color(C.ink2) } }];
+  vco.subTitle = [{ properties: { show: bool(true), text: { expr: msrField(`KPI Context | ${m}`) }, fontSize: num(11), fontColor: { solid: { color: { expr: msrField(`KPI Color | ${m}`) } } } } }];
   vco.border = [{ properties: { show: bool(false) } }];
   vco.background = [{ properties: { show: bool(true), color: color(C.white), transparency: num(0) } }];
   vco.general = [{ properties: { altText: str(`KPI: ${label}`) } }];
@@ -157,7 +157,7 @@ function styleTable(v) {
   const o = v.visual.objects;
   Object.assign(o.columnHeaders[0].properties, { fontColor: color(C.ink), backColor: color(C.white), bold: bool(true) });
   Object.assign(o.values[0].properties, { backColorSecondary: color(C.white), fontColorSecondary: color(C.ink) });
-  o.total = [{ properties: { fontSize: num(10), bold: bool(true), fontColor: color(C.ink), backColor: color(C.white) } }];
+  o.total = [{ properties: { fontSize: num(11), bold: bool(true), fontColor: color(C.ink), backColor: color(C.white) } }];
   const vco = v.visual.visualContainerObjects;
   vco.border = [{ properties: { show: bool(false) } }];
   vco.subTitle = vco.subTitle && [{ properties: { ...vco.subTitle[0].properties, fontColor: color(C.muted) } }];
@@ -169,7 +169,7 @@ function waterfallStory(v) {
   v.visual.objects = {
     ...axes,
     legend: [{ properties: { show: bool(false) } }],
-    labels: [{ properties: { show: bool(true), fontSize: num(10), color: color(C.ink) } }],
+    labels: [{ properties: { show: bool(true), fontSize: num(12), color: color(C.ink) } }],
     sentimentColors: [{ properties: { increaseFill: color(C.context), decreaseFill: color(C.alert), totalFill: color(C.focus) } }],
   };
   v.visual.visualContainerObjects = chrome("p8_vis01", "Total cost build-up by P&L line, USD. Navy = total cost");
@@ -181,7 +181,7 @@ function stackedStory(v) {
   for (const p of v.visual.query.queryState.Y.projections) p.displayName = labels[p.field.Measure.Property] || p.displayName;
   v.visual.objects = {
     ...axisQuiet(false),
-    legend: [{ properties: { show: bool(true), position: str("Top"), fontSize: num(10), labelColor: color(C.ink2) } }],
+    legend: [{ properties: { show: bool(true), position: str("Top"), fontSize: num(12), labelColor: color(C.ink2) } }],
     dataPoint: order.map(([m, hex]) => ({ properties: { fill: color(hex) }, selector: { metadata: `${MT}.${m}` } })),
   };
   v.visual.visualContainerObjects = chrome("p8_vis03", "Each bar is shipped revenue split into cost and margin (grey = cost, navy = margin), USD");
@@ -209,7 +209,7 @@ for (const pageId of pagesMeta.pageOrder) {
       v.visual = s.kind === "line" ? lineVisual(name, s) : barVisual(name, s);
       delete v.filterConfig;
       // keep the right-hand top chart in its grid slot (it was dragged out of place once in Desktop)
-      if (name === "p1_vis02") Object.assign(v.position, { x: 1170, y: 282, width: 734, height: 380 });
+      if (name === "p1_vis02") Object.assign(v.position, { x: 1170, y: 296, width: 734, height: 366 });
     } else if (name === "p8_vis01") waterfallStory(v);
     else if (name === "p8_vis03") stackedStory(v);
     else if (v.visual.visualType === "tableEx") styleTable(v);

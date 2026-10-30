@@ -1,5 +1,5 @@
 {
-  "name": "NexoraBrand-5d8e2b17.json",
+  "name": "NexoraBrand-a3f19c64.json",
   "dataColors": [
     "#0B2C5F",
     "#868F9C",
@@ -25,22 +25,22 @@
   "minimum": "#E8EEF6",
   "textClasses": {
     "callout": {
-      "fontSize": 26,
+      "fontSize": 32,
       "fontFace": "Segoe UI Semibold",
       "color": "#0B2C5F"
     },
     "title": {
-      "fontSize": 13,
+      "fontSize": 16,
       "fontFace": "Segoe UI Semibold",
       "color": "#1F2937"
     },
     "header": {
-      "fontSize": 12,
+      "fontSize": 14,
       "fontFace": "Segoe UI Semibold",
       "color": "#1F2937"
     },
     "label": {
-      "fontSize": 10,
+      "fontSize": 12,
       "fontFace": "Segoe UI",
       "color": "#374151"
     }
@@ -55,7 +55,7 @@
                 "color": "#1F2937"
               }
             },
-            "fontSize": 13,
+            "fontSize": 16,
             "fontFamily": "Segoe UI Semibold"
           }
         ],
@@ -66,7 +66,7 @@
                 "color": "#4B5563"
               }
             },
-            "fontSize": 10
+            "fontSize": 12
           }
         ],
         "background": [
@@ -97,7 +97,7 @@
                 "color": "#374151"
               }
             },
-            "fontSize": 10,
+            "fontSize": 12,
             "titleColor": {
               "solid": {
                 "color": "#374151"
@@ -112,7 +112,7 @@
                 "color": "#374151"
               }
             },
-            "fontSize": 10,
+            "fontSize": 12,
             "titleColor": {
               "solid": {
                 "color": "#374151"
@@ -133,7 +133,7 @@
                 "color": "#374151"
               }
             },
-            "fontSize": 10,
+            "fontSize": 12,
             "position": "Top",
             "show": false
           }
@@ -145,7 +145,7 @@
                 "color": "#1F2937"
               }
             },
-            "fontSize": 10
+            "fontSize": 12
           }
         ]
       }

@@ -30,5 +30,12 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "p3_slc03",
+      "target": "p3_vis03",
+      "type": "NoFilter"
+    }
+  ]
 }

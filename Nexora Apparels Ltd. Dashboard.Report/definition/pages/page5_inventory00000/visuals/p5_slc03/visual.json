@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "p5_slc03",
   "position": {
-    "x": 512,
+    "x": 432,
     "y": 102,
     "z": 302,
-    "width": 236,
-    "height": 62,
+    "width": 200,
+    "height": 70,
     "tabOrder": 302
   },
   "visual": {
@@ -68,7 +68,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             },
@@ -108,7 +108,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             },

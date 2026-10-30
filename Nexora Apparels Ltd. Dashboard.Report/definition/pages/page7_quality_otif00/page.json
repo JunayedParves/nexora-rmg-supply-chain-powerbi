@@ -30,5 +30,12 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "p7_slc02",
+      "target": "p7_vis01",
+      "type": "NoFilter"
+    }
+  ]
 }

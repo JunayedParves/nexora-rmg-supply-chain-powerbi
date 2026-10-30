@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "NexoraBrand-5d8e2b17.json",
+      "name": "NexoraBrand-a3f19c64.json",
       "reportVersionAtImport": {
         "visual": "2.14.0",
         "report": "3.4.0",
@@ -28,6 +28,19 @@
             "expr": {
               "Literal": {
                 "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
               }
             }
           }
@@ -55,11 +68,6 @@
           "name": "nexora_logo.png",
           "path": "nexora_logo.png",
           "type": "Image"
-        },
-        {
-          "name": "NexoraBrand-5d8e2b17.json",
-          "path": "NexoraBrand-5d8e2b17.json",
-          "type": "CustomTheme"
         },
         {
           "name": "page_01_executive_brand.svg",
@@ -100,6 +108,11 @@
           "name": "page_08_sustainability_brand.svg",
           "path": "page_08_sustainability_brand.svg",
           "type": "Image"
+        },
+        {
+          "name": "NexoraBrand-a3f19c64.json",
+          "path": "NexoraBrand-a3f19c64.json",
+          "type": "CustomTheme"
         }
       ]
     }

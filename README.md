@@ -44,7 +44,7 @@ Every page uses the same layout, so a manager learns to read it once. **Top to b
 | **Chart colour** | Grey = context · **navy** = the point · **orange** = the problem | Your eye goes to the coloured bar first. That is deliberate |
 | **Bottom table** | The detail behind the story (company, buyer, supplier, factory) | Sort it, scan it, export it |
 
-**Filters:** *Calendar Year* and *Company* follow you across pages (synced). Each page has one extra filter chosen because it filters **every** chart on that page. Pick one year and the KPI context switches to *"vs prior year"*.
+**Filters:** four per page. *Calendar Year* and *Company* follow you across pages (synced), plus two page filters that reach **every** chart on that page. Filters never collapse a chart to one dot: year trends ignore the Year filter, and company rankings and scorecards ignore the Company and Factory filters, so the benchmark stays visible ([rules](documentation/data_model.md#filters-what-each-page-offers-and-what-each-filter-is-allowed-to-change)). Pick one year and the KPI context switches to *"vs prior year"*.
 
 ---
 
@@ -111,7 +111,7 @@ Every page uses the same layout, so a manager learns to read it once. **Top to b
 | Choose an appropriate visual | No donuts, no dual axes. Trends are lines, comparisons are sorted bars, unlike units are indexed |
 | Eliminate clutter | No chart borders, gridlines, decorative icons, or legends where a direct label works |
 | Focus attention | Grey by default; navy for the point, orange for the problem, computed by DAX, so the highlight moves with the data |
-| Think like a designer | One grid, one type scale (Segoe UI, ≥10pt), text contrast ≥ 7:1, chart marks ≥ 3:1 |
+| Think like a designer | One grid, one type scale (Segoe UI: chart titles 16pt, labels and tables 11–12pt), text contrast ≥ 7:1, chart marks ≥ 3:1 |
 | Tell a story | Titles are findings, not labels, and recalculate for any filter |
 
 ---
@@ -130,6 +130,7 @@ Every page uses the same layout, so a manager learns to read it once. **Top to b
    ```bash
    node tools/build_report.js "Nexora Apparels Ltd. Dashboard.Report"
    node tools/build_storytelling.js "Nexora Apparels Ltd. Dashboard.Report"
+   node tools/build_interactions.js "Nexora Apparels Ltd. Dashboard.Report"
    ```
 
 ## Repository map

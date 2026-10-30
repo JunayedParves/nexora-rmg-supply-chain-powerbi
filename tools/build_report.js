@@ -34,61 +34,61 @@ const PLAN = {
     nav: "Executive", icon: "page_01_executive_brand.svg",
     title: "Executive Command Center",
     sub: "Group revenue, margin, customer delivery, working capital and output across 8 companies and 26 factories",
-    slicer3: { entity: "dim_factory", prop: "factory_name", label: "Factory" },
+    slicers: [{ entity: "dim_factory", prop: "factory_name", label: "Factory" }, { entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" }],
   },
   page2_macro_trends00: {
     nav: "Macro & Market", icon: "page_02_macro_brand.svg",
     title: "Macro Environment & 20-Year Trends",
     sub: "Nexora growth against Bangladesh RMG exports, exchange rate, minimum wage and freight costs",
-    slicer3: null, companySlicer: false,
-    note: "Macro indicators (FX, CPI, wage, BGMEA exports, freight) are Bangladesh-wide, so company and factory filters do not apply on this page.",
+    slicers: [{ entity: "dim_product", prop: "knit_woven_classification", label: "Knit / Woven" }],
+    note: "National data (FX, CPI, wage, freight, RMG exports) ignores these filters.",
   },
   page3_commercial0000: {
     nav: "Commercial", icon: "page_03_commercial_brand.svg",
     title: "Commercial Performance: Buyers & Markets",
     sub: "Order intake, shipped revenue, pricing, cancellations and fulfilment by buyer, product and export market",
-    slicer3: { entity: "dim_buyer", prop: "market_region", label: "Export Market" },
+    slicers: [{ entity: "dim_buyer", prop: "market_region", label: "Export Market" }, { entity: "dim_product", prop: "knit_woven_classification", label: "Knit / Woven" }],
   },
   page4_procurement000: {
     nav: "Procurement", icon: "page_04_procurement_brand.svg",
     title: "Procurement & Supplier Reliability",
     sub: "Spend, import dependence, supplier on-time delivery, rejections and material wastage",
-    slicer3: { entity: "dim_material", prop: "material_category", label: "Material Category" },
+    slicers: [{ entity: "dim_material", prop: "material_category", label: "Material Category" }, { entity: "dim_factory", prop: "factory_name", label: "Factory" }],
   },
   page5_inventory00000: {
     nav: "Inventory", icon: "page_05_inventory_brand.svg",
     title: "Inventory & Working Capital",
     sub: "Stock value, ageing, turnover, days on hand and stock-out risk across factories",
-    slicer3: { entity: "fact_inventory_snapshot_monthly", prop: "stock_type", label: "Stock Type" },
+    slicers: [{ entity: "fact_inventory_snapshot_monthly", prop: "stock_type", label: "Stock Type" }, { entity: "dim_material", prop: "material_category", label: "Material Category" }],
   },
   page6_manufacturing0: {
     nav: "Production", icon: "page_06_manufacturing_brand.svg",
     title: "Manufacturing Productivity & Workforce",
     sub: "Good output, plan attainment, line efficiency, labour productivity, headcount and payroll",
-    slicer3: { entity: "dim_factory", prop: "industrial_zone", label: "Industrial Zone" },
+    slicers: [{ entity: "dim_factory", prop: "factory_name", label: "Factory" }, { entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" }],
   },
   page7_quality_otif00: {
     nav: "Quality & OTIF", icon: "page_07_quality_brand.svg",
     title: "Quality Assurance & On-Time Delivery",
     sub: "First-pass yield, defects, cost of poor quality and on-time-in-full shipment performance",
-    slicer3: { entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" },
+    slicers: [{ entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" }, { entity: "dim_product", prop: "product_category", label: "Product Category" }],
   },
   page8_finance_esg000: {
     nav: "Finance & ESG", icon: "page_08_sustainability_brand.svg",
     title: "Cost Structure & Sustainability (ESG)",
     sub: "COGS composition, gross margin, energy intensity, renewable share and carbon footprint",
-    slicer3: { entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" },
+    slicers: [{ entity: "dim_factory", prop: "compliance_profile", label: "Compliance Tier" }, { entity: "dim_factory", prop: "factory_name", label: "Factory" }],
   },
 };
 
 // ---------- Layout grid (1920 x 1080) ----------
 const L = {
   hdr: { x: 16, y: 12, w: 1888, h: 84 },
-  ctl: { y: 102, h: 62 },
-  slicerX: [16, 264, 512], slicerW: 236,
-  nav: { x: 760, w: 1144 },
-  kpiY: 170, kpiH: 102, kpiIcoY: 182,
-  row1: { y: 282, h: 380 }, row2: { y: 672, h: 392 },
+  ctl: { y: 102, h: 70 },
+  slicerX: [16, 224, 432, 640], slicerW: 200,
+  nav: { x: 852, w: 1052 },
+  kpiY: 180, kpiH: 108, kpiIcoY: 192,
+  row1: { y: 296, h: 366 }, row2: { y: 672, h: 392 },
 };
 
 // ---------- Visual builders ----------
@@ -107,8 +107,8 @@ function headerTextbox(name, plan) {
       general: [{
         properties: {
           paragraphs: [
-            { textRuns: [{ value: plan.title, textStyle: { fontFamily: "Segoe UI Semibold", fontSize: "20pt", color: C.navy } }] },
-            { textRuns: [{ value: plan.sub, textStyle: { fontFamily: "Segoe UI", fontSize: "11pt", color: C.muted } }] },
+            { textRuns: [{ value: plan.title, textStyle: { fontFamily: "Segoe UI Semibold", fontSize: "22pt", color: C.navy } }] },
+            { textRuns: [{ value: plan.sub, textStyle: { fontFamily: "Segoe UI", fontSize: "12pt", color: C.muted } }] },
           ],
         },
       }],
@@ -116,7 +116,7 @@ function headerTextbox(name, plan) {
     visualContainerObjects: {
       background: [{ properties: { show: bool(true), color: color(C.white), transparency: num(0) } }],
       border: [{ properties: { show: bool(true), color: color(C.lineSoft), radius: num(8), width: num(1) } }],
-      padding: [{ properties: { top: num(12), bottom: num(8), left: num(392), right: num(420) } }],
+      padding: [{ properties: { top: num(8), bottom: num(4), left: num(392), right: num(420) } }],
     },
     drillFilterOtherVisuals: true,
   });
@@ -129,8 +129,8 @@ function periodTextbox(name) {
       general: [{
         properties: {
           paragraphs: [
-            { textRuns: [{ value: "Reporting period: 2006 – 2025", textStyle: { fontFamily: "Segoe UI Semibold", fontSize: "11pt", color: C.ink2 } }], horizontalTextAlignment: "right" },
-            { textRuns: [{ value: "Values in USD unless stated · Use the filters below", textStyle: { fontFamily: "Segoe UI", fontSize: "10pt", color: C.muted } }], horizontalTextAlignment: "right" },
+            { textRuns: [{ value: "Reporting period: 2006 – 2025", textStyle: { fontFamily: "Segoe UI Semibold", fontSize: "12pt", color: C.ink2 } }], horizontalTextAlignment: "right" },
+            { textRuns: [{ value: "Values in USD unless stated · Use the filters below", textStyle: { fontFamily: "Segoe UI", fontSize: "11pt", color: C.muted } }], horizontalTextAlignment: "right" },
           ],
         },
       }],
@@ -187,10 +187,10 @@ function slicer(name, x, z, entity, prop, label, syncGroup) {
     objects: {
       data: [{ properties: { mode: str("Dropdown") } }],
       header: [{ properties: { show: bool(false) } }],
-      items: [{ properties: { textSize: num(10), fontColor: color(C.ink) } }],
+      items: [{ properties: { textSize: num(12), fontColor: color(C.ink) } }],
     },
     visualContainerObjects: {
-      title: [{ properties: { show: bool(true), text: str(label), fontSize: num(10), bold: bool(true), fontColor: color(C.ink2) } }],
+      title: [{ properties: { show: bool(true), text: str(label), fontSize: num(12), bold: bool(true), fontColor: color(C.ink2) } }],
       background: [{ properties: { show: bool(true), color: color(C.white), transparency: num(0) } }],
       border: [{ properties: { show: bool(true), color: color(C.line), radius: num(6), width: num(1) } }],
       padding: [{ properties: { top: num(2), bottom: num(2), left: num(10), right: num(10) } }],
@@ -202,8 +202,8 @@ function slicer(name, x, z, entity, prop, label, syncGroup) {
   return container(name, { x, y: L.ctl.y, w: L.slicerW, h: L.ctl.h, z }, visual);
 }
 
-function noteTextbox(name, text) {
-  return container(name, { x: 264, y: L.ctl.y, w: 484, h: L.ctl.h, z: 310 }, {
+function noteTextbox(name, x, text) {
+  return container(name, { x, y: L.ctl.y, w: L.slicerW, h: L.ctl.h, z: 310 }, {
     visualType: "textbox",
     objects: { general: [{ properties: { paragraphs: [{ textRuns: [{ value: text, textStyle: { fontFamily: "Segoe UI", fontSize: "10pt", color: C.ink2 } }] }] } }] },
     visualContainerObjects: {
@@ -220,7 +220,7 @@ function navigator(name) {
   return container(name, { x: L.nav.x, y: L.ctl.y, w: L.nav.w, h: L.ctl.h, z: 200 }, {
     visualType: "pageNavigator",
     objects: {
-      layout: [{ properties: { cellPadding: lit("6L") } }],
+      layout: [{ properties: { cellPadding: lit("4L") } }],
       fill: [
         { properties: { show: bool(true), fillColor: color(C.white), transparency: num(0) } },
         st("default", { show: bool(true), fillColor: color(C.white), transparency: num(0) }),
@@ -228,8 +228,8 @@ function navigator(name) {
         st("selected", { show: bool(true), fillColor: color(C.navy), transparency: num(0) }),
       ],
       text: [
-        { properties: { fontFamily: str("Segoe UI Semibold"), fontSize: num(10), fontColor: color(C.ink) } },
-        st("default", { fontFamily: str("Segoe UI Semibold"), fontSize: num(10), fontColor: color(C.ink) }),
+        { properties: { fontFamily: str("Segoe UI Semibold"), fontSize: num(11), fontColor: color(C.ink) } },
+        st("default", { fontFamily: str("Segoe UI Semibold"), fontSize: num(11), fontColor: color(C.ink) }),
         st("hover", { fontColor: color(C.navy) }),
         st("selected", { fontColor: color(C.white), bold: bool(true) }),
       ],
@@ -265,7 +265,7 @@ function styleChartChrome(v) {
   setVco(v, "border", { show: bool(true), color: color(C.lineSoft), radius: num(8), width: num(1) });
   const vco = v.visual.visualContainerObjects;
   if (vco.title) setVco(v, "title", { fontColor: color(C.ink), fontSize: num(13), fontFamily: str("Segoe UI Semibold") });
-  if (vco.subTitle) setVco(v, "subTitle", { fontColor: color(C.muted), fontSize: num(10) });
+  if (vco.subTitle) setVco(v, "subTitle", { fontColor: color(C.muted), fontSize: num(12) });
   const t = getTitle(v);
   if (t) setVco(v, "general", { altText: str(t) });
 }
@@ -284,14 +284,14 @@ function styleKpi(v) {
 function styleTable(v) {
   const o = (v.visual.objects ||= {});
   o.columnHeaders = [{ properties: {
-    fontSize: num(10), bold: bool(true), fontColor: color(C.white), backColor: color(C.navy),
+    fontSize: num(11), bold: bool(true), fontColor: color(C.white), backColor: color(C.navy),
     autoSizeColumnWidth: bool(true), columnAdjustment: str("growToFit"), wordWrap: bool(true),
   } }];
   o.values = [{ properties: {
-    fontSize: num(10), fontColorPrimary: color(C.ink), backColorPrimary: color(C.white),
+    fontSize: num(11), fontColorPrimary: color(C.ink), backColorPrimary: color(C.white),
     fontColorSecondary: color(C.ink), backColorSecondary: color(C.band),
   } }];
-  o.total = [{ properties: { fontSize: num(10), bold: bool(true), fontColor: color(C.ink), backColor: color(C.hover) } }];
+  o.total = [{ properties: { fontSize: num(11), bold: bool(true), fontColor: color(C.ink), backColor: color(C.hover) } }];
   o.grid = [{ properties: { gridHorizontal: bool(true), gridHorizontalColor: color(C.lineSoft), rowPadding: num(4) } }];
   setVco(v, "stylePreset", { name: str("None") });
 }
@@ -396,12 +396,9 @@ function main() {
 
     // filters: Year (synced everywhere), Company (synced where relationships exist), page-specific
     add(slicer(`${prefix}_slc01`, L.slicerX[0], 300, "dim_date", "calendar_year", "Calendar Year", "NexoraYear"));
-    if (plan.companySlicer === false) {
-      add(noteTextbox(`${prefix}_note1`, plan.note));
-    } else {
-      add(slicer(`${prefix}_slc02`, L.slicerX[1], 301, "dim_company", "company_name", "Company", "NexoraCompany"));
-      if (plan.slicer3) add(slicer(`${prefix}_slc03`, L.slicerX[2], 302, plan.slicer3.entity, plan.slicer3.prop, plan.slicer3.label, null));
-    }
+    add(slicer(`${prefix}_slc02`, L.slicerX[1], 301, "dim_company", "company_name", "Company", "NexoraCompany"));
+    plan.slicers.forEach((f, i) => add(slicer(`${prefix}_slc0${i + 3}`, L.slicerX[i + 2], 302 + i, f.entity, f.prop, f.label, null)));
+    if (plan.note) add(noteTextbox(`${prefix}_note1`, L.slicerX[plan.slicers.length + 2], plan.note));
     add(navigator(`${prefix}_nav01`));
 
     // restyle existing content visuals
@@ -414,7 +411,7 @@ function main() {
         v.position.y = L.kpiIcoY;
         setVco(v, "general", { altText: str("KPI icon") });
       } else if (/_vis\d+$/.test(name)) {
-        if (v.position.y === 264) { v.position.y = L.row1.y; v.position.height = L.row1.h; }
+        if (v.position.y === 264 || v.position.y === 282) { v.position.y = L.row1.y; v.position.height = L.row1.h; }
         else if (v.position.y === 668) { v.position.y = L.row2.y; v.position.height = L.row2.h; }
         styleChartChrome(v);
         if (t === "tableEx") { styleTable(v); tidyTable(v, name); }
@@ -544,23 +541,23 @@ function writeTheme() {
     tableAccent: C.navy, good: "#2E7D32", neutral: "#B26A00", bad: "#C62828",
     maximum: C.navy, center: "#7F9CC4", minimum: "#E8EEF6",
     textClasses: {
-      callout: { fontSize: 26, fontFace: "Segoe UI Semibold", color: C.navy },
-      title: { fontSize: 13, fontFace: "Segoe UI Semibold", color: C.ink },
-      header: { fontSize: 12, fontFace: "Segoe UI Semibold", color: C.ink },
-      label: { fontSize: 10, fontFace: "Segoe UI", color: C.ink2 },
+      callout: { fontSize: 32, fontFace: "Segoe UI Semibold", color: C.navy },
+      title: { fontSize: 16, fontFace: "Segoe UI Semibold", color: C.ink },
+      header: { fontSize: 14, fontFace: "Segoe UI Semibold", color: C.ink },
+      label: { fontSize: 12, fontFace: "Segoe UI", color: C.ink2 },
     },
     visualStyles: {
       "*": {
         "*": {
-          title: [{ fontColor: { solid: { color: C.ink } }, fontSize: 13, fontFamily: "Segoe UI Semibold" }],
-          subTitle: [{ fontColor: { solid: { color: C.muted } }, fontSize: 10 }],
+          title: [{ fontColor: { solid: { color: C.ink } }, fontSize: 16, fontFamily: "Segoe UI Semibold" }],
+          subTitle: [{ fontColor: { solid: { color: C.muted } }, fontSize: 12 }],
           background: [{ show: true, color: { solid: { color: C.white } }, transparency: 0 }],
           border: [{ show: true, color: { solid: { color: C.lineSoft } }, radius: 8 }],
           dropShadow: [{ show: false }],
-          categoryAxis: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 10, titleColor: { solid: { color: C.ink2 } } }],
-          valueAxis: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 10, titleColor: { solid: { color: C.ink2 } }, gridlineColor: { solid: { color: "#E5E7EB" } } }],
-          legend: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 10, position: "Top" }],
-          labels: [{ color: { solid: { color: C.ink } }, fontSize: 10 }],
+          categoryAxis: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 12, titleColor: { solid: { color: C.ink2 } } }],
+          valueAxis: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 12, titleColor: { solid: { color: C.ink2 } }, gridlineColor: { solid: { color: "#E5E7EB" } } }],
+          legend: [{ labelColor: { solid: { color: C.ink2 } }, fontSize: 12, position: "Top" }],
+          labels: [{ color: { solid: { color: C.ink } }, fontSize: 12 }],
         },
       },
       page: { "*": { background: [{ color: { solid: { color: C.page } }, transparency: 0 }] } },

@@ -23,7 +23,7 @@ function 'Nexora.TwoRatio' = ( mA : SCALAR NUMERIC EXPR, mB : SCALAR NUMERIC EXP
 	lineageTag: cd207698-3fd5-4434-b40b-6d5626309138
 
 /// Bar fill: highlight colour for the top (lowFirst = 0) or bottom (lowFirst = 1) n items, grey for the rest.
-function 'Nexora.BarColor' = ( d : ANYREF EXPR, m : SCALAR NUMERIC EXPR, lowFirst : INT64, n : INT64, hi : STRING ) => VAR _R = RANKX ( ALLSELECTED ( d ), IF ( lowFirst = 1, -m, m ), , DESC, DENSE ) RETURN IF ( ISBLANK ( m ), BLANK (), IF ( _R <= n, hi, "#868F9C" ) )
+function 'Nexora.BarColor' = ( d : ANYREF EXPR, m : SCALAR NUMERIC EXPR, lowFirst : INT64, n : INT64, hi : STRING ) => VAR _R = RANKX ( FILTER ( ALLSELECTED ( d ), NOT ISBLANK ( m ) ), IF ( lowFirst = 1, -m, m ), , DESC, DENSE ) RETURN IF ( ISBLANK ( m ), BLANK (), IF ( _R <= n, hi, "#868F9C" ) )
 	lineageTag: 41c1c977-8796-47c0-92df-88e820f7cb4c
 
 /// Index a measure to 100 in the first selected year with data.

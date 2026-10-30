@@ -48,18 +48,27 @@ flowchart LR
   CC --> CT
 ```
 
-## Which filter reaches which fact (why each page has the slicers it has)
+## Filters: what each page offers, and what each filter is allowed to change
 
-| Slicer | Reaches | Does **not** reach | Used on |
-|---|---|---|---|
-| Calendar Year | every fact | – | all pages (synced) |
-| Company | every fact except macro | `fact_macro_monthly` | all pages except Macro (synced) |
-| Factory / Industrial Zone / Compliance Tier | every fact except macro | `fact_macro_monthly` | Executive, Production, Quality, Finance & ESG |
-| Export Market (buyer) | sales, shipments | costs, production, inventory | Commercial only |
-| Material Category | procurement, deliveries, consumption, inventory | sales, costs | Procurement only |
-| Stock Type | inventory | everything else | Inventory only |
+Every page has four filter slots: **Calendar Year** and **Company** (synced across pages) plus two page filters, each chosen because it reaches every fact on that page. Industrial zone (23 values) and production technology (26) were rejected: they are almost one factory each.
 
-A slicer that silently fails to filter a visual on its page is a trust problem, so each page-level slicer was chosen to reach every chart on that page.
+| Page | Filters 3 and 4 |
+|---|---|
+| Executive | Factory · Compliance Tier |
+| Macro & Market | Knit / Woven · *note: national FX, CPI, wage, freight and RMG exports are not affected by filters* |
+| Commercial | Export Market · Knit / Woven |
+| Procurement | Material Category · Factory |
+| Inventory | Stock Type · Material Category |
+| Production | Factory · Compliance Tier |
+| Quality & OTIF | Compliance Tier · Product Category |
+| Finance & ESG | Compliance Tier · Factory |
+
+**Interaction rule** ([tools/build_interactions.js](../tools/build_interactions.js)): a filter narrows the story but never collapses a chart to a single point. A filter does **not** apply to a visual when:
+
+1. the visual is broken down by the filter's own field: Year → the year-trend lines, Company → company ranking and company scorecard, Stock Type → stock-stage bars, and so on;
+2. the filter's field nests inside the visual's breakdown, checked against the data: one factory belongs to one company, and one export region belongs to one market type.
+
+So picking 2007 and Dhaleswari keeps the 20-year trend lines (now Dhaleswari's own history), and the ranking and scorecard still compare all companies for 2007. KPI cards and every other chart follow the filters.
 
 ## Measure design notes
 

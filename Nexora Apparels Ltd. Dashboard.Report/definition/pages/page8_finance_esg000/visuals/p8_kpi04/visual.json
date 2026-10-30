@@ -3,10 +3,10 @@
   "name": "p8_kpi04",
   "position": {
     "x": 966,
-    "y": 170,
+    "y": 180,
     "z": 403,
     "width": 304,
-    "height": 102,
+    "height": 108,
     "tabOrder": 403
   },
   "visual": {
@@ -166,7 +166,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "12D"
                 }
               }
             },
@@ -216,7 +216,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "11D"
                 }
               }
             },

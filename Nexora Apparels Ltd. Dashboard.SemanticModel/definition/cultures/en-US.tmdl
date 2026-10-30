@@ -1155,6 +1155,16 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "Defect rate %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Defect %": {
 			            "State": "Suggested",
 			            "Source": {
@@ -1994,19 +2004,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "primary_defect_category"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Defect": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_shipment_line.delay_reason": {
 			      "Definition": {
@@ -2246,19 +2244,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Defective Quantity (PCS)"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Defective pcs": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_measures.late_shipped_quantity_pcs": {
 			      "Definition": {

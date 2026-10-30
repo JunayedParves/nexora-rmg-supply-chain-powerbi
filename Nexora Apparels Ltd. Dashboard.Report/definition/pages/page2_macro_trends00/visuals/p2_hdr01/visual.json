@@ -22,7 +22,7 @@
                     "value": "Macro Environment & 20-Year Trends",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20pt",
+                      "fontSize": "22pt",
                       "color": "#0B2C5F"
                     }
                   }
@@ -34,7 +34,7 @@
                     "value": "Is Nexora keeping pace with the industry and absorbing cost inflation?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11pt",
+                      "fontSize": "12pt",
                       "color": "#4B5563"
                     }
                   }
@@ -121,14 +121,14 @@
             "top": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "8D"
                 }
               }
             },
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "4D"
                 }
               }
             },

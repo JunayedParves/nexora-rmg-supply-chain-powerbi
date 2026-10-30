@@ -30,5 +30,27 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "p6_slc01",
+      "target": "p6_vis02",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p6_slc02",
+      "target": "p6_vis01",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p6_slc03",
+      "target": "p6_vis01",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p6_slc03",
+      "target": "p6_vis04",
+      "type": "NoFilter"
+    }
+  ]
 }

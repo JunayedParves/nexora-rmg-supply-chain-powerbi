@@ -30,5 +30,37 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "p1_slc01",
+      "target": "p1_vis01",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p1_slc01",
+      "target": "p1_vis02",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p1_slc02",
+      "target": "p1_vis03",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p1_slc02",
+      "target": "p1_vis04",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p1_slc03",
+      "target": "p1_vis03",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p1_slc03",
+      "target": "p1_vis04",
+      "type": "NoFilter"
+    }
+  ]
 }

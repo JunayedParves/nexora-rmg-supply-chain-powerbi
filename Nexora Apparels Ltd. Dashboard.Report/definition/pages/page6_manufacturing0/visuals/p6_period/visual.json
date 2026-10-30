@@ -22,7 +22,7 @@
                     "value": "Reporting period: 2006 – 2025",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11pt",
+                      "fontSize": "12pt",
                       "color": "#374151"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Values in USD unless stated · Use the filters below",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10pt",
+                      "fontSize": "11pt",
                       "color": "#4B5563"
                     }
                   }
