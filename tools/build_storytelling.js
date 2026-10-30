@@ -27,7 +27,9 @@ const msrField = (name) => ({ Measure: { Expression: { SourceRef: { Entity: MT }
 const colField = (e, p) => ({ Column: { Expression: { SourceRef: { Entity: e } }, Property: p } });
 const measureColor = (name) => ({ solid: { color: { expr: msrField(name) } } });
 const readJ = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
-const writeJ = (p, o) => fs.writeFileSync(p, JSON.stringify(o, null, 2));
+// Power BI Desktop briefly locks files it is watching, so retry a write instead of failing mid-build
+const writeRetry = (p, data) => { for (let i = 0; ; i++) { try { return fs.writeFileSync(p, data); } catch (e) { if (i >= 30) throw e; Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200); } } };
+const writeJ = (p, o) => writeRetry(p, JSON.stringify(o, null, 2));
 
 const projCol = (e, p, label) => ({ field: colField(e, p), queryRef: `${e}.${p}`, nativeQueryRef: p, active: true, ...(label ? { displayName: label } : {}) });
 const projMsr = (m, label) => ({ field: msrField(m), queryRef: `${MT}.${m}`, nativeQueryRef: m, ...(label ? { displayName: label } : {}) });

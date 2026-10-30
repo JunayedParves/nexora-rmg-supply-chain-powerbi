@@ -45,6 +45,6 @@ for (const pageId of readJ(path.join(PAGES, "pages.json")).pageOrder) {
   const pf = path.join(PAGES, pageId, "page.json");
   const pj = readJ(pf);
   if (rules.length) pj.visualInteractions = rules; else delete pj.visualInteractions;
-  fs.writeFileSync(pf, JSON.stringify(pj, null, 2));
+  for (let i = 0; ; i++) { try { fs.writeFileSync(pf, JSON.stringify(pj, null, 2)); break; } catch (e) { if (i >= 30) throw e; Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200); } }
   console.log(`${pj.displayName}: ${rules.map((r) => `${r.source} -/-> ${r.target}`).join(", ") || "all filters apply"}`);
 }

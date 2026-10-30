@@ -24,7 +24,9 @@ const col = (entity, prop) => ({ Column: { Expression: { SourceRef: { Entity: en
 const msr = (entity, prop) => ({ Measure: { Expression: { SourceRef: { Entity: entity } }, Property: prop } });
 
 const readJ = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
-const writeJ = (p, o) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(o, null, 2)); };
+// Power BI Desktop briefly locks files it is watching, so retry a write instead of failing mid-build
+const writeRetry = (p, data) => { for (let i = 0; ; i++) { try { return fs.writeFileSync(p, data); } catch (e) { if (i >= 30) throw e; Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200); } } };
+const writeJ = (p, o) => { fs.mkdirSync(path.dirname(p), { recursive: true }); writeRetry(p, JSON.stringify(o, null, 2)); };
 
 let SCHEMA_VC = null;
 
@@ -194,12 +196,14 @@ function slicer(name, x, z, entity, prop, label, syncGroup) {
       background: [{ properties: { show: bool(true), color: color(C.white), transparency: num(0) } }],
       border: [{ properties: { show: bool(true), color: color(C.line), radius: num(6), width: num(1) } }],
       padding: [{ properties: { top: num(2), bottom: num(2), left: num(10), right: num(10) } }],
+      spacing: [{ properties: { customizeSpacing: bool(true), spaceAbovePlotArea: num(4) } }],
       general: [{ properties: { altText: str(`${label} filter`) } }],
     },
     drillFilterOtherVisuals: true,
   };
   if (syncGroup) visual.syncGroup = { groupName: syncGroup, fieldChanges: true, filterChanges: true };
-  return container(name, { x, y: L.ctl.y, w: L.slicerW, h: L.ctl.h, z }, visual);
+  // spacing.spaceAbovePlotArea only exists from visualContainer 2.14.0 (the version Desktop saves)
+  return { ...container(name, { x, y: L.ctl.y, w: L.slicerW, h: L.ctl.h, z }, visual), $schema: SCHEMA_VC.replace(/\/\d+\.\d+\.\d+\//, "/2.14.0/") };
 }
 
 function noteTextbox(name, x, text) {
